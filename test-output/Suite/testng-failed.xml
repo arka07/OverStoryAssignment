@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test name="DOP_TestNG(failed)">
+    <classes>
+      <class name="com.ericsson.edos.rulesengine.testcases.applicationTest">
+        <methods>
+          <include name="VerifyEdosDpLogo"/>
+          <include name="initialisation"/>
+          <include name="tearDown"/>
+          <include name="VerifyApplicationPage"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.ericsson.edos.rulesengine.testcases.applicationTest -->
+      <class name="com.ericsson.edos.rulesengine.testcases.LoginPageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="initialisation"/>
+          <include name="tearDown"/>
+          <include name="EdosLogoText2Test"/>
+          <include name="EdosLogoText1Test"/>
+          <include name="SetusernameTest"/>
+          <include name="EdosLogo2Test"/>
+          <include name="EdosLogo1Test"/>
+        </methods>
+      </class> <!-- com.ericsson.edos.rulesengine.testcases.LoginPageTest -->
+    </classes>
+  </test> <!-- DOP_TestNG(failed) -->
+</suite> <!-- Failed suite [Suite] -->

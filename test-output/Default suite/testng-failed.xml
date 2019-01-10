@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test name="Default test(failed)">
+    <classes>
+      <class name="com.ericsson.edos.rulesengine.testcases.TemplateManagementTest">
+        <methods>
+          <include name="TemplateManagement3GTest"/>
+          <include name="Validate4GTemplateManagementTest"/>
+          <include name="initialisation"/>
+          <include name="tearDown"/>
+          <include name="Validate3GTemplateManagementTest"/>
+          <include name="setUp"/>
+          <include name="MoveToNextPage"/>
+          <include name="TemplateManagement4GTest"/>
+          <include name="TemplateManagement_AppCoverageTest"/>
+          <include name="ValidateAppTemplateManagementTest"/>
+        </methods>
+      </class> <!-- com.ericsson.edos.rulesengine.testcases.TemplateManagementTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

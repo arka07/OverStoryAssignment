@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [EdosRulesEnginesuite]" guice-stage="DEVELOPMENT">
+  <test name=" DeleteTest(failed)">
+    <classes>
+      <class name="com.ericsson.edos.rulesengine.testcases.DeleteTest">
+        <methods>
+          <include name="initialisation"/>
+          <include name="VerifyRuleManageDoesnotExistAfterDeletionTest"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.ericsson.edos.rulesengine.testcases.DeleteTest -->
+    </classes>
+  </test> <!--  DeleteTest(failed) -->
+</suite> <!-- Failed suite [EdosRulesEnginesuite] -->

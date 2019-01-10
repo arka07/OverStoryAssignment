@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Socsuite]">
+  <listeners>
+    <listener class-name="com.soc.util.ListenersTest"/>
+    <listener class-name="com.soc.util.ExtentReportNG"/>
+  </listeners>
+  <test name=" SchedulerPageTest(failed)">
+    <classes>
+      <class name="com.soc.testcases.SchedulerTest">
+        <methods>
+          <include name="initialisation"/>
+          <include name="SchedulerTitleTest"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="AggregationTitleTest"/>
+        </methods>
+      </class> <!-- com.soc.testcases.SchedulerTest -->
+    </classes>
+  </test> <!--  SchedulerPageTest(failed) -->
+</suite> <!-- Failed suite [Socsuite] -->
