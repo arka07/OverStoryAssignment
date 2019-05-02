@@ -1,0 +1,479 @@
+<html>
+<head>
+<title>TestNG:  BouyguesPageTest</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>BouyguesPageTest</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>24/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Fri Mar 29 14:29:25 IST 2019</td>
+</tr>
+<tr><td>Total time:</td><td>1441 seconds (1441807 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.DynamicGraphicalReport()'><b>DynamicGraphicalReport</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-628392976" onClick='toggleBox("Output-628392976", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-628392976" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-628392976">
+Clicked on the Dynamic Graphical Report Link<br/>
+Clicked on the dynamicgraphicalreportspage Filter Tab<br/>
+Clicked on the dynamicgraphicalreportspage ExistingReport Tab + Cluster Level and Daily option is selected<br/>
+Clicked on the date<br/>
+</div>
+</td>
+<td></td>
+<td>93</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.ValidateOnAddingPredefinedKPI()'><b>ValidateOnAddingPredefinedKPI</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-911501858" onClick='toggleBox("Output-911501858", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-911501858" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-911501858">
+The pre-defined KPI is addeded successfully<br/>
+The pre-defined KPI formula is selected successfully<br/>
+</div>
+</td>
+<td></td>
+<td>12</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.ValidateOnCustomKPI()'><b>ValidateOnCustomKPI</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-785271142" onClick='toggleBox("Output-785271142", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-785271142" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-785271142">
+The pre-defined KPI formula is present in the added KPI formula tab<br/>
+The KPI is addeded successfully<br/>
+The KPI formula is addeded successfully<br/>
+The KPI formula is added successfully<br/>
+</div>
+</td>
+<td></td>
+<td>33</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.ValidateSearchforSpecificPmCounter()'><b>ValidateSearchforSpecificPmCounter</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-95685867" onClick='toggleBox("Output-95685867", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-95685867" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-95685867">
+The  Counter Added is available and Countername is:::pmErabEstabAttAdded<br/>
+</div>
+</td>
+<td></td>
+<td>35</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.ValidateSearchingForCell()'><b>ValidateSearchingForCell</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-1547398254" onClick='toggleBox("Output-1547398254", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1547398254" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1547398254">
+Clicked on the QueryBuilder Link<br/>
+Clicked on the QueryBuilder Filter Tab<br/>
+The Cell name is Cell<br/>
+The Cluster name is E00631.D00631A<br/>
+Clicked on the Cluster Field<br/>
+The Cluster NE field name is E00631.D00631A<br/>
+The Cell is present in the Cluster NE text filed<br/>
+</div>
+</td>
+<td></td>
+<td>52</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyAllTitleTest()'><b>VerifyAllTitleTest</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-1871680329" onClick='toggleBox("Output-1871680329", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1871680329" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1871680329">
+Title of Tab is :Bouygues<br/>
+Title of Tab is :REPORTS<br/>
+Title of Tab is :CHARTS<br/>
+Title of Tab is :CONFIG<br/>
+Title of Tab is :KPIS<br/>
+Title of Tab is :Filters/Options<br/>
+Latest Available Data Present is: 2019/03/28 20:00UTC<br/>
+Latest Available Data Present AfterSplit: 2019/03/28<br/>
+The latest year is: 2019<br/>
+The latest month is: 03<br/>
+The latest day is: 28<br/>
+Date in Advanced Master is:3/28/2019 12:00 AM<br/>
+Date in Advanced Master after Split is:3/28/2019<br/>
+The latest startdate in Advanced Master is: 28<br/>
+The latest startmonth in Advanced Master is: 3<br/>
+The latest startyear in Advanced Master is: 2019<br/>
+3/29/2019 12:00 AM<br/>
+Date in Advanced Master End after Split is:3/29/2019<br/>
+The latest enddate in Advanced Master is: 29<br/>
+The latest endmonth in Advanced Master is: 3<br/>
+The latest endyear in Advanced Master is: 2019<br/>
+All The Tabs are Latest Date is validated<br/>
+</div>
+</td>
+<td></td>
+<td>63</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyCounterAddedQBReportinTable()'><b>VerifyCounterAddedQBReportinTable</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-2078641942" onClick='toggleBox("Output-2078641942", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-2078641942" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-2078641942">
+The  Counter Added is available and Countername is:::pmErabEstabAttAdded<br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The counter is added successfully::</b><span><br/><br/>
+</div>
+</td>
+<td></td>
+<td>52</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyDeltaAuditForUnderlinedValues()'><b>VerifyDeltaAuditForUnderlinedValues</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-1213871206" onClick='toggleBox("Output-1213871206", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1213871206" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1213871206">
+A new tab is appeared in the browser<br/>
+Both the clicked element and the total number of changes in new window is matching<br/>
+Both the clicked element date and the total number of changes in new window date is matching<br/>
+Both the clicked element date and the total number of changes in new window date is matching<br/>
+Both the clicked element date and the total number of changes in new window date is matching<br/>
+Both the clicked element date and the total number of changes in new window Enode is matching<br/>
+Both the clicked element date and the total number of changes in new window Enode is matching<br/>
+Both the clicked element date and the total number of changes in new window Enode is matching<br/>
+</div>
+</td>
+<td></td>
+<td>77</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyDeltaAuditofSites()'><b>VerifyDeltaAuditofSites</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-1558395480" onClick='toggleBox("Output-1558395480", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1558395480" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1558395480">
+Clicked on the Config Change Audit Link<br/>
+The Title of the page is :<br/>
+Clicked on the Query option<br/>
+Collapsed the filter/Options Tab<br/>
+Clicked on the refresh button<br/>
+The start date is: 3/15/2019<br/>
+The end date is: 3/29/2019<br/>
+The total number of selected dates in calendar :15<br/>
+The total number of processed dates :15<br/>
+All the selected dates in calendar are processed successfully<br/>
+A report is displayed with the number of changes per Parameter per day<br/>
+</div>
+</td>
+<td></td>
+<td>264</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyEprefKPIChart()'><b>VerifyEprefKPIChart</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-1456061400" onClick='toggleBox("Output-1456061400", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1456061400" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1456061400">
+The Dropdown element selected is:::::Accessibility QCI 1 (%)<br/>
+The Dropdown element selected is:::::ERAB Attempts<br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Accessibility (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Accessibility QCI 1 (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Accessibility QCI 5 (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Accessibility QCI 8 (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Added ERAB Establishment Success Rate (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Avg DL PRB Utilization (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Avg Number of DL Active Users</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Avg Number of RRC Connected Users</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Avg Number of UL Active Users</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Avg PDCCH CCE Utilization (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Avg UL PRB Utilization (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::CQI</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Cell Availability (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::DL Spectral Efficiency (bps/Hz/cell)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Default Bearer Drop Rate (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Discarded Paging Ratio (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Downlink Cell Throughput (Mbps)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Downlink Latency (ms)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Downlink PRB utilization (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Downlink Packet Loss Rate (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Downlink Packet Loss Rate Overall (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Downlink User Throughput (Mbps)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Drops</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::ERAB Attempts</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::ERAB Attempts QCI 1</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::ERAB Retainability (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Estab Attempts</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Estab Failures</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Estab Successes</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::IRAT Handover Rate (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Initial ERAB Establishment Success Rate (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Inter Frequency Handover Success Rate (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Intra Frequency Handover Success Rate (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Intra LTE Handover per Call</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::LatitudeIndex</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::LongitudeIndex</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::MAC DL BLER (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::MAC UL BLER (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Mobility Success Rate (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::PDCP DL Data Volume (GB)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::PDCP UL Data Volume (GB)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::PUCCH SINR</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::PUSCH SINR</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Peak number of RRC Connected users per cell</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::ROPs Avail</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::ROPs Expected</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::RRC Connection Attempts</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::RRC Connection Setup Success Rate (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::RecordDate Local</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Retainability (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Retainability QCI 1 (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Retainability QCI 5 (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Retainability QCI 8 (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::S1 Signalling Setup Success Rate (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Session Setup Success Rate (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::SubNetwork3</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::SubNetwork4</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Tile</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::UL Spectral Efficiency (bps/Hz/cell)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Ue Context Abnormal Release Rate (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Uplink Cell Throughput (Mbps)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Uplink PRB utilization (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Uplink Packet Loss Rate (%)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::Uplink User Throughput (Mbps)</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The DropDown List values are:::VolTE Call Attempts</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The Count of Titles of  the Selected KPI1 is:::2</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The Count of Titles of  the Selected KPI2 is:::2</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The Count of the dot's mapped in the graph are:::4</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The Graph is plotted with the selected KPI'sin both Y-Axis's are available number of Dot's/circle are:::: 4</b><span><br/><br/>
+</div>
+</td>
+<td></td>
+<td>102</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyEprefNEChart()'><b>VerifyEprefNEChart</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-104261836" onClick='toggleBox("Output-104261836", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-104261836" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-104261836">
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The Count of Titles of  the Selected KPI is:::2</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The Count of the dot's mapped in the graph are:::4</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The Graph is plotted with the selected KPI'sin both Y-Axis's are available number of Dot's/circle are:::: 4</b><span><br/><br/>
+</div>
+</td>
+<td></td>
+<td>17</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyEprefTimeChart()'><b>VerifyEprefTimeChart</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-259630944" onClick='toggleBox("Output-259630944", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-259630944" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-259630944">
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The Count of Titles of  the Selected KPI is:::1</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The Count of the dot's mapped in the graph are:::3</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The Graph is plotted with the selected KPI'sin both Y-Axis's are available number of Dot's/circle are:::: 3</b><span><br/><br/>
+</div>
+</td>
+<td></td>
+<td>25</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyExportToCSV()'><b>VerifyExportToCSV</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-453398853" onClick='toggleBox("Output-453398853", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-453398853" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-453398853">
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>Exported to CSV Sucessfully</b><span><br/><br/>
+</div>
+</td>
+<td></td>
+<td>17</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyExportToExcel()'><b>VerifyExportToExcel</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-1193398802" onClick='toggleBox("Output-1193398802", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1193398802" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1193398802">
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>Exported to Excel Sucessfully</b><span><br/><br/>
+</div>
+</td>
+<td></td>
+<td>11</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyExportToTemplate()'><b>VerifyExportToTemplate</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-1171255580" onClick='toggleBox("Output-1171255580", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1171255580" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1171255580">
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>Exported the Template Sucessfully</b><span><br/><br/>
+</div>
+</td>
+<td></td>
+<td>15</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyFingerRCAReport()'><b>VerifyFingerRCAReport</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest</td>
+<td></td>
+<td>37</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyIsolationReport()'><b>VerifyIsolationReport</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-351656492" onClick='toggleBox("Output-351656492", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-351656492" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-351656492">
+Title of the Page is eNodeB RCA Isolation View KPIs Daily<br/>
+</div>
+</td>
+<td></td>
+<td>69</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyPreCannedReport()'><b>VerifyPreCannedReport</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-1275009283" onClick='toggleBox("Output-1275009283", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1275009283" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1275009283">
+Title of the Page is eNodeB Performance KPIs Hourly<br/>
+</div>
+</td>
+<td></td>
+<td>40</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyPreCannedReportByCell()'><b>VerifyPreCannedReportByCell</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest</td>
+<td></td>
+<td>80</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyQBCharting()'><b>VerifyQBCharting</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-34073107" onClick='toggleBox("Output-34073107", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-34073107" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-34073107">
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The Count of the Selected KPI of Y1 Axis Selection is:::2</b><span><br/><br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>The Graph is plotted with the selected KPI from the Y1 Axis and the available no of Dot's/circle are:::: 2</b><span><br/><br/>
+</div>
+</td>
+<td></td>
+<td>36</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyQBReportinTable()'><b>VerifyQBReportinTable</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-606775513" onClick='toggleBox("Output-606775513", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-606775513" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-606775513">
+Clicked on the QueryBuilder Filter Tab<br/>
+The Selected NE Elemnt is ::::Cluster Level<br/>
+The Selected NE Elemnt is ::::Daily<br/>
+<span style='color:#F8F8FF;background-color:#006400;font-size:14px;'><b>Table Contains the Selected counter and Dates filtred</b><span><br/><br/>
+</div>
+</td>
+<td></td>
+<td>82</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyRCAReport()'><b>VerifyRCAReport</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-597364637" onClick='toggleBox("Output-597364637", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-597364637" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-597364637">
+Title of the Page is eNodeB Rule Engine Results Hourly<br/>
+Before filter table size is 250<br/>
+After filter table size is 2<br/>
+</div>
+</td>
+<td></td>
+<td>60</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyTriageReport()'><b>VerifyTriageReport</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest<br/>
+<a href="#Output-1842509246" onClick='toggleBox("Output-1842509246", this, "Show output", "Hide output");'>Show output</a>
+
+<a href="#Output-1842509246" onClick="toggleAllBoxes();">Show all outputs</a>
+<div class='log' id="Output-1842509246">
+Title of Tab is :CDwindow-F9DE8601AB0B32087E05BCF1AFA933B1<br/>
+Title of the page EPP<br/>
+</div>
+</td>
+<td></td>
+<td>93</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+<tr>
+<td title='com.ericsson.edos.dopuatautomation.testcases.BouyguesTest.VerifyenodeBUtranCellTest()'><b>VerifyenodeBUtranCellTest</b><br>Test class: com.ericsson.edos.dopuatautomation.testcases.BouyguesTest</td>
+<td></td>
+<td>64</td>
+<td>com.ericsson.edos.dopuatautomation.testcases.BouyguesTest@71423665</td></tr>
+</table><p>
+</body>
+</html>

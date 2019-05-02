@@ -84,12 +84,24 @@ public class Edosloginpage extends TestBase{
 	 }
      
      
-     /*Method to click on LoginButton of Login Page*/ 
+    /* Method to click on LoginButton of Login Page 
      public EdosApplicationPage ClickLogin() {
         Loginbutton.click(); 
         return new EdosApplicationPage();
-        }
+        }*/
      
+     
+     /*Method to click on LoginButton of Login Page*/ 
+     public EdosRasterpage  ClickLogin() {
+        Loginbutton.click(); 
+        return new EdosRasterpage();
+        }
+
+     /*Method to click on LoginButton of Login Page to navigate to TIV page*/ 
+     public EdosTraceInputValidationPage ClickLoginForTIV() {
+        Loginbutton.click(); 
+        return new EdosTraceInputValidationPage();
+        }
      
      /*Method to click on LoginButton at once of Login Page*/ 
      public void LoginInOne() throws InterruptedException {

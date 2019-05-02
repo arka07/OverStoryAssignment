@@ -5,16 +5,16 @@
     <listener class-name="com.ericsson.edos.dopuatautomation.util.ListenersTest"/>
     <listener class-name="com.ericsson.edos.dopuatautomation.util.ExtentReportNG"/>
   </listeners>
-  <test name="ApplicationPageTest(failed)">
+  <test name="TivTest(failed)">
     <classes>
-      <class name="com.ericsson.edos.dopuatautomation.testcases.applicationTest">
+      <class name="com.ericsson.edos.dopuatautomation.testcases.EdosTraceInputValidationTest">
         <methods>
-          <include name="VerifyApplicationPage"/>
-          <include name="initialisation"/>
-          <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="initialisation"/>
+          <include name="VerifyTableWithCellFiltering"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.ericsson.edos.dopuatautomation.testcases.applicationTest -->
+      </class> <!-- com.ericsson.edos.dopuatautomation.testcases.EdosTraceInputValidationTest -->
     </classes>
-  </test> <!-- ApplicationPageTest(failed) -->
+  </test> <!-- TivTest(failed) -->
 </suite> <!-- Failed suite [Regression Testing Suite] -->

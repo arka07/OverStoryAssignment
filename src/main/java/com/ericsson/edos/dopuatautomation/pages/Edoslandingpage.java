@@ -13,7 +13,7 @@ public class Edoslandingpage extends TestBase
 	private WebElement LegalNotice;
 	
 	/*  Inspecting WebElement for Authorized User*/
-	@FindBy(xpath="//p[@class='eaLogin-licenceContent']")
+	@FindBy(xpath="(//p[@class='eaLogin-licenceContent'])[2]")
 	private WebElement LicenseContent;
 	
 	/*  Inspecting WebElement for Proceed Button*/
