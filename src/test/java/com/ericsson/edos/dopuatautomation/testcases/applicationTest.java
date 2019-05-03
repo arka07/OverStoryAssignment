@@ -83,9 +83,12 @@ public class applicationTest extends  TestBase{
    	applicationpage.TIVLinkClick();
     Thread.sleep(5000);
    	landingpage.ClickProceedButton();
+  	loginpage.SetUserName();
+	Thread.sleep(2000);
+	loginpage.SetPassword();
     Thread.sleep(2000);
-   	loginpage.LoginInOne();
-    Thread.sleep(1000);
+    loginpage.ClickLoginForTIV();
+	 Thread.sleep(2000);
    	}
     
     /*TestMethod to Click on CTA*/
@@ -96,9 +99,12 @@ public class applicationTest extends  TestBase{
    	applicationpage.ClickOnCTA();
     Thread.sleep(5000);
    	landingpage.ClickProceedButton();
-   	Thread.sleep(2000);
-   	loginpage.LoginInOne();
-    Thread.sleep(1000);
+    loginpage.SetUserName();
+	Thread.sleep(2000);
+	loginpage.SetPassword();
+    Thread.sleep(2000);
+    loginpage.ClickLoginForCTA();
+	 Thread.sleep(2000);
    	}
 	
     /*TestMethod to Click on CM/PM*/
