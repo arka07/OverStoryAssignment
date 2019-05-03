@@ -70,9 +70,12 @@ public class applicationTest extends  TestBase{
     applicationpage.ClickonRasterLink();
     Thread.sleep(1000);
     landingpage.ClickProceedButton();
-    Thread.sleep(1000);
-    loginpage.LoginInOne();
-    Thread.sleep(1000);
+    loginpage.SetUserName();
+	Thread.sleep(2000);
+	loginpage.SetPassword();
+    Thread.sleep(2000);
+    loginpage.ClickLogin();
+	 Thread.sleep(2000);
    	}
     
     /*TestMethod to Click on TIV*/
