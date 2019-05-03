@@ -102,6 +102,11 @@ public class Edosloginpage extends TestBase{
         Loginbutton.click(); 
         return new EdosTraceInputValidationPage();
         }
+       /*Method to click on LoginButton of Login Page to navigate to CTA page*/ 
+     public CallTerminationAnalysisPage ClickLoginForCTA() {
+        Loginbutton.click(); 
+        return new CallTerminationAnalysisPage();
+        }
      
      /*Method to click on LoginButton at once of Login Page*/ 
      public void LoginInOne() throws InterruptedException {
