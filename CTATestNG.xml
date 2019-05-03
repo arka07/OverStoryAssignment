@@ -32,6 +32,10 @@
 		<test name="CallTerminationAnalysisTest">
 		<classes>
 			<class name="com.ericsson.edos.dopuatautomation.testcases.CallTerminationAnalysisTest" />
+              <methods>
+              <include name="VerifyCellFilterData" />
+              <include name="VerifyCellFilterSearch" />
+             </methods>
 		</classes>
 	</test>
 	
