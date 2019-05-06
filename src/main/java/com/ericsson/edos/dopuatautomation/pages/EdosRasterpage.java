@@ -289,6 +289,7 @@ public class EdosRasterpage extends TestBase{
 
 	/*Private Fields*/
     public String Classnameis=null; 
+    public int CurrentDateis;
 	private List<String> CssClass;
 	private List<String> HoursSelected;
 
