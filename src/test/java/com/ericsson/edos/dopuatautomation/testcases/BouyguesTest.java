@@ -899,7 +899,7 @@ public class BouyguesTest extends  TestBase{
                 
        }
 	   
-	    @Test(priority=34,timeOut=240000) 
+	    @Test(priority=34,timeOut=350000) 
     public void VerifyTriageReport() throws InterruptedException {
     	 
     	 String Bouygueshandle= bouyguespage.getwindowhandle();
