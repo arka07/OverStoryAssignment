@@ -1052,7 +1052,7 @@ public class EdosRasterpage extends TestBase{
 		Thread.sleep(2000);
 		ClickStartDate.click();
 		Thread.sleep(2000);
-		GetDatesFromCalendar("ROPP");
+		GetDatesFromCalendar("today");
 		Thread.sleep(2000);
 		GetHours("Normal");
 		Thread.sleep(2000);
