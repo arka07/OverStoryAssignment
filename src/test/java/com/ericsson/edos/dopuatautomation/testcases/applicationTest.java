@@ -69,12 +69,12 @@ public class applicationTest extends  TestBase{
     Thread.sleep(5000);
     applicationpage.ClickonRasterLink();
     Thread.sleep(1000);
-    landingpage.ClickProceedButton();
+    /*landingpage.ClickProceedButton();
     loginpage.SetUserName();
 	Thread.sleep(2000);
 	loginpage.SetPassword();
     Thread.sleep(2000);
-    loginpage.ClickLogin();
+    loginpage.ClickLogin();*/
 	 Thread.sleep(2000);
    	}
     
@@ -85,12 +85,12 @@ public class applicationTest extends  TestBase{
     Thread.sleep(9000);
    	applicationpage.TIVLinkClick();
     Thread.sleep(5000);
-   	landingpage.ClickProceedButton();
+   /*landingpage.ClickProceedButton();
   	loginpage.SetUserName();
 	Thread.sleep(2000);
 	loginpage.SetPassword();
     Thread.sleep(2000);
-    loginpage.ClickLoginForTIV();
+    loginpage.ClickLoginForTIV();*/
 	 Thread.sleep(2000);
    	}
     
@@ -101,12 +101,12 @@ public class applicationTest extends  TestBase{
     Thread.sleep(9000);
    	applicationpage.ClickOnCTA();
     Thread.sleep(5000);
-   	landingpage.ClickProceedButton();
+   	/*landingpage.ClickProceedButton();
     loginpage.SetUserName();
 	Thread.sleep(2000);
 	loginpage.SetPassword();
     Thread.sleep(2000);
-    loginpage.ClickLoginForCTA();
+    loginpage.ClickLoginForCTA();*/
 	 Thread.sleep(2000);
    	}
 	
@@ -117,9 +117,9 @@ public class applicationTest extends  TestBase{
     Thread.sleep(9000);
     applicationpage.clickonCMPMDashboard();
     Thread.sleep(5000);
-    landingpage.ClickProceedButton();
+    /*landingpage.ClickProceedButton();
     Thread.sleep(2000);
-    loginpage.LoginInOne();
+    loginpage.LoginInOne();*/
     Thread.sleep(1000);
  
    	}
