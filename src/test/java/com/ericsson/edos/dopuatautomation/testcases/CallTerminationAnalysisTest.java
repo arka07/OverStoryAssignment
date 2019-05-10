@@ -17,6 +17,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 	Edosloginpage loginpage;
 	EdosApplicationPage applicationpage;
 	CallTerminationAnalysisPage CTAPage;
+	String OrigCellVAlue;
 
 
 	public  CallTerminationAnalysisTest() {
@@ -53,11 +54,27 @@ public class CallTerminationAnalysisTest extends TestBase {
 		Assert.assertEquals(DashboardHeaderText, "Call Termination Analysis", "Dashboard Text is not matching");
 
 	}
+	
+	@Test(priority=3)
+	public void VerifyCTACalendars() throws InterruptedException
+	{
+		boolean isTSavailable=false;
+		boolean isTRavailable=false;
+		String C1;
+		String C2;
+		Thread.sleep(9000);
+		C1=CTAPage.GetDateFromTextBox("Start","Start");
+		C2=CTAPage.GetDateFromTextBox("End","End");
+		System.out.println("The Start date Captured is::::"+C1);
+		System.out.println("The End date Captured is::::"+C2);
+		//CTAPage.ClickFiltier();
+				
+		}
 
-	//TC-06 Cell Filter: Data is filtered
-	@Test(priority=6)
+	//TC-03 Cell Filter: Data is filtered
+	@Test(priority=4)
 	public void VerifyCellFilterData() throws InterruptedException{
-		Thread.sleep(13000);
+		Thread.sleep(3000);
 		CTAPage.ClickOnArrow();
 
 		Thread.sleep(2000);
@@ -95,7 +112,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 		CTAPage.ClickFiltier();
 		System.out.println("Clicked on filter");
 
-		Thread.sleep(5000);
+		Thread.sleep(9000);
 		String OrigCellVAlue = CTAPage.ValidateOriginatingCell();
 		System.out.println("The value present in the Table datagrid is "+OrigCellVAlue);
 
@@ -110,7 +127,106 @@ public class CallTerminationAnalysisTest extends TestBase {
 		}
 	}
 
-	//TC-07 Cell Filter: Search
+	
+	//TC - 06 Open call details from table
+	
+	@Test(priority=6)
+	public void VerifyOpenCallDetails() throws InterruptedException{
+		
+		Thread.sleep(8000);
+		OrigCellVAlue = CTAPage.ValidateOriginatingCell();
+		System.out.println("The value present in the Table datagrid is "+OrigCellVAlue);
+		
+		Thread.sleep(2000);
+		String TerStatValue = CTAPage.ValidateTerminationStatus();
+		System.out.println("The value present in the Termination status is "+TerStatValue);
+		
+		Thread.sleep(2000);
+		String TerReasonValue = CTAPage.ValidateTerminationReason();
+		System.out.println("The value present in the Termination Reason is "+TerReasonValue);
+		
+		Thread.sleep(2000);
+		CTAPage.ClickMagnifyingLens();
+		
+		Thread.sleep(2000);
+		String CallDetailsText = CTAPage.CallDetailText();
+		System.out.println("The Call Deatil Dashboard contains text = "+CallDetailsText);
+		
+		Thread.sleep(2000);
+		if(CallDetailsText.contains("Call Details Analysis")) {
+		System.out.println("Call Details Dashboard is open for the selected call");
+		Reporter.log("Call Details Dashboard is open for the selected call");
+		}
+		else
+		{
+			System.out.println("Call Details Dashboard is not open");
+			Reporter.log("Call Details Dashboard is not open");
+			Assert.fail("Call Details Dashboard is not open");
+		}
+		
+		Thread.sleep(2000);
+		if(CallDetailsText.contains(TerStatValue)) {
+			System.out.println("Call Termination Status is available on top of the dashboard  - "+TerStatValue);
+			Reporter.log("Call Termination Status is available on top of the dashboard  - "+TerStatValue);
+			}
+			else
+			{
+				System.out.println("Call Termination Status is not available on top of the dashboard");
+				Reporter.log("Call Termination Status is not available on top of the dashboard");
+				Assert.fail("Call Termination Status is not available on top of the dashboard");
+			}
+		
+		Thread.sleep(2000);
+		if(CallDetailsText.contains(TerReasonValue)) {
+			System.out.println("Call Termination Reason is available on top of the dashboard  - "+TerReasonValue);
+			Reporter.log("Call Termination Reason is available on top of the dashboard  - "+TerReasonValue);
+			}
+			else
+			{
+				System.out.println("Call Termination Reason is not available on top of the dashboard");
+				Reporter.log("Call Termination Reason is not available on top of the dashboard");
+				Assert.fail("Call Termination Reason is not available on top of the dashboard");
+			}
+	}
+	
+	//TC - 07 Call Events
+	@Test(priority=7)
+	public void ValidateCallEvents() throws InterruptedException{
+		
+		Thread.sleep(5000);
+		String ServingCellValue = CTAPage.validateServingcell();
+		
+		Thread.sleep(2000);
+		if(!(ServingCellValue.equalsIgnoreCase(""))) {
+		System.out.println("The Serving Cell value present in the Call Details page is "+ServingCellValue);
+		}
+		else {
+			System.out.println("Call Event details is not available on top of the dashboard");
+			Reporter.log("Call Event details is not available on top of the dashboard");
+			Assert.fail("Call Event details is not available on top of the dashboard");
+		}
+		
+		Thread.sleep(2000);
+		String EventNameValue = CTAPage.validateEventname();
+		System.out.println("The Serving Cell value present in the Call Details page is "+EventNameValue);
+		
+		if(!(EventNameValue.equalsIgnoreCase("")) && (ServingCellValue.equalsIgnoreCase(OrigCellVAlue))) {
+			System.out.println("Call Events are availabe in the table along with Serving Cell - "+ ServingCellValue+ " the Event Name  - "+EventNameValue);
+			Reporter.log("Call Events are availabe in the table along with Serving Cell - "+ ServingCellValue+ " the Event Name  - "+EventNameValue);
+		}
+		
+		else {
+			System.out.println("Call Events are not availabe for the Originatining Cell :"+OrigCellVAlue);
+			Reporter.log("Call Events are not availabe for the Originatining Cell :"+OrigCellVAlue);
+			Assert.fail("Call Events are not availabe for the Originatining Cell :"+OrigCellVAlue);
+		}
+		
+		CTAPage.ValidateBackgroundColor();
+		
+		
+	}
+	
+	/*//TC-07 Cell Filter: Search
 	@Test(priority=7)
 	public void VerifyCellFilterSearch() throws InterruptedException{
 
@@ -267,4 +383,5 @@ public class CallTerminationAnalysisTest extends TestBase {
 			Assert.fail("The second selected cell from the dropdown"+SecondCellValue+" and the Originating Cell in the Table Datagrid "+SecondOrigCellVAlue+" is not matching");
 		}
 	}
+*/
 }
