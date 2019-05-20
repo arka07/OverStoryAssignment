@@ -32,12 +32,12 @@ public class EdosTraceInputValidationPage extends TestBase {
 	WebElement TIVHeaderText;
 
 	/*Inspecting WebElement for TIV Calendar----STARTTIME*/	
-	@FindBy (xpath = "(//input[@class='calendar__datePickerInput___Q4HiG'])[1]")
+	@FindBy (xpath = "(//input[contains(@class,'calendar__datePickerInput')])[1]")
 	WebElement TIVStartTime;
 
 
 	/*Inspecting WebElement for TIV Calendar----ENDTIME*/	
-	@FindBy (xpath = "(//input[@class='calendar__datePickerInput___Q4HiG'])[2]")
+	@FindBy (xpath = "(//input[contains(@class,'calendar__datePickerInput')])[2]")
 	WebElement TIVEndTime;
 
 
