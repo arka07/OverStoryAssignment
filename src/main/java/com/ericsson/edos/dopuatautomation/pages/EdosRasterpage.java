@@ -39,11 +39,11 @@ public class EdosRasterpage extends TestBase{
 	WebElement TopologyText;
 
 	//WebElement for Start Date
-	@FindBy (xpath="//div[text()='Start']")
+	@FindBy (xpath="//label[text()='Start']")
 	WebElement StartDateText;
 
 	//WebElement for End Date
-	@FindBy (xpath="//div[text()='End']")
+	@FindBy (xpath="//label[text()='End']")
 	WebElement EndDateText;
 
 	//WebElement for Selecting the Topology in search box
@@ -293,11 +293,19 @@ public class EdosRasterpage extends TestBase{
 	private List<String> CssClass;
 	private List<String> HoursSelected;
 
-	@FindBy (xpath="//div[text()='Start']/../div[2]/div/div/div/input")
-	WebElement ClickStartDate;
+	/*@FindBy (xpath="//div[text()='Start']/../div[2]/div/div/div/input")
+	WebElement ClickStartDate;*/
 
-	@FindBy (xpath="//div[text()='End']/../div[4]/div/div/div/input")
+	/*@FindBy (xpath="//div[text()='End']/../div[4]/div/div/div/input")
+	WebElement ClickEndDate;*/
+	
+	@FindBy (xpath="(//input[contains(@class,'calendar')])[1]")
+	WebElement ClickStartDate;
+	
+	@FindBy (xpath="(//input[contains(@class,'calendar')])[2]")
 	WebElement ClickEndDate;
+	
+	
 	
 	//WebElement to click on the start date panel
 	@FindBy (xpath="(//div[@class='react-datepicker__input-container'])[1]")
@@ -305,9 +313,12 @@ public class EdosRasterpage extends TestBase{
 
 	@FindBy (xpath="(//input[@class='calendar__datePickerInput___AuvN3 react-datepicker-ignore-onclickoutside']")
 	WebElement DatePanelText;
-
-	@FindBy (xpath="//div[@class='toolbar__datepicker-refresh-btn-container___1Xvva']")
+    
+	@FindBy (xpath="//div[contains(@class,'rangeCalendar__button')]")
 	WebElement RefreshButton;
+	
+	/*@FindBy (xpath="//div[@class='toolbar__datepicker-refresh-btn-container___1Xvva']")
+	WebElement RefreshButton;*/
 
 	/*Inspecting WebElement for TIV StartHours*/	
 	@FindBy (xpath = "(//ul[@class='react-datepicker__time-list']//li)")
@@ -1134,4 +1145,5 @@ public class EdosRasterpage extends TestBase{
 
 	}
 }
+
 
