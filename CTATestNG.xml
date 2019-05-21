@@ -31,11 +31,18 @@
 	
 		<test name="CallTerminationAnalysisTest">
 		<classes>
-			<class name="com.ericsson.edos.dopuatautomation.testcases.CallTerminationAnalysisTest" />
+			<class name="com.ericsson.edos.dopuatautomation.testcases.CallTerminationAnalysisTest">
               <methods>
               <include name="VerifyCellFilterData" />
               <include name="VerifyCellFilterSearch" />
+              <include name="VerifyCTACallsDataGridTable"/>
+              <include name="VerifyNonTableComponents"/>
+              <include name="VerifyOpenCallDetails"/>
+              <include name="ValidateCallEvents"/>
+              <include name="VerifyCallsPlottedonMap"/>
+              <include name="VerifyCallsDetailsfrommap"/>
              </methods>
+             </class>
 		</classes>
 	</test>
 	

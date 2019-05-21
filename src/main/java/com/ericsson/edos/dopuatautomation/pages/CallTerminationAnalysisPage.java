@@ -4,9 +4,11 @@ package com.ericsson.edos.dopuatautomation.pages;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebElement;
 
 import org.openqa.selenium.interactions.Actions;
@@ -21,18 +23,18 @@ import com.ericsson.edos.dopuatautomation.base.TestBase;
 public class CallTerminationAnalysisPage extends TestBase {
 
 	/*Inspecting WebElement for CTA HeaderText*/	
-	@FindBy (xpath = "//span[contains(text(),'Termination')]")
+	@FindBy (xpath = "//div//span[contains(text(),'Call Termination Analysis')]")
 	WebElement CTADashboardHeaderText;
 	
 	//TC - Start and End Date
 	
 	/*Inspecting WebElement for Start Date Calendar Textbox*/	
-	@FindBy (xpath = "//label[text()='Start']//parent::div//input[@class='calendar__datePickerInput___1fwAZ']")
+	@FindBy (xpath = "(//label[text()='Start']//parent::div//input[contains(@class,'calendar__datePickerInput')])[1]")
 	WebElement CTAStartDateCalTextbox;
 	
 	
 	/*Inspecting WebElement for End Date Calendar Textbox*/	
-	@FindBy (xpath = "//label[text()='End']//parent::div//input[@class='calendar__datePickerInput___1fwAZ']")
+	@FindBy (xpath = "(//label[text()='End']//parent::div//input[contains(@class,'calendar__datePickerInput')])[2]")
 	WebElement CTAEndDateCalTextbox;
 	
 	/*Inspecting WebElement for StartWeek Date Calendar Textbox*/	
@@ -88,7 +90,7 @@ public class CallTerminationAnalysisPage extends TestBase {
 	@FindBy (xpath="//button[text()='Filter']")
 	WebElement Filter;
 
-	@FindBy (xpath="(//div[@accesskey='0-4'])[3]")
+	@FindBy (xpath="(//div[@accesskey='0-4'])[2]")
 	WebElement OriginatingCell;
 
 
@@ -121,10 +123,10 @@ public class CallTerminationAnalysisPage extends TestBase {
 
 	//TC-06 Open call details from table
 
-	@FindBy (xpath="(//div[@class='ReactVirtualized__Grid__innerScrollContainer'])[4]/div[@accesskey='0-3']")
+	@FindBy (xpath="//div[contains(@class,'dataGrid__bottom-right-side-grid')]//div[@accesskey='0-3']")
 	WebElement TerminationStatusValue;
 
-	@FindBy (xpath="(//div[@class='ReactVirtualized__Grid__innerScrollContainer'])[4]/div[@accesskey='0-4']")
+	@FindBy (xpath="//div[contains(@class,'dataGrid__bottom-right-side-grid')]//div[@accesskey='0-4']")
 	WebElement TerminationReasonValue;
 
 	@FindBy (xpath="(//i[@title='Open Call Details'])[1]")
@@ -141,6 +143,88 @@ public class CallTerminationAnalysisPage extends TestBase {
 	WebElement Eventname;
 
 
+	/*WebElements for the TestCase IS---------1*/
+	   
+	
+	   /*Xpath to collect the Count of the rows available in the LeftTable of the Calls Datagrid */
+		@FindBy (xpath = "//div[contains(@class,'ReactVirtualized__Grid dataGrid')]//div[contains(@class,'ReactVirtualized__Grid__innerScrollContainer')]//div")
+		List<WebElement> CTATLeftGridTable;
+		
+		/*Xpath to collect the Count of the rows available in the RightTable of the Calls Datagrid */
+		@FindBy (xpath = "(//div[contains(@class,'ReactVirtualized__Grid dataGrid')])[2]//div[contains(@class,'ReactVirtualized__Grid__innerScrollContainer')]//div")
+		List<WebElement> CTATRightGridTable;
+		
+		/*Xpath to collect the Selected Customer Project */
+		@FindBy (xpath="//button[contains(@class,'dropdown__btn___LbWtm dropdown__clickable')]//span")
+		WebElement DefaultCustomerProjectSelected;
+
+		/*Xpath to collect the Selected Customer Project */
+		@FindBy (xpath="//div[contains(@class,'dropdown__dropdown')]//div[contains(@class,'tree__tree')]/ul")
+		List<WebElement> AvilablCustomers;
+		
+		/*Xpath to collect the Selected Customer Project */
+		@FindBy (xpath="//div//span[contains(@class,'styles__username')]")
+		WebElement UserLoggedIn;
+		
+		/*Xpath to Get the No Data to Display---Termination Status */
+		@FindBy (xpath="//div[@id='terminationStatusPieChart']//*[name()='g'][contains(@class,'highcharts-label highcharts-no-data')]//*[name()='text']//*[name()='tspan']")
+		WebElement NoDataDisplayMsg;
+		
+		/*Xpath to Get the No Data to Display---HeatmaporScatterchart toggle button */
+		@FindBy (xpath="//div[contains(@class,'scatterChart__coverateAndQualityScatterChart')]//label[contains(@class,'styles__switch')]")
+		WebElement HeatMaporScatterToggleBtn;
+	
+		
+		
+	
+	/**
+	 * 
+	 * Xpath for the Test Case- 4 & 5-------Start----------------------- 
+	 * 
+	 */
+		
+		@FindBy (xpath = "//div[contains(@class,'is-clearable')]")
+	       WebElement Clickcells;
+	       
+	       @FindBy (xpath = "//div[contains(@class,'is-open')]//div[@class=Select-menu-outer]//span//div")
+	       WebElement Clickarrow;
+	       
+	       @FindBy (xpath ="(//*[name()='g'][contains(@class,'highcharts-series ')]//*[name()='path'])")
+	       List<WebElement> piechartclickingsize;
+	       
+	       
+	       @FindBy (xpath ="(//div[contains(@class,'bottom-left-side-grid')]//div)")
+	       List<WebElement> getsectorfromtable;   
+
+	      @FindBy (xpath="//div[contains(@class,'right-side-grid')]")
+	       WebElement Selectingsecondtablecallsdatagrid;
+	       
+	       @FindBy (xpath="//div[contains(@class,'left-side-grid')]")
+	       WebElement Selectingfirsttablecallsdatagrid;
+	       
+	       @FindBy (xpath="//div[@title='Latitude']//input")
+	       WebElement LatitudeTextBox;
+	       
+	       @FindBy (xpath ="(//*[name()='svg']//*[name()='g']//*[name()='path'][contains(@class,'leaflet-interactive')])")
+	       List<WebElement> callscountinmap;
+	       
+	       
+	       @FindBy (xpath="//div[contains(@class,'leaflet-popup  leaflet-zoom-animated') ]//b[contains(text(),'Sector')]")
+	       WebElement maptooltipsectortext;
+	       
+	       @FindBy (xpath="//a[contains(@class,'zoom-out')]")
+	       WebElement zoomoutbutton;
+
+ 	      /*Xpath to Get the No Data to Display---ErrorNotificationCount */
+		  @FindBy (xpath="(//div[contains(@class,'errorNotificationsPanel__error-notifications-panel')]//div[contains(@class,'notification__main-div')])")
+		  List<WebElement> ErrorNotificationCount;
+		   
+		
+    /**
+     * 
+     * Xpath for the Test Case- 4 & 5-------End----------------------- 
+     */
+	
 	public  CallTerminationAnalysisPage() {
 
 		PageFactory.initElements(driver , this);
@@ -156,7 +240,10 @@ public class CallTerminationAnalysisPage extends TestBase {
 	List<String> CTAEndHoursProcessed = new ArrayList<>();
 	List<String> CellValue = new ArrayList();
 	
-	
+	/*----List Declarations for the Testcase id 1------*/
+	List<String> CTALeftTable = new  ArrayList<>();
+	List<String> listsectortext= new ArrayList<String>(); 
+	List<String> listsectortexttable= new ArrayList<String>();
 	/*Methods to Act on the WebDriver Webelements*/
 
 	public String getCTAtitle() {
@@ -173,7 +260,12 @@ public class CallTerminationAnalysisPage extends TestBase {
 	/*Generic Method for to Get Start Date and End Date Selection---------------M1()*/
 	public String GetDateFromTextBox(String XpathId,String DateType) throws InterruptedException {
 		StringBuilder StrforDateTxb = new StringBuilder();
-		StrforDateTxb.append("//label[text()='"+XpathId+"']//parent::div//input[@class='calendar__datePickerInput___1fwAZ']");
+		if(DateType.equals("Start")){
+			StrforDateTxb.append("(//label[text()='"+XpathId+"']//parent::div//input[contains(@class,'calendar__datePickerInput')])[1]");
+		}
+		else{
+			StrforDateTxb.append("(//label[text()='"+XpathId+"']//parent::div//input[contains(@class,'calendar__datePickerInput')])[2]");
+		}
 		System.out.println(StrforDateTxb);
 		driver.findElement(By.xpath(StrforDateTxb.toString())).click();
 		Thread.sleep(2000);
@@ -353,7 +445,9 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 	 Thread.sleep(2000);
 	 System.out.println("End hr:::"+StrEnPHr);
 	 driver.findElement(By.xpath(StrEnPHr.toString())).click();
-	 CTAAct.sendKeys(Keys.ESCAPE).build().perform();
+	 Thread.sleep(2000);
+	 CTADashboardHeaderText.click();
+	// CTAAct.sendKeys(Keys.ESCAPE).build().perform();
 	// CTAAct.sendKeys(Keys.ESCAPE).build().perform();
 	 Thread.sleep(1000);
 	 for(String PHours:CTAEndHoursProcessed)
@@ -400,7 +494,7 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 
 		CTAAct.moveToElement(CTADashboardHeaderText).click();
 
-		for(int i=1;i<=27;i++){
+		for(int i=1;i<=31;i++){
 			CTAAct.sendKeys(Keys.ARROW_DOWN);
 			CTAAct.build().perform();
 		}
@@ -410,7 +504,7 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 	public String ValidateOriginatingCell() throws InterruptedException{
 
 		ScrollDown();
-		Thread.sleep(2000);
+		Thread.sleep(7000);
 		OriginatingCell.click();
 		Thread.sleep(1000);
 		String OCellValue = OriginatingCell.getText();
@@ -514,8 +608,8 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 
 	public String ValidateTerminationReason() throws InterruptedException{
 
-		Thread.sleep(2000);
-		TerminationReasonValue.click();
+		Thread.sleep(4000);
+	//	TerminationReasonValue.click();
 		Thread.sleep(1000);
 		String TReasonValue = TerminationReasonValue.getText();
 		return TReasonValue;
@@ -557,8 +651,8 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 	}
 
 	public String validateEventname() throws InterruptedException{
-		Thread.sleep(2000);
-		Eventname.click();
+		Thread.sleep(4000);
+		//Eventname.click();
 
 		Thread.sleep(2000);
 		return Eventname.getText();
@@ -617,6 +711,344 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 			
 		}
 	}
+	
+	
+	
+	/*Methods to Act on the web elements captured-----------------------------------TC.No 1*/
+/*	public void GetScroll(String KeyDownorUP,int Howmanytimes) {
+
+		switch (KeyDownorUP) {
+		case "DOWN":
+			for(int ky=1;ky<=Howmanytimes;ky++)
+			{
+		
+				CTAAct.sendKeys(Keys.DOWN);
+			}
+			CTAAct.build().perform();
+			break;
+		case "UP":
+			for(int ky=1;ky<=Howmanytimes;ky++)
+			{
+		
+				CTAAct.sendKeys(Keys.UP);
+			}
+			CTAAct.build().perform();
+			break;
+		default:
+			break;
+		}
+	}*/
+
+	public void GetScroll(String KeyDownorUP,int Howmanytimes) {
+	       
+	       switch (KeyDownorUP) {
+	      case "DOWN":
+	             CTADashboardHeaderText.click();
+	             //actions.moveToElement(CTADashboardHeaderText).click();
+	             for(int ky=1;ky<=Howmanytimes;ky++)
+	             {
+	               CTAAct.sendKeys(Keys.DOWN);
+	             }
+	             CTAAct.build().perform();
+	             break;
+	      case "UP":
+	             CTADashboardHeaderText.click();
+	             //actions.moveToElement(CallsDatagrid).click();
+	             for(int ky=1;ky<=Howmanytimes;ky++)
+	             {
+	           CTAAct.sendKeys(Keys.UP);
+	             }
+	             break;
+	       case "RIGHT":
+	              Selectingsecondtablecallsdatagrid.click();
+	             //actions.moveToElement(CallsDatagrid).click();
+	             for(int ky=1;ky<=Howmanytimes;ky++)
+	             {
+	              CTAAct.sendKeys(Keys.RIGHT);
+	             }
+	               CTAAct.build().perform();
+	             break;
+	       case "LEFT":
+	              Selectingsecondtablecallsdatagrid.click();
+	             //actions.moveToElement(CallsDatagrid).click();
+	             for(int ky=1;ky<=Howmanytimes;ky++)
+	             {
+	            CTAAct.sendKeys(Keys.LEFT);
+	             }
+	               CTAAct.build().perform();
+	             break;
+	      default:
+	             break;
+	      }
+	}
+
+public boolean GetFullTableData() throws InterruptedException {
+	
+	boolean isTableHasData=false;
+	Thread.sleep(4000);
+	CTADashboardHeaderText.click();
+	GetScroll("DOWN",34);
+	Thread.sleep(3000);
+	int size=CTATLeftGridTable.size();
+	System.out.println("The Table Size is::"+size);
+	
+	if(size>0){
+		isTableHasData=true;
+		for(int ctatblL=1;ctatblL<=size;ctatblL++){
+			
+			WebElement TblElmval=driver.findElement(By.xpath("(//div[contains(@class,'ReactVirtualized__Grid dataGrid')]//div[contains(@class,'ReactVirtualized__Grid__innerScrollContainer')]//div)["+ctatblL+"]"));
+			String CellValis=TblElmval.getText();
+			if(!CellValis.equals("")){
+				CTALeftTable.add(CellValis);	
+			}
+		}
+		
+		for(String LeftTableList:CTALeftTable){
+			System.out.println("The CallDataGrid LeftTable Value is:::"+LeftTableList);
+		}
+		
+	}
+	else{
+	}
+	
+	
+	
+	
+	return isTableHasData;
+}
+
+
+
+public boolean GetFullRightTableData() throws InterruptedException {
+	
+	boolean isRightTableHasData=false;
+	/*CTADashboardHeaderText.click();
+	GetScroll("DOWN",34);*/
+	Thread.sleep(3000);
+	int size=CTATRightGridTable.size();
+	System.out.println("The Right Table Size is::"+size);
+	
+	if(size>0){
+		isRightTableHasData=true;
+		CTALeftTable.removeAll(CTALeftTable);
+		for(int ctatblL=1;ctatblL<=size;ctatblL++){
+			
+			WebElement TblElmval=driver.findElement(By.xpath("(//div[contains(@class,'ReactVirtualized__Grid dataGrid')])[2]//div[contains(@class,'ReactVirtualized__Grid__innerScrollContainer')]//div["+ctatblL+"]"));
+			String CellValis=TblElmval.getText();
+			if(!CellValis.equals("")){
+				CTALeftTable.add(CellValis);	
+			}
+		}
+		
+		for(String LeftTableList:CTALeftTable){
+			System.out.println("The CallDataGrid RightTable Value is:::"+LeftTableList);
+		}
+		
+	}
+	else{
+		System.out.println("No Data Available in the Right Table");
+	}
+	
+	
+	
+	
+	return isRightTableHasData;
+}
+
+public void GetProjectCount() {
+	
+	/*StringBuilder STRBforProject = new StringBuilder();
+	STRBforProject.append("(//div[contains(@class,'dropdown__dropdown')]//div[contains(@class,'tree__tree')]/ul)");*/
+	GetScroll("UP",34);
+	int noofprojectsAvailable;
+	String UserLoggedInIs=UserLoggedIn.getText();
+	String DefaultcustomerIs=DefaultCustomerProjectSelected.getText();
+	if(!DefaultcustomerIs.equals("")){
+		DefaultcustomerIs=DefaultcustomerIs.split("::")[0].trim();
+	}
+	String DefaultProjectIs=DefaultCustomerProjectSelected.getText();
+	if(!DefaultProjectIs.equals("")){
+		DefaultProjectIs=DefaultProjectIs.split("::")[1].trim();
+	}
+	DefaultCustomerProjectSelected.click();
+	noofprojectsAvailable=AvilablCustomers.size();
+	
+	System.out.println("The Number of the Customers Avilable are for logged in user::["+UserLoggedInIs+"] is:::"+noofprojectsAvailable);
+	System.out.println("The Selected default Customer is::"+DefaultcustomerIs+"  & Selected Default Project under it is :::"+DefaultProjectIs);
+}	
+	
+	public boolean GetTerminationNodataXpath(String IdType,String Type) {
+		boolean isDataAvailable=false;
+		boolean isElepresent=false;
+		StringBuilder StrBforND = new StringBuilder();
+		StrBforND.append("//div[@id='");
+		StrBforND.append(IdType);
+		StrBforND.append("']//*[name()='g'][contains(@class,'highcharts-label highcharts-no-data')]//*[name()='text']//*[name()='tspan']");
+	try {
+		/*WebDriverWait wait = new WebDriverWait(driver, 1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(StrBforND.toString())));*/
+		driver.manage().timeouts().implicitlyWait(8, TimeUnit.MILLISECONDS);
+		WebElement NdEle=driver.findElement(By.xpath(StrBforND.toString()));
+		//isElepresent=NdEle.isDisplayed();
+		
+		isElepresent=NdEle.isDisplayed();
+		int Ndsize=driver.findElements(By.xpath(StrBforND.toString())).size();
+		//System.out.println("[In the DOM?????]is the element is avaialble in the DOM????:::"+isElepresent);
+		//Reporter.log("<span style='color:#fffff0;background-color:#ff0038;font-size:14px;'>"+"<b>"+"[In the DOM?????]is the element is avaialble in the DOM????:::"+isElepresent+"</b>"+"<span>"+"<br/>");
+		System.out.println("The Size of the component is:::"+Ndsize);
+		System.out.println("The message Displayed is:::"+NdEle.getText());
+		String Msg=NdEle.getText();
+		if(Ndsize>0 && Msg.equals("No data to display"))
+		{
+			isDataAvailable=true;
+			System.out.println("[No Data::"+Type+"]There is No Data Available for the " +Type);
+			Reporter.log("<span style='color:#fffff0;background-color:#c90016;font-size:14px;'>"+"<b>"+"[No Data::"+Type+"]There is No Data Available for the " +Type+"</b>"+"<span>"+"<br/>");
+		}
+		else
+		{
+			System.out.println("[Data Available::"+Type+"]There is  Data available for the ::" +Type );
+			Reporter.log("<span style='color:#fffff0;background-color:#18453b;font-size:14px;'>"+"<b>"+"[Data Available::"+Type+"]There is  Data available for the ::" +Type+"</b>"+"<span>"+"<br/>");
+		}
+	
+		
+	} catch (NoSuchElementException e) {
+		System.out.println("[Exception::::::"+Type+"]]There is  Data available for the ::" +Type );
+		System.out.println("[Exception::::::"+Type+"]]Exception type is::"+e.getClass().getSimpleName());
+		Reporter.log("<span style='color:#fffff0;background-color:#228b22;font-size:14px;'>"+"<b>"+"[Exception::::::"+Type+"]]There is  Data available for the ::" +Type+"</b>"+"<span>"+"<br/>");
+		Reporter.log("<span style='color:#fffff0;background-color:#228b22;font-size:14px;'>"+"<b>"+"[Exception::::::"+Type+"]]Exception type is::"+e.getClass().getSimpleName()+"</b>"+"<span>"+"<br/>");
+		isDataAvailable=false;
+	}
+			
+		return isDataAvailable;
+		
+	}
+
+	public void GetHeatorScatterStatus() throws InterruptedException {
+		GetScroll("DOWN",7);
+		Thread.sleep(4000);
+		HeatMaporScatterToggleBtn.click();
+		
+	}
+	
+public void GetScrolled(String ScrollType,int noOfTimes) throws InterruptedException {
+	Thread.sleep(2000);
+	GetScroll(ScrollType,noOfTimes);
+	Thread.sleep(2000);
+}	
+	
+	
+/*Methods to act on Test Cases 4 & 5-----------Start---------------------*/	
+
+
+
+public void Gettextboxclick(String texttype) throws InterruptedException {
+       
+       StringBuilder textbox= new StringBuilder();
+       textbox.append("//div[@title='");
+       textbox.append(texttype);
+       textbox.append("']//input");
+       WebElement textbx=driver.findElement(By.xpath(textbox.toString()));
+       textbx.click();
+       Thread.sleep(2000);
+       textbx.sendKeys(">=0");
+       Thread.sleep(2000);
+       CTAAct.sendKeys(Keys.ENTER).build().perform();
+       Thread.sleep(3000);
+       
+       
+}
+
+public void clickoncheckbox() throws InterruptedException {
+       for(int i=1;i<=5;i++) {
+       //driver.findElement(By.xpath(("((//div[contains(@class,'left-side-grid')]//div)//img)["+i+"]"))).click();
+       WebElement callsclick =driver.findElement(By.xpath("((//div[contains(@class,'left-side-grid')]//div)//img//parent::span)["+i+"]"));
+       callsclick.click();
+       Thread.sleep(2000);
+          }
+       }
+
+public int checkcountcallsinmap() throws InterruptedException 
+{
+       int totalsize = callscountinmap.size();
+       System.out.println("The total call selected on map are:"+ totalsize);
+       return totalsize;
+       
+}
+
+
+
+public void clickcallsfrommap() throws InterruptedException
+{
+zoomoutbutton.click();
+Thread.sleep(2000);
+zoomoutbutton.click();
+Thread.sleep(2000);
+//ArrayList<String> sectortext= new ArrayList<String>();   
+int totalsize = callscountinmap.size();
+for(int i=1;i<=totalsize;i++)
+       {
+              WebElement calls= driver.findElement(By.xpath("(//*[name()='svg']//*[name()='g']//*[name()='path'][contains(@class,'leaflet-interactive')])["+i+"]"));
+           calls.click();
+              //Thread.sleep(3000);
+              //System.out.println(maptooltipsectortext.getText().split(":")[1].trim());
+              Thread.sleep(2000);
+              String sectortext = maptooltipsectortext.getText().split(":")[1].trim();
+              listsectortext.add(sectortext);
+              CTAAct.sendKeys(Keys.ESCAPE).build().perform();
+              //System.out.println(listsectortext);
+              Thread.sleep(5000);
+         }
+    System.out.println("List of Sectors from Map: "+ listsectortext);
+}
+
+public void getsectornametable() throws InterruptedException {
+       
+       for(int i=8;i<=40;i=i+7) {
+              
+              WebElement getsector=driver.findElement(By.xpath("(//div[contains(@class,'bottom-left-side-grid')]//div)["+i+"]"));
+              Thread.sleep(2000);
+              System.out.println(getsector.getText());
+              listsectortexttable.add(getsector.getText());
+              Thread.sleep(2000);
+              }
+       System.out.println("List of Sectors from Table: "+ listsectortexttable);
+}
+
+public boolean comparesectors() {
+       boolean isEqual= listsectortext.equals(listsectortexttable);
+       System.out.println(isEqual);
+       return isEqual;
+}
+
+
+/*Methods to act on Test Cases 4 & 5-----------End---------------------*/	
+
+
+public boolean GetErrorAlertMeassages() {
+	int TotalAlertsAvailable;
+	boolean IsAlertNotificationAvailable=false;
+	
+	try {
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.MILLISECONDS);
+		TotalAlertsAvailable=ErrorNotificationCount.size();
+		System.out.println("The Total Number of Error Notifications Available Are:::"+TotalAlertsAvailable);
+		IsAlertNotificationAvailable=true;
+		
+		for(int Erraler=1;Erraler<=TotalAlertsAvailable;Erraler++)
+		{
+			WebElement AlrEl= driver.findElement(By.xpath("(//div[contains(@class,'errorNotificationsPanel__error-notifications-panel')]//div[contains(@class,'notification__main-div')])["+Erraler+"]//div[contains(@class,'styles__title')]"));
+			String ErrMsg=AlrEl.getText();
+			System.out.println("Error Meassage is::::"+ErrMsg);
+			AlrEl.click();
+		}
+		
+		
+	} catch (NoSuchElementException e) {
+		IsAlertNotificationAvailable=false;
+	}
+	return IsAlertNotificationAvailable;
+}
+
 }
 
 

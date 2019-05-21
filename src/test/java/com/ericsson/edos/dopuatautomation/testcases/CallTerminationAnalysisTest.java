@@ -18,7 +18,8 @@ public class CallTerminationAnalysisTest extends TestBase {
 	EdosApplicationPage applicationpage;
 	CallTerminationAnalysisPage CTAPage;
 	String OrigCellVAlue;
-
+	boolean IsDataavailableinLeftTable; 
+	boolean IsDataavailableinRightTable;
 
 	public  CallTerminationAnalysisTest() {
 		super();
@@ -71,10 +72,131 @@ public class CallTerminationAnalysisTest extends TestBase {
 				
 		}
 
-	//TC-03 Cell Filter: Data is filtered
+	
+	
+	
+
+	/*---------------------------Test Case Methods for UAT TC ID--2----------------------START-------------*/
+	
+	
 	@Test(priority=4)
+	public void VerifyCTACallsDataGridTable() throws InterruptedException
+	{
+		Thread.sleep(7000);
+	    
+	   IsDataavailableinLeftTable=CTAPage.GetFullTableData();
+	   Thread.sleep(3000);
+	   IsDataavailableinRightTable=CTAPage.GetFullRightTableData();
+	   if(IsDataavailableinLeftTable && IsDataavailableinRightTable){
+		   System.out.println("The Data is available in the both the tables");
+	   }
+	   else{
+		   System.out.println("Data is not available in both the tables");
+	   }
+	  Assert.assertTrue(IsDataavailableinLeftTable && IsDataavailableinRightTable, "Data is not available in both the tables"); 
+	}
+
+
+	@Test(priority=5)
+	public void VerifyNonTableComponents() throws InterruptedException{
+		Thread.sleep(7000);
+		boolean isTerminationStatusvAvailable=false;
+		boolean isTerminationReasonvAvailable=false;
+		boolean isHeatMapAvilable=false;
+		boolean isScatterChartAvsilsble=false;
+		boolean isRSRPChartAvsilsble=false;
+		boolean isRSRQChartAvsilsble=false;
+		boolean IsLeftTableDataAvailable=false;
+		boolean IsRightTableDataAvailable=false;
+		Thread.sleep(2000);
+		CTAPage.GetProjectCount();
+		Thread.sleep(5000);
+		
+		isTerminationStatusvAvailable=CTAPage.GetTerminationNodataXpath("terminationStatusPieChart","Termination_Status");
+		System.out.println("The Termination Status val is:::"+isTerminationStatusvAvailable);
+		if(isTerminationStatusvAvailable){
+			System.out.println("[From TEST{Termination Status}]There is no data available for the Termination Status");
+			Reporter.log("<span style='color:#fffff0;background-color:#c90016;font-size:14px;'>"+"<b>"+"[From TEST{Termination Status}]There is no data available for the Termination Status"+"</b>"+"<span>"+"<br/>");
+		}
+		else{
+			System.out.println("[From TEST{Termination Status}]The data is available for the Termination Status");
+			Reporter.log("<span style='color:#fffff0;background-color:#006d5b;font-size:14px;'>"+"<b>"+"[From TEST{Termination Status}]The data is available for the Termination Status"+"</b>"+"<span>"+"<br/>");
+		}
+		Thread.sleep(2000);
+		
+		isTerminationReasonvAvailable=CTAPage.GetTerminationNodataXpath("termination-reason-container","Termination_Reason");
+		if(isTerminationReasonvAvailable){
+			System.out.println("[From TEST{Termination Reason}]There is no data available for the Termination Reason");	
+			Reporter.log("<span style='color:#fffff0;background-color:#c90016;font-size:14px;'>"+"<b>"+"[From TEST{Termination Reason}]There is no data available for the Termination Reason"+"</b>"+"<span>"+"<br/>");
+		}
+		else{
+			System.out.println("[From TEST{Termination Reason}]The data is available for the Termination Reason");
+			Reporter.log("<span style='color:#fffff0;background-color:#006d5b;font-size:14px;'>"+"<b>"+"[From TEST{Termination Status}]The data is available for the Termination Status"+"</b>"+"<span>"+"<br/>");
+		}
+		
+		System.out.println("[From TEST]The Termination reason val is:::"+isTerminationReasonvAvailable);
+		
+		isHeatMapAvilable=CTAPage.GetTerminationNodataXpath("qualityHeatmap","HeatMap");
+		if(isHeatMapAvilable){
+			System.out.println("[From TEST{HeatMap}]There is no data available for the HeatMap");	
+			Reporter.log("<span style='color:#fffff0;background-color:#c90016;font-size:14px;'>"+"<b>"+"[From TEST{HeatMap}]There is no data available for the HeatMap"+"</b>"+"<span>"+"<br/>");
+		}
+		else{
+			System.out.println("[From TEST{HeatMap}]The data is available for the HeatMap");
+			Reporter.log("<span style='color:#fffff0;background-color:#006d5b;font-size:14px;'>"+"<b>"+"[From TEST{HeatMap}]The data is available for the HeatMap"+"</b>"+"<span>"+"<br/>");
+		}
+		CTAPage.GetHeatorScatterStatus();
+		Thread.sleep(2000);
+		isScatterChartAvsilsble=CTAPage.GetTerminationNodataXpath("qualityScatterChart","ScatterChart");
+		if(isScatterChartAvsilsble){
+			System.out.println("[From TEST{ScatterChart}]There is no data available for the ScatterChart");	
+			Reporter.log("<span style='color:#fffff0;background-color:#c90016;font-size:14px;'>"+"<b>"+"[From TEST{ScatterChart}]There is no data available for the ScatterChart"+"</b>"+"<span>"+"<br/>");
+		}
+		else{
+			System.out.println("[From TEST{ScatterChart}]The data is available for the ScatterChart");
+			Reporter.log("<span style='color:#fffff0;background-color:#006d5b;font-size:14px;'>"+"<b>"+"[From TEST{ScatterChart}]The data is available for the ScatterChart"+"</b>"+"<span>"+"<br/>");
+		}
+		
+		CTAPage.GetScrolled("DOWN",14);
+		isRSRPChartAvsilsble=CTAPage.GetTerminationNodataXpath("RSRP-chart-container","RSRP-chart");
+		if(isRSRPChartAvsilsble){
+			System.out.println("[From TEST{1..RSRP-chart}]There is no data available for the RSRP-chart");
+			Reporter.log("<span style='color:#fffff0;background-color:#c90016;font-size:14px;'>"+"<b>"+"[From TEST{1..RSRP-chart}]There is no data available for the RSRP-chart"+"</b>"+"<span>"+"<br/>");
+		}
+		else{
+			System.out.println("[From TEST{1..RSRP-chart}]The data is available for the RSRP-chart");
+			Reporter.log("<span style='color:#fffff0;background-color:#006d5b;font-size:14px;'>"+"<b>"+"[From TEST{1..RSRP-chart}]The data is available for the RSRP-chart"+"</b>"+"<span>"+"<br/>");
+		}
+		isRSRQChartAvsilsble=CTAPage.GetTerminationNodataXpath("RSRQ-chart-container","RSRQ-chart");
+		if(isRSRQChartAvsilsble){
+			System.out.println("[From TEST{2..RSRQ-chart}]There is no data available for the RSRQ-chart");	
+			Reporter.log("<span style='color:#fffff0;background-color:#c90016;font-size:14px;'>"+"<b>"+"[From TEST{2..RSRQ-chart}]There is no data available for the RSRQ-chart"+"</b>"+"<span>"+"<br/>");
+		}
+		else{
+			System.out.println("[From TEST{2..RSRQ-chart}]The data is available for the RSRQ-chart");
+			Reporter.log("<span style='color:#fffff0;background-color:#006d5b;font-size:14px;'>"+"<b>"+"[From TEST{2..RSRQ-chart}]The data is available for the RSRQ-chart"+"</b>"+"<span>"+"<br/>");
+		}
+		
+	Assert.assertFalse(isTerminationStatusvAvailable || isTerminationReasonvAvailable	|| isHeatMapAvilable  ||	isScatterChartAvsilsble	|| isRSRPChartAvsilsble	|| isRSRQChartAvsilsble	|| IsLeftTableDataAvailable ||	IsRightTableDataAvailable, "Test Failed");
+	}
+
+	
+	
+	/*---------------------------Test Case Methods Ends for UAT TC ID--2----------------------END-------------*/
+
+	
+	
+	
+	
+	//TC-03 Cell Filter: Data is filtered
+	@Test(priority=8)
 	public void VerifyCellFilterData() throws InterruptedException{
 		Thread.sleep(3000);
+		CTAPage.GetScrolled("UP",17);
+        CTAPage.GetDateFromTextBox("Start","Start");
+       
+        Thread.sleep(4000);
+        CTAPage.GetDateFromTextBox("End","End");
 		CTAPage.ClickOnArrow();
 
 		Thread.sleep(2000);
@@ -112,7 +234,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 		CTAPage.ClickFiltier();
 		System.out.println("Clicked on filter");
 
-		Thread.sleep(9000);
+		Thread.sleep(15000);
 		String OrigCellVAlue = CTAPage.ValidateOriginatingCell();
 		System.out.println("The value present in the Table datagrid is "+OrigCellVAlue);
 
@@ -128,24 +250,29 @@ public class CallTerminationAnalysisTest extends TestBase {
 	}
 
 	
+	
+		
+	
+	
+	
 	//TC - 06 Open call details from table
 	
-	@Test(priority=6)
+	@Test(priority=9)
 	public void VerifyOpenCallDetails() throws InterruptedException{
-		
 		Thread.sleep(8000);
 		OrigCellVAlue = CTAPage.ValidateOriginatingCell();
 		System.out.println("The value present in the Table datagrid is "+OrigCellVAlue);
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
+		CTAPage.GetScroll("LEFT",28);
 		String TerStatValue = CTAPage.ValidateTerminationStatus();
 		System.out.println("The value present in the Termination status is "+TerStatValue);
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		String TerReasonValue = CTAPage.ValidateTerminationReason();
 		System.out.println("The value present in the Termination Reason is "+TerReasonValue);
 		
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		CTAPage.ClickMagnifyingLens();
 		
 		Thread.sleep(2000);
@@ -190,7 +317,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 	}
 	
 	//TC - 07 Call Events
-	@Test(priority=7)
+	@Test(priority=10)
 	public void ValidateCallEvents() throws InterruptedException{
 		
 		Thread.sleep(5000);
@@ -226,162 +353,47 @@ public class CallTerminationAnalysisTest extends TestBase {
 		
 	}
 	
-	/*//TC-07 Cell Filter: Search
+
+	@Test(priority=6)
+	public void VerifyCallsPlottedonMap() throws InterruptedException
+	{
+		 /* Thread.sleep(3000);
+		  CTAPage.GetScrolled("UP",17);*/
+	       CTAPage.GetScroll("DOWN",28);
+	       Thread.sleep(7000);
+	       CTAPage.GetScroll("RIGHT",29);
+	       Thread.sleep(7000);
+	       CTAPage.Gettextboxclick("Latitude");
+	       Thread.sleep(5000);
+	       CTAPage.Gettextboxclick("Longitude");
+	       CTAPage.clickoncheckbox();
+	       Thread.sleep(6000);
+	       CTAPage.getsectornametable();
+	       Thread.sleep(4000);
+	       CTAPage.GetScroll("DOWN",47);
+	       Thread.sleep(4000);
+	       Assert.assertEquals(5, CTAPage.checkcountcallsinmap());
+	       Thread.sleep(4000);
+	}
+
+
 	@Test(priority=7)
-	public void VerifyCellFilterSearch() throws InterruptedException{
-
-		Thread.sleep(2000);
-		CTAPage.ScrollUp();
-
-		Thread.sleep(2000);
-		CTAPage.ClickClearAllButton();
-
-		Thread.sleep(2000);
-		CTAPage.ClickOnArrow();
-
-		Thread.sleep(2000);
-		String selectedCellValue = CTAPage.GetDropdownValue();
-
-
-		if(selectedCellValue.contains("No results found")) {
-			System.out.println("There are no cells present in the cell box");
-			Reporter.log("There are no cells present in the cell box");
-			Assert.fail("There are no cells present in the cell box");
-		}
-		else {
-			System.out.println("The first cell value selected from the dropdown is : "+selectedCellValue);
-			Reporter.log("The first cell value selected from the dropdown is : "+selectedCellValue);
-		}
-
-		Thread.sleep(2000);
-		CTAPage.SearchCellValue();
-
-		Thread.sleep(2000);
-		CTAPage.SpiltTheCellValue();
-
-		Thread.sleep(2000);
-		CTAPage.ClickFiltier();
-		System.out.println("Clicked on filter");
-
-		Thread.sleep(2000);
-		String OrigCellVAlue = CTAPage.ValidateOriginatingCell();
-		System.out.println("The value present in the Table datagrid is "+OrigCellVAlue);
-
-		if(selectedCellValue.trim().equalsIgnoreCase(OrigCellVAlue.trim())) {
-			System.out.println("The selected cell from the dropdown and the Originating Cell in the Table Datagrid is matching");
-			Reporter.log("The selected cell from the dropdown and the Originating Cell in the Table Datagrid is matching");
-		}
-		else {
-			System.out.println("The selected cell from the dropdown and the Originating Cell in the Table Datagrid is not matching");
-			Reporter.log("The selected cell from the dropdown and the Originating Cell in the Table Datagrid is not matching");
-			Assert.fail("The selected cell from the dropdown and the Originating Cell in the Table Datagrid is not matching");
-		}
+	public void VerifyCallsDetailsfrommap() throws InterruptedException
+	{   
+	       CTAPage.clickcallsfrommap();
+	       Assert.assertTrue(CTAPage.comparesectors(), "The sectors present in Table and Maps are not matching");
 
 	}
-	 
-	//TC-08 Cell Filter: Multiple selection
-	@Test(priority=8)
-	public void VerifyCellFilterMultipleSelection() throws InterruptedException{
 
-		Thread.sleep(2000);
-		CTAPage.ScrollUp();
-
-		Thread.sleep(2000);
-		CTAPage.ClickClearAllButton();
-
-		Thread.sleep(5000);
-		CTAPage.ClickOnArrow();
-
-		Thread.sleep(2000);
-		String FirstCellValue = CTAPage.GetDropdownValue();
-
-		Thread.sleep(5000);
-		CTAPage.SearchCellValue();
-
-		Thread.sleep(4000);
-		int defaultCount = CTAPage.GetCellValues();
-		System.out.println("The total number of rows present is: "+defaultCount);
-
-		Thread.sleep(2000);
-		CTAPage.SpiltTheCellValue();
-
-		Thread.sleep(5000);
-		CTAPage.ClickOnArrow();
-
-		Thread.sleep(4000);
-		String SecondCellValue = CTAPage.GetDropdownValue();
-
-		Thread.sleep(2000);
-		CTAPage.SearchSecondCellValue();
-
-		Thread.sleep(4000);
-		int actualCount = CTAPage.GetCellValues();
-		System.out.println("The total number of rows present is: "+actualCount);
-
-		Thread.sleep(2000);
-		CTAPage.SpiltTheCellValue();
-
-		CTAPage.SearchCellCount();
-
-		if(actualCount<defaultCount) {
-			System.out.println("Multiple Cells filtered are applied in the search box");
-		}
-		else {
-			System.out.println("Multiple Cells filtered are not applied in the search box");
-		}
-
-		Thread.sleep(2000);
-		CTAPage.ValidateCellValue();
-
-		Thread.sleep(2000);
-		CTAPage.ClickFiltier();
-		System.out.println("Clicked on filter");
-
-		Thread.sleep(2000);
-		CTAPage.ScrollDown();
-
-		Thread.sleep(9000);
-		CTAPage.OriginatingCellClick();
-
-		Thread.sleep(3000);
-		CTAPage.SendCellValueToOriginatingCell(0);
-
-		Thread.sleep(4000);
-		String OrigCellVAlue = CTAPage.ValidateOriginatingCell();
-		System.out.println("The value present in the Table datagrid is "+OrigCellVAlue);
-
-		if(FirstCellValue.trim().equalsIgnoreCase(OrigCellVAlue.trim())) {
-			System.out.println("The first selected cell from the dropdown"+FirstCellValue+" and the Originating Cell in the Table Datagrid "+OrigCellVAlue+" is matching");
-			Reporter.log("The first selected cell from the dropdown"+FirstCellValue+" and the Originating Cell in the Table Datagrid "+OrigCellVAlue+" is matching");
-		}
-		else {
-			System.out.println("The first selected cell from the dropdown"+FirstCellValue+" and the Originating Cell in the Table Datagrid "+OrigCellVAlue+" is not matching");
-			Reporter.log("The first selected cell from the dropdown"+FirstCellValue+" and the Originating Cell in the Table Datagrid "+OrigCellVAlue+" is not matching");
-			//Assert.fail("The first selected cell from the dropdown"+FirstCellValue+" and the Originating Cell in the Table Datagrid "+OrigCellVAlue+" is not matching");
-		}
-
-		Thread.sleep(9000);
-		CTAPage.OriginatingCellClick();
-
-		Thread.sleep(2000);
-		CTAPage.OriginatingCellClear();
-
-		Thread.sleep(3000);
-		CTAPage.SendCellValueToOriginatingCell(1);
-
-		Thread.sleep(4000);
-		String SecondOrigCellVAlue = CTAPage.ValidateOriginatingCell();
-		System.out.println("The value present in the Table datagrid is "+SecondOrigCellVAlue);
-
-		if(SecondCellValue.trim().equalsIgnoreCase(SecondOrigCellVAlue.trim())) {
-			System.out.println("The second selected cell from the dropdown"+SecondCellValue+" and the Originating Cell in the Table Datagrid "+SecondOrigCellVAlue+" is matching");
-			Reporter.log("The second selected cell from the dropdown"+SecondCellValue+" and the Originating Cell in the Table Datagrid "+SecondOrigCellVAlue+" is matching");
-		}
-		else {
-			System.out.println("The second selected cell from the dropdown"+SecondCellValue+" and the Originating Cell in the Table Datagrid "+SecondOrigCellVAlue+" is not matching");
-			Reporter.log("The second selected cell from the dropdown"+SecondCellValue+" and the Originating Cell in the Table Datagrid "+SecondOrigCellVAlue+" is not matching");
-			Assert.fail("The second selected cell from the dropdown"+SecondCellValue+" and the Originating Cell in the Table Datagrid "+SecondOrigCellVAlue+" is not matching");
-		}
-	}
-*/
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

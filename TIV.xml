@@ -34,6 +34,8 @@
 		<classes>
 			<class name="com.ericsson.edos.dopuatautomation.testcases.EdosTraceInputValidationTest" >
 			 <methods>
+			 
+			 <include name="VerifyTIVErrorNotificationAlertPopUp" />
 			 <include name="VerifyChartValuesWithDateSelected" />
 			 <include name="VerifyTableWithCellFiltering" />
 			  </methods>

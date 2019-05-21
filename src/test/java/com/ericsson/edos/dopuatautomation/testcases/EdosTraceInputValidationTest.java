@@ -37,7 +37,17 @@ public class EdosTraceInputValidationTest extends TestBase {
 	
 	/*----Tc.No:1----------STARTS-------------------TestCase Methods-----------------------------------------------------------*/
 	
+	
 	@Test(priority=1)
+	public void VerifyTIVErrorNotificationAlertPopUp() throws InterruptedException
+	{
+		boolean IsAlertPresent=TraceInputValidationPage.GetErrorAlertMeassages();
+		System.out.println("The Status of boolvalis:::"+IsAlertPresent);
+		Assert.assertFalse(IsAlertPresent, "Failed Due to Error Notifcation Popped Up... ");
+	}
+	
+	
+	@Test(priority=2,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
 	public void VerifyTIVHeaderText() throws InterruptedException
 	{
 		
@@ -47,7 +57,7 @@ public class EdosTraceInputValidationTest extends TestBase {
 	
 	/*----Tc.No:2----------STARTS-------------------TestCase Methods-----------------------------------------------------------*/
 	
-	@Test(priority=2)
+	@Test(priority=3,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
 	public void VerifyChartValuesWithDateSelected() throws InterruptedException
 	{
 		Thread.sleep(3000);
@@ -97,7 +107,7 @@ public class EdosTraceInputValidationTest extends TestBase {
 	
 	
 	
-	@Test(priority=5)
+	@Test(priority=6,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
 	public void VerifyTableWithCellFiltering() throws InterruptedException
 	{
 		
@@ -154,7 +164,7 @@ public class EdosTraceInputValidationTest extends TestBase {
 	}
 	
 	
-	@Test(priority=3)
+	@Test(priority=4,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
 	public void VerifyTablePagination() throws InterruptedException
 	{
 		boolean FinalStausPag=false;
@@ -170,7 +180,7 @@ public class EdosTraceInputValidationTest extends TestBase {
 	}
 	
 	
-	@Test(priority=4)
+	@Test(priority=5,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
 	public void VerifyExportFunctionalityTC4() throws InterruptedException
 	{
 		boolean IsClickable=false;

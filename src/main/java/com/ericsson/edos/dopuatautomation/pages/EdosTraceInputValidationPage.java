@@ -12,6 +12,7 @@ import org.testng.Reporter;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.xmlbeans.impl.xb.xsdschema.Public;
 import org.openqa.selenium.By;
@@ -145,6 +146,11 @@ public class EdosTraceInputValidationPage extends TestBase {
 	
 	@FindBy (xpath = "(//div[contains(@class,'day--mon react-datepicker__day--selected')]//preceding::div[contains(@class,'datepicker__week')]//div[last()])")
 	WebElement MondaySelection;
+	
+
+     /*Xpath to Get the No Data to Display---ErrorNotificationCount */
+	  @FindBy (xpath="(//div[contains(@class,'errorNotificationsPanel__error-notifications-panel')]//div[contains(@class,'notification__main-div')])")
+	  List<WebElement> ErrorNotificationCount;
 	
 	
 /*Private Fields*/
@@ -309,6 +315,7 @@ public class EdosTraceInputValidationPage extends TestBase {
 		GetDatesFromCalendar("today");
 		Thread.sleep(6000);
 		GetHours("Rop");
+		Thread.sleep(5000);
 		TIVHeaderText.click();
 		String Endate=TIVEndTime.getAttribute("value");
 		Reporter.log("<span style='color:#33FF46;background-color:#17202A;'>"+"EndTime is:" +"<b>"+Endate +"</b>"+"<span>"+"<br/>");
@@ -1728,7 +1735,33 @@ public boolean VerifyExportbtnClick() throws InterruptedException {
 
 
 	
-	
+	public boolean GetErrorAlertMeassages() {
+		int TotalAlertsAvailable;
+		boolean IsAlertNotificationAvailable=false;
+		
+		try {
+			driver.manage().timeouts().implicitlyWait(33, TimeUnit.MILLISECONDS);
+			TotalAlertsAvailable=ErrorNotificationCount.size();
+			System.out.println("The Total Number of Error Notifications Available Are:::"+TotalAlertsAvailable);
+			
+			
+			for(int Erraler=TotalAlertsAvailable;Erraler>=1;Erraler--)
+			{
+				WebElement AlrEl= driver.findElement(By.xpath("(//div[contains(@class,'errorNotificationsPanel__error-notifications-panel')]//div[contains(@class,'notification__main-div')])["+Erraler+"]//div[contains(@class,'styles__title')]"));
+				String ErrMsg=AlrEl.getText();
+				System.out.println("Error Meassage is::::"+ErrMsg );
+				AlrEl.click();
+				IsAlertNotificationAvailable=true;
+			}
+			
+			
+		} catch (NoSuchElementException e) {
+			System.out.println("The Exception type is::::"+e.getClass().getSimpleName()+e.getMessage());
+			IsAlertNotificationAvailable=false;
+		}
+		return IsAlertNotificationAvailable;
+	}
+
 	
 	
 	

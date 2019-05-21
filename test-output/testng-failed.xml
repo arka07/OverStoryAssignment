@@ -10,7 +10,9 @@
       <class name="com.ericsson.edos.dopuatautomation.testcases.EdosTraceInputValidationTest">
         <methods>
           <include name="setUp"/>
+          <include name="VerifyTIVErrorNotificationAlertPopUp"/>
           <include name="initialisation"/>
+          <include name="VerifyChartValuesWithDateSelected"/>
           <include name="VerifyTableWithCellFiltering"/>
           <include name="tearDown"/>
         </methods>
