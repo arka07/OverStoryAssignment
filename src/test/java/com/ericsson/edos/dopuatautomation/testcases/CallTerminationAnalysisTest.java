@@ -360,11 +360,11 @@ public class CallTerminationAnalysisTest extends TestBase {
 		 /* Thread.sleep(3000);
 		  CTAPage.GetScrolled("UP",17);*/
 	       CTAPage.GetScroll("DOWN",28);
-	       Thread.sleep(7000);
+	       Thread.sleep(10000);
 	       CTAPage.GetScroll("RIGHT",29);
-	       Thread.sleep(7000);
+	       Thread.sleep(10000);
 	       CTAPage.Gettextboxclick("Latitude");
-	       Thread.sleep(5000);
+	       Thread.sleep(10000);
 	       CTAPage.Gettextboxclick("Longitude");
 	       CTAPage.clickoncheckbox();
 	       Thread.sleep(6000);
