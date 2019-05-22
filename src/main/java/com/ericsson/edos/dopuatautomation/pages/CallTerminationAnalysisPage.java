@@ -980,23 +980,23 @@ public int checkcountcallsinmap() throws InterruptedException
 public void clickcallsfrommap() throws InterruptedException
 {
 zoomoutbutton.click();
-Thread.sleep(2000);
+Thread.sleep(5000);
 zoomoutbutton.click();
-Thread.sleep(2000);
+Thread.sleep(5000);
 //ArrayList<String> sectortext= new ArrayList<String>();   
 int totalsize = callscountinmap.size();
 for(int i=1;i<=totalsize;i++)
        {
               WebElement calls= driver.findElement(By.xpath("(//*[name()='svg']//*[name()='g']//*[name()='path'][contains(@class,'leaflet-interactive')])["+i+"]"));
            calls.click();
-              //Thread.sleep(3000);
+              //Thread.sleep(5000);
               //System.out.println(maptooltipsectortext.getText().split(":")[1].trim());
-              Thread.sleep(2000);
+              Thread.sleep(5000);
               String sectortext = maptooltipsectortext.getText().split(":")[1].trim();
               listsectortext.add(sectortext);
               CTAAct.sendKeys(Keys.ESCAPE).build().perform();
               //System.out.println(listsectortext);
-              Thread.sleep(5000);
+              Thread.sleep(7000);
          }
     System.out.println("List of Sectors from Map: "+ listsectortext);
 }
