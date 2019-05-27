@@ -220,7 +220,10 @@ public class CallTerminationAnalysisPage extends TestBase {
 		  List<WebElement> ErrorNotificationCount;
   
           @FindBy (xpath="(//span[contains(@class,'dataGrid__column-header-title')])[6]")
-	       WebElement checkheader;
+	      WebElement checkheader;
+  
+          @FindBy (xpath=" (//div[contains(@class,'eButton__linked')])[8]")
+	       WebElement clickarrowheader;
 		   
    
         
@@ -954,7 +957,8 @@ public void GetScrolled(String ScrollType,int noOfTimes) throws InterruptedExcep
   
   public String getheadertexttable() throws InterruptedException {
     Thread.sleep(10000);
-	checkheader.click();
+    clickarrowheader.click();
+	//checkheader.click();
     Thread.sleep(10000);
 	return checkheader.getText();
 }
