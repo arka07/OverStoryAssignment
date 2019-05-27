@@ -952,7 +952,7 @@ public void GetScrolled(String ScrollType,int noOfTimes) throws InterruptedExcep
 /*Methods to act on Test Cases 4 & 5-----------Start---------------------*/	
   
   
-  public String getheadertexttable() {
+  public String getheadertexttable() throws InterruptedException {
 	checkheader.click();
     Thread.sleep(3000);
 	return checkheader.getText();
