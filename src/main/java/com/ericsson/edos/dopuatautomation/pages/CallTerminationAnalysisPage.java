@@ -220,8 +220,7 @@ public class CallTerminationAnalysisPage extends TestBase {
 		  List<WebElement> ErrorNotificationCount;
 		   
    
-         @FindBy (xpath="//a[contains(@class,'zoom-out')]")
-	       WebElement zoomoutbutton;
+        
 		
     /**
      * 
