@@ -974,8 +974,8 @@ public void Gettextboxclick(String texttype) throws InterruptedException {
        WebElement textbx=driver.findElement(By.xpath(textbox.toString()));
        System.out.println("Xpath"+texttype+"::"+ textbx);
        Thread.sleep(9000);
-       textbx.click();
-       Thread.sleep(9000);
+       //textbx.click();
+      // Thread.sleep(9000);
        textbx.sendKeys(">=0");
        Thread.sleep(5000);
        CTAAct.sendKeys(Keys.ENTER).build().perform();
