@@ -973,13 +973,13 @@ public void Gettextboxclick(String texttype) throws InterruptedException {
        textbox.append("']//input");
        WebElement textbx=driver.findElement(By.xpath(textbox.toString()));
        System.out.println("Xpath"+texttype+"::"+ textbx);
-       Thread.sleep(4000);
+       Thread.sleep(9000);
        textbx.click();
-       Thread.sleep(8000);
+       Thread.sleep(9000);
        textbx.sendKeys(">=0");
-       Thread.sleep(8000);
+       Thread.sleep(5000);
        CTAAct.sendKeys(Keys.ENTER).build().perform();
-       Thread.sleep(10000);
+       Thread.sleep(8000);
        
        
 }
