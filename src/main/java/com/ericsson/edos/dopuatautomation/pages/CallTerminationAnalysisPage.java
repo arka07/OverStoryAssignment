@@ -218,6 +218,9 @@ public class CallTerminationAnalysisPage extends TestBase {
  	      /*Xpath to Get the No Data to Display---ErrorNotificationCount */
 		  @FindBy (xpath="(//div[contains(@class,'errorNotificationsPanel__error-notifications-panel')]//div[contains(@class,'notification__main-div')])")
 		  List<WebElement> ErrorNotificationCount;
+  
+          @FindBy (xpath="(//span[contains(@class,'dataGrid__column-header-title')])[6]")
+	       WebElement checkheader;
 		   
    
         
@@ -947,6 +950,12 @@ public void GetScrolled(String ScrollType,int noOfTimes) throws InterruptedExcep
 	
 	
 /*Methods to act on Test Cases 4 & 5-----------Start---------------------*/	
+  
+  
+  public String getheadertexttable() {
+	
+	return checkheader.getText();
+}
 
 
 
