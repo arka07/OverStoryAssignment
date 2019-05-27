@@ -48,7 +48,8 @@ public class CallTerminationAnalysisTest extends TestBase {
 
 	@Test(priority=2)
 	public void VerifyCTAHeaderText() throws InterruptedException
-	{
+	{   
+        Thread.sleep(10000);
 		String DashboardHeaderText;
 		Thread.sleep(3000);
 		DashboardHeaderText=CTAPage.VerifyCTADashbaordHeaderTetxt();
@@ -58,7 +59,8 @@ public class CallTerminationAnalysisTest extends TestBase {
 	
 	@Test(priority=3)
 	public void VerifyCTACalendars() throws InterruptedException
-	{
+	{   
+        Thread.sleep(10000);
 		boolean isTSavailable=false;
 		boolean isTRavailable=false;
 		String C1;
@@ -82,10 +84,10 @@ public class CallTerminationAnalysisTest extends TestBase {
 	@Test(priority=4)
 	public void VerifyCTACallsDataGridTable() throws InterruptedException
 	{
-		Thread.sleep(7000);
+		Thread.sleep(10000);
 	    
 	   IsDataavailableinLeftTable=CTAPage.GetFullTableData();
-	   Thread.sleep(3000);
+	   Thread.sleep(5000);
 	   IsDataavailableinRightTable=CTAPage.GetFullRightTableData();
 	   if(IsDataavailableinLeftTable && IsDataavailableinRightTable){
 		   System.out.println("The Data is available in the both the tables");
@@ -99,7 +101,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 
 	@Test(priority=5)
 	public void VerifyNonTableComponents() throws InterruptedException{
-		Thread.sleep(7000);
+		Thread.sleep(10000);
 		boolean isTerminationStatusvAvailable=false;
 		boolean isTerminationReasonvAvailable=false;
 		boolean isHeatMapAvilable=false;
@@ -108,7 +110,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 		boolean isRSRQChartAvsilsble=false;
 		boolean IsLeftTableDataAvailable=false;
 		boolean IsRightTableDataAvailable=false;
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		CTAPage.GetProjectCount();
 		Thread.sleep(5000);
 		
@@ -122,7 +124,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 			System.out.println("[From TEST{Termination Status}]The data is available for the Termination Status");
 			Reporter.log("<span style='color:#fffff0;background-color:#006d5b;font-size:14px;'>"+"<b>"+"[From TEST{Termination Status}]The data is available for the Termination Status"+"</b>"+"<span>"+"<br/>");
 		}
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		
 		isTerminationReasonvAvailable=CTAPage.GetTerminationNodataXpath("termination-reason-container","Termination_Reason");
 		if(isTerminationReasonvAvailable){
@@ -146,7 +148,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 			Reporter.log("<span style='color:#fffff0;background-color:#006d5b;font-size:14px;'>"+"<b>"+"[From TEST{HeatMap}]The data is available for the HeatMap"+"</b>"+"<span>"+"<br/>");
 		}
 		CTAPage.GetHeatorScatterStatus();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		isScatterChartAvsilsble=CTAPage.GetTerminationNodataXpath("qualityScatterChart","ScatterChart");
 		if(isScatterChartAvsilsble){
 			System.out.println("[From TEST{ScatterChart}]There is no data available for the ScatterChart");	
@@ -156,7 +158,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 			System.out.println("[From TEST{ScatterChart}]The data is available for the ScatterChart");
 			Reporter.log("<span style='color:#fffff0;background-color:#006d5b;font-size:14px;'>"+"<b>"+"[From TEST{ScatterChart}]The data is available for the ScatterChart"+"</b>"+"<span>"+"<br/>");
 		}
-		
+		Thread.sleep(5000);
 		CTAPage.GetScrolled("DOWN",14);
 		isRSRPChartAvsilsble=CTAPage.GetTerminationNodataXpath("RSRP-chart-container","RSRP-chart");
 		if(isRSRPChartAvsilsble){
@@ -191,15 +193,15 @@ public class CallTerminationAnalysisTest extends TestBase {
 	//TC-03 Cell Filter: Data is filtered
 	@Test(priority=8)
 	public void VerifyCellFilterData() throws InterruptedException{
-		Thread.sleep(3000);
+		Thread.sleep(10000);
 		CTAPage.GetScrolled("UP",17);
         CTAPage.GetDateFromTextBox("Start","Start");
        
-        Thread.sleep(4000);
+        Thread.sleep(8000);
         CTAPage.GetDateFromTextBox("End","End");
 		CTAPage.ClickOnArrow();
 
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		String selectedCellValue = CTAPage.GetDropdownValue();
 
 		if(selectedCellValue.contains("No results found")) {
@@ -211,14 +213,14 @@ public class CallTerminationAnalysisTest extends TestBase {
 			System.out.println("The first cell value selected from the dropdown is : "+selectedCellValue);
 			Reporter.log("The first cell value selected from the dropdown is : "+selectedCellValue);
 		}
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		CTAPage.ClickFirstCellvalue();
 
 
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		String CellValueinField = CTAPage.GetCellValue();
 
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		if(selectedCellValue.trim().equalsIgnoreCase(CellValueinField.trim())) {
 			System.out.println("The selected cell from the dropdown is properly added in the cell box");
 			Reporter.log("The selected cell from the dropdown is properly added in the cell box");
@@ -230,7 +232,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 			Assert.fail("The selected cell from the dropdown is not properly added in the cell box");
 		}
 
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		CTAPage.ClickFiltier();
 		System.out.println("Clicked on filter");
 
@@ -259,27 +261,27 @@ public class CallTerminationAnalysisTest extends TestBase {
 	
 	@Test(priority=9)
 	public void VerifyOpenCallDetails() throws InterruptedException{
-		Thread.sleep(8000);
+		Thread.sleep(12000);
 		OrigCellVAlue = CTAPage.ValidateOriginatingCell();
 		System.out.println("The value present in the Table datagrid is "+OrigCellVAlue);
 		
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		CTAPage.GetScroll("LEFT",28);
 		String TerStatValue = CTAPage.ValidateTerminationStatus();
 		System.out.println("The value present in the Termination status is "+TerStatValue);
 		
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		String TerReasonValue = CTAPage.ValidateTerminationReason();
 		System.out.println("The value present in the Termination Reason is "+TerReasonValue);
 		
-		Thread.sleep(3000);
+		Thread.sleep(8000);
 		CTAPage.ClickMagnifyingLens();
 		
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 		String CallDetailsText = CTAPage.CallDetailText();
 		System.out.println("The Call Deatil Dashboard contains text = "+CallDetailsText);
 		
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 		if(CallDetailsText.contains("Call Details Analysis")) {
 		System.out.println("Call Details Dashboard is open for the selected call");
 		Reporter.log("Call Details Dashboard is open for the selected call");
@@ -291,7 +293,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 			Assert.fail("Call Details Dashboard is not open");
 		}
 		
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 		if(CallDetailsText.contains(TerStatValue)) {
 			System.out.println("Call Termination Status is available on top of the dashboard  - "+TerStatValue);
 			Reporter.log("Call Termination Status is available on top of the dashboard  - "+TerStatValue);
@@ -303,7 +305,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 				Assert.fail("Call Termination Status is not available on top of the dashboard");
 			}
 		
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 		if(CallDetailsText.contains(TerReasonValue)) {
 			System.out.println("Call Termination Reason is available on top of the dashboard  - "+TerReasonValue);
 			Reporter.log("Call Termination Reason is available on top of the dashboard  - "+TerReasonValue);
@@ -320,10 +322,10 @@ public class CallTerminationAnalysisTest extends TestBase {
 	@Test(priority=10)
 	public void ValidateCallEvents() throws InterruptedException{
 		
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		String ServingCellValue = CTAPage.validateServingcell();
 		
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 		if(!(ServingCellValue.equalsIgnoreCase(""))) {
 		System.out.println("The Serving Cell value present in the Call Details page is "+ServingCellValue);
 		}
@@ -333,7 +335,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 			Assert.fail("Call Event details is not available on top of the dashboard");
 		}
 		
-		Thread.sleep(2000);
+		Thread.sleep(8000);
 		String EventNameValue = CTAPage.validateEventname();
 		System.out.println("The Serving Cell value present in the Call Details page is "+EventNameValue);
 		
@@ -357,29 +359,29 @@ public class CallTerminationAnalysisTest extends TestBase {
 	@Test(priority=6)
 	public void VerifyCallsPlottedonMap() throws InterruptedException
 	{
-		 /* Thread.sleep(3000);
+		 /* Thread.sleep(10000);
 		  CTAPage.GetScrolled("UP",17);*/
 	       CTAPage.GetScroll("DOWN",28);
-	       Thread.sleep(10000);
+	       Thread.sleep(15000);
 	       CTAPage.GetScroll("RIGHT",29);
-	       Thread.sleep(10000);
+	       Thread.sleep(20000);
 	       CTAPage.Gettextboxclick("Latitude");
-	       Thread.sleep(10000);
+	       Thread.sleep(15000);
 	       CTAPage.Gettextboxclick("Longitude");
 	       CTAPage.clickoncheckbox();
-	       Thread.sleep(6000);
+	       Thread.sleep(10000);
 	       CTAPage.getsectornametable();
-	       Thread.sleep(4000);
+	       Thread.sleep(10000);
 	       CTAPage.GetScroll("DOWN",47);
-	       Thread.sleep(4000);
+	       Thread.sleep(12000);
 	       Assert.assertEquals(5, CTAPage.checkcountcallsinmap());
-	       Thread.sleep(4000);
+	       Thread.sleep(15000);
 	}
 
 
 	@Test(priority=7)
 	public void VerifyCallsDetailsfrommap() throws InterruptedException
-	{   
+	{      Thread.sleep(10000);
 	       CTAPage.clickcallsfrommap();
 	       Assert.assertTrue(CTAPage.comparesectors(), "The sectors present in Table and Maps are not matching");
 
