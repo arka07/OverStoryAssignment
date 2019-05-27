@@ -219,6 +219,9 @@ public class CallTerminationAnalysisPage extends TestBase {
 		  @FindBy (xpath="(//div[contains(@class,'errorNotificationsPanel__error-notifications-panel')]//div[contains(@class,'notification__main-div')])")
 		  List<WebElement> ErrorNotificationCount;
 		   
+   
+         @FindBy (xpath="//a[contains(@class,'zoom-out')]")
+	       WebElement zoomoutbutton;
 		
     /**
      * 
@@ -956,9 +959,9 @@ public void Gettextboxclick(String texttype) throws InterruptedException {
        textbox.append("']//input");
        WebElement textbx=driver.findElement(By.xpath(textbox.toString()));
        textbx.click();
-       Thread.sleep(5000);
+       Thread.sleep(8000);
        textbx.sendKeys(">=0");
-       Thread.sleep(5000);
+       Thread.sleep(8000);
        CTAAct.sendKeys(Keys.ENTER).build().perform();
        Thread.sleep(6000);
        
