@@ -363,7 +363,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 		  CTAPage.GetScrolled("UP",17);*/
 	       CTAPage.GetScroll("DOWN",28);
 	       Thread.sleep(15000);
-	       CTAPage.GetScroll("RIGHT",34);
+	       CTAPage.GetScroll("RIGHT",32);
 	       Thread.sleep(20000);
            String tableheader=CTAPage.getheadertexttable();
 	       System.out.println(tableheader);
