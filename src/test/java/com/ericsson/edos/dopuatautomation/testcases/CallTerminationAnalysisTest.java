@@ -266,7 +266,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 		System.out.println("The value present in the Table datagrid is "+OrigCellVAlue);
 		
 		Thread.sleep(8000);
-		CTAPage.GetScroll("LEFT",33);
+		CTAPage.GetScroll("LEFT",38);
 		String TerStatValue = CTAPage.ValidateTerminationStatus();
 		System.out.println("The value present in the Termination status is "+TerStatValue);
 		
@@ -363,7 +363,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 		  CTAPage.GetScrolled("UP",17);*/
 	       CTAPage.GetScroll("DOWN",28);
 	       Thread.sleep(15000);
-	       CTAPage.GetScroll("RIGHT",33);
+	       CTAPage.GetScroll("RIGHT",35);
 	       Thread.sleep(20000);
 	       CTAPage.Gettextboxclick("Latitude");
 	       Thread.sleep(15000);
