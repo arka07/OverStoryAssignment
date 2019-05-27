@@ -367,6 +367,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 	       Thread.sleep(20000);
            String tableheader=CTAPage.getheadertexttable();
 	       System.out.println(tableheader);
+           Thread.sleep(3000);
 	       CTAPage.Gettextboxclick("Latitude");
 	       Thread.sleep(15000);
 	       CTAPage.Gettextboxclick("Longitude");
