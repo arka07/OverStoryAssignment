@@ -220,7 +220,7 @@ public class CallTerminationAnalysisPage extends TestBase {
 		  List<WebElement> ErrorNotificationCount;
   
           @FindBy (xpath="(//span[contains(@class,'dataGrid__column-header-title')])")
-	      WebElement checkheader;
+	      List<WebElement> checkheader;
   
           @FindBy (xpath=" (//div[contains(@class,'eButton__linked')])[8]")
 	       WebElement clickarrowheader;
