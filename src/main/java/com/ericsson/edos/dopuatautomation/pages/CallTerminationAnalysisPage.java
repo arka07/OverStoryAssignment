@@ -462,7 +462,8 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 
 	//TC-06 Cell Filter: Data is filtered
 
-	public void ClickOnArrow() {
+	public void ClickOnArrow() throws InterruptedException  {
+        Thread.sleep(5000);
 		ArrowClick.click();
 	}
 
@@ -476,25 +477,28 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 
 
 	public void ClickFirstCellvalue() throws InterruptedException{
+        Thread.sleep(5000);
 		FirstCellDropdown.click();
 	}
 
 	public String GetCellValue() throws InterruptedException  {
-
+        Thread.sleep(5000);
 		String SelectedCellName = cellvalue.getText();
 		System.out.println(SelectedCellName);
 		return SelectedCellName;
 	}
 
 	public void ClickFiltier() throws InterruptedException{
+      Thread.sleep(5000);
 		Filter.click();
 	}
 
 	public void ScrollDown() throws InterruptedException{
-
+        Thread.sleep(5000);
 		CTAAct.moveToElement(CTADashboardHeaderText).click();
 
 		for(int i=1;i<=31;i++){
+            Thread.sleep(5000);
 			CTAAct.sendKeys(Keys.ARROW_DOWN);
 			CTAAct.build().perform();
 		}
@@ -506,7 +510,7 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 		ScrollDown();
 		Thread.sleep(7000);
 		OriginatingCell.click();
-		Thread.sleep(1000);
+		Thread.sleep(10000);
 		String OCellValue = OriginatingCell.getText();
 		return OCellValue;
 	}
@@ -518,6 +522,7 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 		CTAAct.moveToElement(CallsDatagrid).click();
 
 		for(int i=1;i<=27;i++){
+            Thread.sleep(10000); 
 			CTAAct.sendKeys(Keys.ARROW_UP);
 			CTAAct.build().perform();
 		}
@@ -525,10 +530,12 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 	}
 
 	public void ClickClearAllButton() throws InterruptedException{
-		ClearAll.click();
+		Thread.sleep(10000);
+      ClearAll.click();
 	}
 
-	public void SearchCellValue() {
+	public void SearchCellValue() throws InterruptedException {
+      Thread.sleep(10000);
 		ClickSelectCell.click();
 	}
 
@@ -539,9 +546,9 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 		defaultCellValue[0] = splitValue.substring(splitValue.length()-2);
 		System.out.println("The partial text which we enter in the search box is "+defaultCellValue[0]);
 		Reporter.log("The partial text which we enter in the search box is "+defaultCellValue[0]);
-		Thread.sleep(2000);
+		Thread.sleep(6000);
 		SelectCell.sendKeys(defaultCellValue[0]);
-		Thread.sleep(2000);
+		Thread.sleep(6000);
 		CTAAct.sendKeys(Keys.ENTER);
 		CTAAct.build().perform();
 	}
@@ -785,10 +792,10 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 public boolean GetFullTableData() throws InterruptedException {
 	
 	boolean isTableHasData=false;
-	Thread.sleep(4000);
+	Thread.sleep(10000);
 	CTADashboardHeaderText.click();
 	GetScroll("DOWN",34);
-	Thread.sleep(3000);
+	Thread.sleep(10000);
 	int size=CTATLeftGridTable.size();
 	System.out.println("The Table Size is::"+size);
 	
@@ -824,7 +831,7 @@ public boolean GetFullRightTableData() throws InterruptedException {
 	boolean isRightTableHasData=false;
 	/*CTADashboardHeaderText.click();
 	GetScroll("DOWN",34);*/
-	Thread.sleep(3000);
+	Thread.sleep(10000);
 	int size=CTATRightGridTable.size();
 	System.out.println("The Right Table Size is::"+size);
 	
@@ -925,15 +932,15 @@ public void GetProjectCount() {
 
 	public void GetHeatorScatterStatus() throws InterruptedException {
 		GetScroll("DOWN",7);
-		Thread.sleep(4000);
+		Thread.sleep(10000);
 		HeatMaporScatterToggleBtn.click();
 		
 	}
 	
 public void GetScrolled(String ScrollType,int noOfTimes) throws InterruptedException {
-	Thread.sleep(2000);
+	Thread.sleep(8000);
 	GetScroll(ScrollType,noOfTimes);
-	Thread.sleep(2000);
+	Thread.sleep(8000);
 }	
 	
 	
@@ -949,11 +956,11 @@ public void Gettextboxclick(String texttype) throws InterruptedException {
        textbox.append("']//input");
        WebElement textbx=driver.findElement(By.xpath(textbox.toString()));
        textbx.click();
-       Thread.sleep(2000);
+       Thread.sleep(5000);
        textbx.sendKeys(">=0");
-       Thread.sleep(2000);
+       Thread.sleep(5000);
        CTAAct.sendKeys(Keys.ENTER).build().perform();
-       Thread.sleep(3000);
+       Thread.sleep(6000);
        
        
 }
@@ -963,13 +970,14 @@ public void clickoncheckbox() throws InterruptedException {
        //driver.findElement(By.xpath(("((//div[contains(@class,'left-side-grid')]//div)//img)["+i+"]"))).click();
        WebElement callsclick =driver.findElement(By.xpath("((//div[contains(@class,'left-side-grid')]//div)//img//parent::span)["+i+"]"));
        callsclick.click();
-       Thread.sleep(2000);
+       Thread.sleep(8000);
           }
        }
 
 public int checkcountcallsinmap() throws InterruptedException 
 {
        int totalsize = callscountinmap.size();
+       Thread.sleep(4000);
        System.out.println("The total call selected on map are:"+ totalsize);
        return totalsize;
        
@@ -980,23 +988,23 @@ public int checkcountcallsinmap() throws InterruptedException
 public void clickcallsfrommap() throws InterruptedException
 {
 zoomoutbutton.click();
-Thread.sleep(5000);
+Thread.sleep(10000);
 zoomoutbutton.click();
-Thread.sleep(5000);
+Thread.sleep(10000);
 //ArrayList<String> sectortext= new ArrayList<String>();   
 int totalsize = callscountinmap.size();
 for(int i=1;i<=totalsize;i++)
        {
               WebElement calls= driver.findElement(By.xpath("(//*[name()='svg']//*[name()='g']//*[name()='path'][contains(@class,'leaflet-interactive')])["+i+"]"));
            calls.click();
-              //Thread.sleep(5000);
+              //Thread.sleep(8000);
               //System.out.println(maptooltipsectortext.getText().split(":")[1].trim());
-              Thread.sleep(5000);
+              Thread.sleep(8000);
               String sectortext = maptooltipsectortext.getText().split(":")[1].trim();
               listsectortext.add(sectortext);
               CTAAct.sendKeys(Keys.ESCAPE).build().perform();
               //System.out.println(listsectortext);
-              Thread.sleep(7000);
+              Thread.sleep(10000);
          }
     System.out.println("List of Sectors from Map: "+ listsectortext);
 }
@@ -1006,10 +1014,10 @@ public void getsectornametable() throws InterruptedException {
        for(int i=8;i<=40;i=i+7) {
               
               WebElement getsector=driver.findElement(By.xpath("(//div[contains(@class,'bottom-left-side-grid')]//div)["+i+"]"));
-              Thread.sleep(2000);
+              Thread.sleep(5000);
               System.out.println(getsector.getText());
               listsectortexttable.add(getsector.getText());
-              Thread.sleep(2000);
+              Thread.sleep(5000);
               }
        System.out.println("List of Sectors from Table: "+ listsectortexttable);
 }
