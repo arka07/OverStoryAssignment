@@ -219,7 +219,7 @@ public class CallTerminationAnalysisPage extends TestBase {
 		  @FindBy (xpath="(//div[contains(@class,'errorNotificationsPanel__error-notifications-panel')]//div[contains(@class,'notification__main-div')])")
 		  List<WebElement> ErrorNotificationCount;
   
-          @FindBy (xpath="(//span[contains(@class,'dataGrid__column-header-title')])[6]")
+          @FindBy (xpath="(//span[contains(@class,'dataGrid__column-header-title')])")
 	      WebElement checkheader;
   
           @FindBy (xpath=" (//div[contains(@class,'eButton__linked')])[8]")
@@ -252,6 +252,7 @@ public class CallTerminationAnalysisPage extends TestBase {
 	List<String> CTALeftTable = new  ArrayList<>();
 	List<String> listsectortext= new ArrayList<String>(); 
 	List<String> listsectortexttable= new ArrayList<String>();
+    List<String> Tableheaders = new ArrayList<>();
 	/*Methods to Act on the WebDriver Webelements*/
 
 	public String getCTAtitle() {
@@ -963,6 +964,18 @@ public void GetScrolled(String ScrollType,int noOfTimes) throws InterruptedExcep
 	return checkheader.getText();
 }
 
+  
+public void getheaderstextfromtableloop() throws InterruptedException{
+  
+  int headerssize = checkheader.size();
+  System.out.println("Headers Size" + headerssize)
+  for(int i=1;i<=headerssize;i++)
+  {
+   WebElement header=driver.findElement(By.xpath("(//span[contains(@class,'dataGrid__column-header-title')])["+i+"]"));
+   Tableheaders.add(header.getText());
+   }
+  System.out.println(Tableheaders);
+}
 
 
 public void Gettextboxclick(String texttype) throws InterruptedException {
