@@ -972,7 +972,7 @@ public void Gettextboxclick(String texttype) throws InterruptedException {
        textbx.sendKeys(">=0");
        Thread.sleep(8000);
        CTAAct.sendKeys(Keys.ENTER).build().perform();
-       Thread.sleep(6000);
+       Thread.sleep(10000);
        
        
 }
