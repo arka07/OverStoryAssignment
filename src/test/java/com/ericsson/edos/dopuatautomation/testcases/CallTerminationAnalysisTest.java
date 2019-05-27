@@ -191,7 +191,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 	
 	
 	//TC-03 Cell Filter: Data is filtered
-	@Test(priority=8)
+	@Test(priority=8,enabled=false)
 	public void VerifyCellFilterData() throws InterruptedException{
 		Thread.sleep(10000);
 		CTAPage.GetScrolled("UP",17);
@@ -259,7 +259,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 	
 	//TC - 06 Open call details from table
 	
-	@Test(priority=9)
+	@Test(priority=9,enabled=false)
 	public void VerifyOpenCallDetails() throws InterruptedException{
 		Thread.sleep(12000);
 		OrigCellVAlue = CTAPage.ValidateOriginatingCell();
@@ -319,7 +319,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 	}
 	
 	//TC - 07 Call Events
-	@Test(priority=10)
+	@Test(priority=10,enabled=false)
 	public void ValidateCallEvents() throws InterruptedException{
 		
 		Thread.sleep(10000);
