@@ -615,18 +615,18 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 
 	public String ValidateTerminationStatus() throws InterruptedException{
 
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		//TerminationStatusValue.click();
-		Thread.sleep(1000);
+		
 		String TStatusValue = TerminationStatusValue.getText();
 		return TStatusValue;
 	}
 
 	public String ValidateTerminationReason() throws InterruptedException{
 
-		Thread.sleep(4000);
+		Thread.sleep(5000);
 	//	TerminationReasonValue.click();
-		Thread.sleep(1000);
+		
 		String TReasonValue = TerminationReasonValue.getText();
 		return TReasonValue;
 	}
