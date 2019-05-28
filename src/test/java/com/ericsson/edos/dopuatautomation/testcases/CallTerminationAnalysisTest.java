@@ -268,8 +268,8 @@ public class CallTerminationAnalysisTest extends TestBase {
 		Thread.sleep(8000);
 		CTAPage.GetScroll("LEFT",24);
         Thread.sleep(7000);
-        CTAPage.getheaderstextfromtableloop().clear();
-        Thread.sleep(4000);
+       
+       
         CTAPage.getheaderstextfromtableloop();
            Thread.sleep(7000);
 		String TerStatValue = CTAPage.ValidateTerminationStatus();
