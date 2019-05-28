@@ -266,7 +266,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 		System.out.println("The value present in the Table datagrid is "+OrigCellVAlue);
 		
 		Thread.sleep(8000);
-		CTAPage.GetScroll("LEFT",34);
+		CTAPage.GetScroll("LEFT",26);
 		String TerStatValue = CTAPage.ValidateTerminationStatus();
 		System.out.println("The value present in the Termination status is "+TerStatValue);
 		
