@@ -960,7 +960,7 @@ public void GetScrolled(String ScrollType,int noOfTimes) throws InterruptedExcep
 
   
 public void getheaderstextfromtableloop() throws InterruptedException{
-  
+  Tableheaders.removeAll(Tableheaders);
   int headerssize = checkheader.size();
   System.out.println("Headers Size" + headerssize);
   for(int i=1;i<=headerssize;i++)
