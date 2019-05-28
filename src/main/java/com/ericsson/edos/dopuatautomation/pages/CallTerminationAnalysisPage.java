@@ -1023,7 +1023,9 @@ int totalsize = callscountinmap.size();
 for(int i=1;i<=totalsize;i++)
        {
               WebElement calls= driver.findElement(By.xpath("(//*[name()='svg']//*[name()='g']//*[name()='path'][contains(@class,'leaflet-interactive')])["+i+"]"));
-           calls.click();
+              Thread.sleep(8000);
+              System.out.println("Xpath for calls "+ calls);
+              calls.click();
               //Thread.sleep(8000);
               //System.out.println(maptooltipsectortext.getText().split(":")[1].trim());
               Thread.sleep(8000);
