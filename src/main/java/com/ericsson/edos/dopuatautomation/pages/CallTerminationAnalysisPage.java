@@ -656,7 +656,11 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 		Thread.sleep(2000);
 		return CallDetailAnalysisText.getText();
 	}
-
+  
+  public void ClickCallDetailText() throws InterruptedException{
+    CallDetailAnalysisText.click();
+  }
+  
 	//TC - 06 Call Events	
 	public String validateServingcell() throws InterruptedException{
 		Thread.sleep(2000);
@@ -682,7 +686,10 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 		
 		int eventsize = driver.findElements(By.xpath("(//div[@class='ReactVirtualized__Grid__innerScrollContainer'])[3]//div[contains(@style,'left: 550px')]")).size();
 		System.out.println("The total number of event present is "+eventsize);
-
+      
+        Thread.sleep(2000);
+        ClickCallDetailText();
+          
 		Thread.sleep(5000);
 		for(int i=1;i<=eventsize;i++) {
 			WebElement EventValue = driver.findElement(By.xpath("(//div[@class='ReactVirtualized__Grid__innerScrollContainer'])[3]//div[contains(@style,'left: 550px')]["+i+"]"));
