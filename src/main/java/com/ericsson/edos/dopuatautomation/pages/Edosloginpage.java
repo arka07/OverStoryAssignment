@@ -60,12 +60,7 @@ public class Edosloginpage extends TestBase{
 	 {
 		 return Logo1.getText();
 	 }
-	 
-	 /*Method to Get the text of Main Portal Logo of Login Page*/ 
-	 public String GetEDOSLOGO2() 
-	 {
-		 return Logo2.getText();
-	 }
+
 	
 	 /*Method to get the username from excelsheet of Login Page*/ 
 	 public void SetUserName()
