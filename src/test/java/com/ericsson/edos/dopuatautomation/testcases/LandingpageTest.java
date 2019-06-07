@@ -36,7 +36,7 @@ public class LandingpageTest extends  TestBase{
 		String title=landingpage.ValidateLandingPageTitle();
 		Thread.sleep(2000);
 		System.out.println("Page Title name is : "+ title);
-	    Assert.assertEquals(title,"EDOS-DP Main Portal" );
+	    Assert.assertEquals(title,"Design and Optimization Platform" );
 	}
 	
 	
