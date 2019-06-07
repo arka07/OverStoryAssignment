@@ -59,7 +59,7 @@ public class applicationTest extends  TestBase{
     {
     Thread.sleep(2000);
    	String edostitle= applicationpage.VisibleOfEDOSDPtitle();
-    Assert.assertEquals(edostitle, "Ericsson Design & Optimization Services Delivery Platform","EdosDp title not present");
+    Assert.assertEquals(edostitle, "Ericsson Operations Engine","EdosDp title not present");
    	}
 	
     /*TestMethod to Click on Raster*/
