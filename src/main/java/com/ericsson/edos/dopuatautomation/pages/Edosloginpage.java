@@ -28,12 +28,12 @@ public class Edosloginpage extends TestBase{
 	@FindBy(id="showUarLdap")
 	WebElement RequestAccess;
 	
-	/*Inspecting WebElement for EDOS-DP LOGO*/
+	/*Inspecting WebElement for DOPLOGO*/
 	@FindBy(xpath="//*[@class='eaLogin-title1']")
 	WebElement Logo1;
 	
-	/*Inspecting WebElement for Main Portal LOGO*/
-    @FindBy(xpath="//*[@class='eaLogin-title2']")
+	/*Inspecting WebElement for EricssonLOGO*/
+    @FindBy(xpath="//div[@class='eaLogin-ericssonLogo']")
 	WebElement Logo2;
 	
     /*Initializing all the WebElements*/
