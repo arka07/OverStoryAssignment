@@ -66,7 +66,7 @@ public class LoginPageTest extends  TestBase{
 	{
 		String Logotext1=loginpage.GetEDOSLOGO1();
 		Thread.sleep(2000);
-		Assert.assertEquals(Logotext1,"Design and Optimization Platform");
+		Assert.assertEquals(Logotext1,"DESIGN AND OPTIMIZATION PLATFORM");
 	}
 	
 	/*TestMethod to Get the UserName of Login Page*/
