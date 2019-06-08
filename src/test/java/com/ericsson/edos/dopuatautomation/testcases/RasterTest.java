@@ -48,7 +48,7 @@ public class RasterTest extends TestBase{
 		String HomePageTitle = rasterpage.ValidateRasterHomePage();
 		Reporter.log("The HomePage name is "+HomePageTitle);
 		System.out.println("The HomePage name is "+HomePageTitle);
-		Assert.assertEquals("GNP Rasters", HomePageTitle,"HomePage is matching");
+		Assert.assertEquals("DOP Rasters", HomePageTitle,"HomePage is matching");
 		Reporter.log("Navigated to the correct Raster page");
 
 		Thread.sleep(2000);
