@@ -422,7 +422,7 @@ public class EdosTraceInputValidationPage extends TestBase {
 				}
 				
 				
-				if( Classnameis.contains("react-datepicker__day react-datepicker__day--sun react-datepicker__day--selected react-datepicker__day--weekend"))
+				if( Classnameis.contains("react-datepicker__day react-datepicker__day--sun react-datepicker__day--selected react-datepicker__day--weekend") || Classnameis.contains("react-datepicker__day react-datepicker__day--sat react-datepicker__day--selected react-datepicker__day--weekend"))
 				{
 				    /*driver.findElement(By.xpath("//div[contains(text(),'"+PreviousDateis+"')]")).click();
 					Thread.sleep(4000);*/
