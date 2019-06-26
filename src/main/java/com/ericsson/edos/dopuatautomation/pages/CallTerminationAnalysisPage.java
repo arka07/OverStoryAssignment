@@ -719,7 +719,7 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 			//#fff599 - Yellow
 			//#d0e3a2 - Green
 			
-			if((ColorasHex.equalsIgnoreCase("#99ddee")) | (ColorasHex.equalsIgnoreCase("#fff599")) | (ColorasHex.equalsIgnoreCase("#d0e3a2"))) 
+			if((ColorasHex.equalsIgnoreCase("#99ddee")) || (ColorasHex.equalsIgnoreCase("#fff599")) || (ColorasHex.equalsIgnoreCase("#d0e3a2"))) 
 			{
 				Thread.sleep(2000);
 				System.out.println("The background color of the event is based on the event protocol");
