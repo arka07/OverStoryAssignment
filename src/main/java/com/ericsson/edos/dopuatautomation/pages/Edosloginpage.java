@@ -28,12 +28,12 @@ public class Edosloginpage extends TestBase{
 	@FindBy(id="showUarLdap")
 	WebElement RequestAccess;
 	
-	/*Inspecting WebElement for EDOS-DP LOGO*/
+	/*Inspecting WebElement for DOPLOGO*/
 	@FindBy(xpath="//*[@class='eaLogin-title1']")
 	WebElement Logo1;
 	
-	/*Inspecting WebElement for Main Portal LOGO*/
-    @FindBy(xpath="//*[@class='eaLogin-title2']")
+	/*Inspecting WebElement for EricssonLOGO*/
+    @FindBy(xpath="//div[@class='eaLogin-ericssonLogo']")
 	WebElement Logo2;
 	
     /*Initializing all the WebElements*/
@@ -60,12 +60,7 @@ public class Edosloginpage extends TestBase{
 	 {
 		 return Logo1.getText();
 	 }
-	 
-	 /*Method to Get the text of Main Portal Logo of Login Page*/ 
-	 public String GetEDOSLOGO2() 
-	 {
-		 return Logo2.getText();
-	 }
+
 	
 	 /*Method to get the username from excelsheet of Login Page*/ 
 	 public void SetUserName()
@@ -84,12 +79,29 @@ public class Edosloginpage extends TestBase{
 	 }
      
      
-     /*Method to click on LoginButton of Login Page*/ 
+    /* Method to click on LoginButton of Login Page 
      public EdosApplicationPage ClickLogin() {
         Loginbutton.click(); 
         return new EdosApplicationPage();
-        }
+        }*/
      
+     
+     /*Method to click on LoginButton of Login Page*/ 
+     public EdosRasterpage  ClickLogin() {
+        Loginbutton.click(); 
+        return new EdosRasterpage();
+        }
+
+     /*Method to click on LoginButton of Login Page to navigate to TIV page*/ 
+     public EdosTraceInputValidationPage ClickLoginForTIV() {
+        Loginbutton.click(); 
+        return new EdosTraceInputValidationPage();
+        }
+       /*Method to click on LoginButton of Login Page to navigate to CTA page*/ 
+     public CallTerminationAnalysisPage ClickLoginForCTA() {
+        Loginbutton.click(); 
+        return new CallTerminationAnalysisPage();
+        }
      
      /*Method to click on LoginButton at once of Login Page*/ 
      public void LoginInOne() throws InterruptedException {

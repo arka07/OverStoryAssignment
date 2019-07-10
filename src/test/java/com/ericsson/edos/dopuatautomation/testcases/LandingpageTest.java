@@ -1,5 +1,6 @@
 package com.ericsson.edos.dopuatautomation.testcases;
 import org.testng.annotations.Test;
+import org.apache.commons.collections.FastArrayList;
 import org.testng.Assert;
 
 import org.testng.Reporter;
@@ -35,7 +36,7 @@ public class LandingpageTest extends  TestBase{
 		String title=landingpage.ValidateLandingPageTitle();
 		Thread.sleep(2000);
 		System.out.println("Page Title name is : "+ title);
-	    Assert.assertEquals(title,"EDOS-DP Main Portal" );
+	    Assert.assertEquals(title,"Design and Optimization Platform" );
 	}
 	
 	
@@ -50,17 +51,17 @@ public class LandingpageTest extends  TestBase{
 	}
 	
 	/*TestMethod to Check LicenseContentLogo of Landing Page is Displaying*/
-	@Test(priority=3)
+	/*@Test(priority=3)
 	public void LicenseContentLogoTest() throws InterruptedException 
 	{
 		boolean LicenseContentLogo=landingpage.ValidateLicenseContentLogo();
 		Thread.sleep(2000);
 		System.out.println("Page LicenseContent is validated successfully");
 		Assert.assertTrue(LicenseContentLogo);
-	}
+	}*/
 	
 	/*TestMethod to Check Text of LegalNoticeLogo of Landing Page is Correct*/
-	@Test(priority=4)
+	@Test(priority=4,enabled=false)
 	public void LegalNoticeLogoTextTest() throws InterruptedException 
 	{
 		String LegalNoticeLogo=landingpage.GetLegalNoticeLogo();
@@ -71,13 +72,13 @@ public class LandingpageTest extends  TestBase{
 	
 	
 	/*TestMethod to Check Text of LicenseContentLogo of Landing Page is Correct*/
-	@Test(priority=5)
+	@Test(priority=5,enabled=false)
 	public void LicenseContentLogoTextTest() throws InterruptedException 
 	{
 		String LicenseContentLogo=landingpage.GetLicenseContentLogo();
 		Thread.sleep(2000);
 		System.out.println("Page LicenseContent page is validated successfully");
-		Assert.assertEquals(LicenseContentLogo,"If you are not an authorized user, please leave.");
+		Assert.assertEquals(LicenseContentLogo,"IF YOU ARE NOT AN AUTHORIZED USER PLEASE EXIT IMMEDIATELY".toLowerCase());
 	}
 	
 	/*TestMethod to Click on ProceedButton of Landing Page*/

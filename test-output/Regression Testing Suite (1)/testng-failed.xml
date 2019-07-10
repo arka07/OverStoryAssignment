@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Regression Testing Suite (1)]">
+  <listeners>
+    <listener class-name="com.ericsson.edos.dopuatautomation.util.ListenersTest"/>
+    <listener class-name="com.ericsson.edos.dopuatautomation.util.ExtentReportNG"/>
+  </listeners>
+  <test name="PerformancePortalPageTest(failed)">
+    <classes>
+      <class name="com.ericsson.edos.dopuatautomation.testcases.PerformancePortalTest">
+        <methods>
+          <include name="initialisation"/>
+          <include name="VerifyPerformancePortalTest"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.ericsson.edos.dopuatautomation.testcases.PerformancePortalTest -->
+    </classes>
+  </test> <!-- PerformancePortalPageTest(failed) -->
+  <test name="BouyguesPageTest(failed)">
+    <classes>
+      <class name="com.ericsson.edos.dopuatautomation.testcases.BouyguesTest">
+        <methods>
+          <include name="VerifyAllTitleTest"/>
+          <include name="VerifyFingerRCAReport"/>
+          <include name="VerifyenodeBUtranCellTest"/>
+          <include name="setUp"/>
+          <include name="VerifyPreCannedReport"/>
+          <include name="VerifyTriageReport"/>
+          <include name="ValidateSearchingForCell"/>
+          <include name="VerifyRCAReport"/>
+          <include name="VerifyIsolationReport"/>
+          <include name="initialisation"/>
+          <include name="VerifyDeltaAuditofSites"/>
+          <include name="VerifyQBCharting"/>
+          <include name="VerifyQBReportinTable"/>
+          <include name="VerifyEprefNEChart"/>
+          <include name="ValidateOnAddingPredefinedKPI"/>
+          <include name="VerifyPreCannedReportByCell"/>
+          <include name="VerifyExportToCSV"/>
+          <include name="VerifyDeltaAuditForUnderlinedValues"/>
+          <include name="DynamicGraphicalReport"/>
+          <include name="ValidateSearchforSpecificPmCounter"/>
+          <include name="VerifyEprefTimeChart"/>
+          <include name="VerifyExportToExcel"/>
+          <include name="VerifyEprefKPIChart"/>
+          <include name="ValidateOnCustomKPI"/>
+          <include name="VerifyCounterAddedQBReportinTable"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.ericsson.edos.dopuatautomation.testcases.BouyguesTest -->
+    </classes>
+  </test> <!-- BouyguesPageTest(failed) -->
+</suite> <!-- Failed suite [Regression Testing Suite (1)] -->

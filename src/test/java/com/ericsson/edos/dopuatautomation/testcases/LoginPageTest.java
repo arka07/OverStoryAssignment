@@ -57,26 +57,20 @@ public class LoginPageTest extends  TestBase{
 		Assert.assertTrue(Logo2);
 	}
 	
-	/*TestMethod to Check Text of EDOS-DP of Login Page is Correct*/
+	
+
+	
+	/*TestMethod to Check Text of Main Portal of Login Page is Correct*/
 	@Test(priority=3)
 	public void EdosLogoText1Test() throws InterruptedException 
 	{
 		String Logotext1=loginpage.GetEDOSLOGO1();
 		Thread.sleep(2000);
-		Assert.assertEquals(Logotext1,"EDOS-DP");
-	}
-	
-	/*TestMethod to Check Text of Main Portal of Login Page is Correct*/
-	@Test(priority=4)
-	public void EdosLogoText2Test() throws InterruptedException 
-	{
-		String Logotext2=loginpage.GetEDOSLOGO2();
-		Thread.sleep(2000);
-		Assert.assertEquals(Logotext2,"MAIN PORTAL");
+		Assert.assertEquals(Logotext1,"DESIGN AND OPTIMIZATION PLATFORM");
 	}
 	
 	/*TestMethod to Get the UserName of Login Page*/
-	@Test(priority=5)
+	@Test(priority=4)
 	public void SetusernameTest() throws Exception 
 	{
 		loginpage.SetUserName();
@@ -84,7 +78,7 @@ public class LoginPageTest extends  TestBase{
 	}
 	
 	/*TestMethod to Get the Password of Login Page*/
-	@Test(priority=6)
+	@Test(priority=5)
 	public void SetUserPasswordTest() throws Exception 
 	{
 	     loginpage.SetPassword();
@@ -92,7 +86,7 @@ public class LoginPageTest extends  TestBase{
 	}
 	
 	/*TestMethod to Click Enter of Login Page*/
-	@Test(priority=7)
+	@Test(priority=6)
 	public void ClickEnterButtonTest() throws InterruptedException 
 	{
 		 loginpage.ClickLogin();

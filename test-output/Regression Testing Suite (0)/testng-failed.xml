@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Regression Testing Suite (0)]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="com.ericsson.edos.dopuatautomation.util.ListenersTest"/>
+    <listener class-name="com.ericsson.edos.dopuatautomation.util.ExtentReportNG"/>
+  </listeners>
+  <test name="TivTest(failed)">
+    <classes>
+      <class name="com.ericsson.edos.dopuatautomation.testcases.EdosTraceInputValidationTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="initialisation"/>
+          <include name="tearDown"/>
+          <include name="VerifyTIVStartTimeText"/>
+        </methods>
+      </class> <!-- com.ericsson.edos.dopuatautomation.testcases.EdosTraceInputValidationTest -->
+    </classes>
+  </test> <!-- TivTest(failed) -->
+</suite> <!-- Failed suite [Regression Testing Suite (0)] -->

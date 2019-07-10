@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Regression Testing Suite">
+  <listeners>
+		<listener class-name="com.ericsson.edos.dopuatautomation.util.ListenersTest" />
+		<listener class-name="com.ericsson.edos.dopuatautomation.util.ExtentReportNG" />
+	</listeners>
+
+	<test name=" LandingPageTest">
+		<classes>
+			<class name="com.ericsson.edos.dopuatautomation.testcases.LandingpageTest" />
+		</classes>
+	</test>
+	
+	<test name="LoginPageTest">
+		<classes>
+			<class name="com.ericsson.edos.dopuatautomation.testcases.LoginPageTest" />
+		</classes>
+	</test>
+	
+	<test name="ApplicationPageTest">
+		<classes>
+			<class name="com.ericsson.edos.dopuatautomation.testcases.applicationTest" >
+			 <methods>
+              <include name="VerifyApplicationPage" />
+              <include name="VerifyEdosDpLogo" />
+              <include name="RasterClick" />
+              </methods>
+            </class>	   
+           </classes>
+	</test>
+	
+	<test name="RasterPageTest">
+		<classes>
+			<class name="com.ericsson.edos.dopuatautomation.testcases.RasterTest" />
+		</classes>
+	</test>
+	
+	
+
+	
+
+</suite> 
