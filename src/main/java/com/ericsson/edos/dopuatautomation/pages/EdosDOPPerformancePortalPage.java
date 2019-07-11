@@ -10,7 +10,7 @@ public class EdosDOPPerformancePortalPage extends TestBase {
 	
 	
 	/*Inspecting WebElement for GNP Performance Portal*/	
-	@FindBy (xpath = "//a[contains(@href,'Customer=Bouygues')]")
+	@FindBy (xpath = "//a[contains(@href,'Customer=')]")
 	WebElement ClickOnBouygueslink;
     
 	/*@FindBy (xpath = "//a[contains(@href,'Customer=dtathapoc')]")

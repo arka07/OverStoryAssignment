@@ -44,7 +44,7 @@ public class PerformancePortalTest extends  TestBase{
     Thread.sleep(5000);
     String PerfPortalpagetitle= portalpage.VisibleOfGNPPerfPortal();
     System.out.println("Title:"+ PerfPortalpagetitle);
-    Assert.assertEquals(PerfPortalpagetitle, "GNP Performance Portal");
+    Assert.assertEquals(PerfPortalpagetitle, "DOP Performance Portal");
 	}
     
 }
