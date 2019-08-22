@@ -124,6 +124,11 @@ public class EdosRasterpage extends TestBase{
 	//WebElement to validate the layer is compacted or not
 	@FindBy (xpath="//div[text()='Basic']")
 	WebElement BasicText;
+	
+	
+	 
+
+	
 
 	public int rowXCount;
 	public int rowYCount;
@@ -380,6 +385,18 @@ public class EdosRasterpage extends TestBase{
 	//WebElement for fetching the zoom values
 	@FindBy (xpath="//div[@class='mapControlsOverlay__zoom___140pK']")
 	WebElement ZoomValue;
+	
+	
+	 
+	  /*Multi-Tenancy */
+	  
+	  @FindBy(xpath="//button[contains(@class,'dropdown__btn') or contains(@class,'dropdown__clickable')]")
+    WebElement clickProjectDD;
+    
+    @FindBy(xpath="//div[contains(@class,'tree__tree')]/ul/li/span")
+    List<WebElement> customername;
+    
+    String allcustomerRasters="(//div[contains(@class,'tree__tree')]/ul/li/span)" ;
 
 	Actions action = new Actions(driver);
 	
@@ -422,6 +439,20 @@ public class EdosRasterpage extends TestBase{
 	public String ValidateSearchPanelText() {
 		return SelectTopologyText.getText();
 	}
+	
+	
+	
+	/*Multi-Tenancy Method*/
+	public List<String> GetRastersCustomerNames() throws InterruptedException {
+  	  List<String> CustomerNames = new ArrayList<>();
+  	  CustomerNames = VerifyCustomerName(clickProjectDD, customername, allcustomerRasters);
+  	for(String Cval:CustomerNames) 
+  	{
+//  		CustomerNames.add(Cval);
+  		System.out.println("The Customer values are:::: "+Cval);
+  	}
+  return CustomerNames;
+}
 
 	public String ValidateDistanceMeasurementText() throws InterruptedException {
 		String tooltipText="";

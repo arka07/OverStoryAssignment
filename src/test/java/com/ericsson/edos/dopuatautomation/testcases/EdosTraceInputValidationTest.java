@@ -2,6 +2,10 @@ package com.ericsson.edos.dopuatautomation.testcases;
 
 
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeTest;
@@ -47,7 +51,57 @@ public class EdosTraceInputValidationTest extends TestBase {
 	}
 	
 	
-	@Test(priority=2,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
+	@Test(priority=2)
+	public void VerifyTIVMultiTenancy() throws InterruptedException
+	{
+		boolean isCustomerValMatching=false;
+		boolean isCustomerCountMatching=false;
+		Thread.sleep(3000);
+		String[] LibCusCount=TestBase.getCustomerName();
+		
+		List<String> CusNameFromTIVPAge = new ArrayList<>();
+		
+		CusNameFromTIVPAge=TraceInputValidationPage.GetTIVCustomerNames();
+		
+		System.out.println("No Of Customers available in TIV are::::"+CusNameFromTIVPAge.size());
+		System.out.println("No Of Customers available in Prop Files are::::"+LibCusCount.length);
+		int TIVCusCount=CusNameFromTIVPAge.size();
+		int LIbCusCount=LibCusCount.length;
+		
+		
+		if(TIVCusCount>0){
+			List<String> CusNameFromLibFile = new ArrayList<>();
+		    Collections.addAll(CusNameFromLibFile, LibCusCount);
+		if(TIVCusCount==LIbCusCount)
+		{
+			isCustomerCountMatching=true;
+		}
+		else
+		{
+			isCustomerCountMatching=false;
+		}
+		
+		if(CusNameFromLibFile.equals(CusNameFromTIVPAge))
+		{   isCustomerValMatching=true;
+			System.out.println("TIV Dashbaord Customer values are matching with :: Constant Values stored in Prop File");
+			Reporter.log("<span style='color:white;background-color:green;font-size:14px;'>"+"<b>"+"TIV Dashbaord Customer values are matching with :: Constant Values stored in Prop File"+"</b>"+"<span>"+"<br/>");
+		}
+		else{isCustomerValMatching=false;
+			System.out.println("TIV Dashbaord Customer values are Not matching with :: Constant Values stored in Prop File");
+			Reporter.log("<span style='color:white;background-color:green;font-size:14px;'>"+"<b>"+"TIV Dashbaord Customer values are Not matching with :: Constant Values stored in Prop File"+"</b>"+"<span>"+"<br/>");
+		}
+		
+		Assert.assertTrue(isCustomerValMatching && isCustomerCountMatching);
+		}
+		else{
+		Assert.assertFalse(true);	
+		}
+		
+	}	
+	
+	
+	
+	@Test(priority=3,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
 	public void VerifyTIVHeaderText() throws InterruptedException
 	{
 		
@@ -57,7 +111,7 @@ public class EdosTraceInputValidationTest extends TestBase {
 	
 	/*----Tc.No:2----------STARTS-------------------TestCase Methods-----------------------------------------------------------*/
 	
-	@Test(priority=3,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
+	@Test(priority=4,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
 	public void VerifyChartValuesWithDateSelected() throws InterruptedException
 	{
 		Thread.sleep(3000);
@@ -107,7 +161,7 @@ public class EdosTraceInputValidationTest extends TestBase {
 	
 	
 	
-	@Test(priority=6,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
+	@Test(priority=7,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
 	public void VerifyTableWithCellFiltering() throws InterruptedException
 	{
 		
@@ -164,7 +218,7 @@ public class EdosTraceInputValidationTest extends TestBase {
 	}
 	
 	
-	@Test(priority=4,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
+	@Test(priority=5,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
 	public void VerifyTablePagination() throws InterruptedException
 	{
 		boolean FinalStausPag=false;
@@ -180,7 +234,7 @@ public class EdosTraceInputValidationTest extends TestBase {
 	}
 	
 	
-	@Test(priority=5,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
+	@Test(priority=6,dependsOnMethods={"VerifyTIVErrorNotificationAlertPopUp"})
 	public void VerifyExportFunctionalityTC4() throws InterruptedException
 	{
 		boolean IsClickable=false;
