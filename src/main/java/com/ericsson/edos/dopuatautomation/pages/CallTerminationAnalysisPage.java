@@ -163,7 +163,7 @@ public class CallTerminationAnalysisPage extends TestBase {
 		List<WebElement> AvilablCustomers;
 		
 		/*Xpath to collect the Selected Customer Project */
-		@FindBy (xpath="//div//span[contains(@class,'styles__username')]")
+		@FindBy (xpath="//div//span[contains(@class,'__username')]")
 		WebElement UserLoggedIn;
 		
 		/*Xpath to Get the No Data to Display---Termination Status */
