@@ -270,10 +270,10 @@ public class CallTerminationAnalysisPage extends TestBase {
 	public String GetDateFromTextBox(String XpathId,String DateType) throws InterruptedException {
 		StringBuilder StrforDateTxb = new StringBuilder();
 		if(DateType.equals("Start")){
-			StrforDateTxb.append("(//label[text()='"+XpathId+"']//parent::div//input[contains(@class,'calendar__datePickerInput')])[1]");
+			StrforDateTxb.append("(//label[text()='"+XpathId+"']//parent::div//input[contains(@class,'datePickerInput')])[1]");
 		}
 		else{
-			StrforDateTxb.append("(//label[text()='"+XpathId+"']//parent::div//input[contains(@class,'calendar__datePickerInput')])[2]");
+			StrforDateTxb.append("(//label[text()='"+XpathId+"']//parent::div//input[contains(@class,'datePickerInput')])[2]");
 		}
 		System.out.println(StrforDateTxb);
 		driver.findElement(By.xpath(StrforDateTxb.toString())).click();
