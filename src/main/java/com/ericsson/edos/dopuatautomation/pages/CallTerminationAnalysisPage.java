@@ -77,7 +77,7 @@ public class CallTerminationAnalysisPage extends TestBase {
 
 	//TC-06 Cell Filter: Data is filtered
 
-	@FindBy (xpath="(//span[@class='Select-arrow'])[2]")
+	@FindBy (xpath="//div[text()='Select cell(s)']")
 	WebElement ArrowClick;
 
 	@FindBy (xpath="//div[@class='Select-menu-outer']/div/div[1]")
