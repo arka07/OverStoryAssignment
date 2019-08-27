@@ -80,7 +80,8 @@ public class CallTerminationAnalysisPage extends TestBase {
 	@FindBy (xpath="//div[text()='Select cell(s)']")
 	WebElement ArrowClick;
 
-	@FindBy (xpath="//div[@class='Select-menu-outer']/div/div[1]")
+	@FindBy (xpath="//label[text()='Cells']//parent::div//div[contains(@class,'placeholder')]")
+    // (xpath="//div[@class='Select-menu-outer']/div/div[1]")
 	//@FindBy (xpath="//label[text()='Cells']/../div/div[@class='Select-menu-outer']/div/div[1]")
 	WebElement FirstCellDropdown;
 
