@@ -21,6 +21,9 @@ import org.testng.Reporter;
 import com.ericsson.edos.dopuatautomation.base.TestBase;
 
 public class CallTerminationAnalysisPage extends TestBase {
+	
+	
+	
 
 	/*Inspecting WebElement for CTA HeaderText*/	
 	@FindBy (xpath = "//div//span[contains(text(),'Call Termination Analysis')]")
@@ -226,8 +229,20 @@ public class CallTerminationAnalysisPage extends TestBase {
           @FindBy (xpath=" (//div[contains(@class,'eButton__linked')])[8]")
 	       WebElement clickarrowheader;
 		   
-   
-        
+   /*
+    
+    Multi-tenancy 
+    */
+          
+          @FindBy(xpath="//button[contains(@class,'dropdown__btn') or contains(@class,'dropdown__clickable')]")
+          WebElement clickProjectDD;
+          
+          @FindBy(xpath="//div[contains(@class,'tree__tree')]/ul/li/span")
+          List<WebElement> customername;
+          
+          String allcustomercta="(//div[contains(@class,'tree__tree')]/ul/li/span)" ;
+          
+          
 		
     /**
      * 
@@ -235,7 +250,8 @@ public class CallTerminationAnalysisPage extends TestBase {
      */
 	
 	public  CallTerminationAnalysisPage() {
-
+        
+		
 		PageFactory.initElements(driver , this);
 	}
 
@@ -254,7 +270,22 @@ public class CallTerminationAnalysisPage extends TestBase {
 	List<String> listsectortext= new ArrayList<String>(); 
 	List<String> listsectortexttable= new ArrayList<String>();
     List<String> Tableheaders = new ArrayList<>();
-	/*Methods to Act on the WebDriver Webelements*/
+    
+    List<String> Cname = new ArrayList<>();
+    List<String> Pname = new ArrayList<>();
+    
+  
+
+    
+    public List<String> CTACustomername() throws InterruptedException {
+    	  List<String> CustomerNames = new ArrayList<>();
+    	  CustomerNames = VerifyCustomerName(clickProjectDD, customername, allcustomercta);
+    	for(String Cval:CustomerNames) 
+    	{
+          System.out.println("The Customer values are:::: "+Cval);
+    	}
+    return CustomerNames;
+  }
 
 	public String getCTAtitle() {
 
@@ -1066,6 +1097,22 @@ public boolean comparesectors() {
        return isEqual;
 }
 
+
+	/*
+	 * public void getCustomerName() {
+	 * 
+	 * int Customercount= driver.findElements(By.xpath(
+	 * "//div[contains(@class,'tree__tree')]/ul/li/span")).size();
+	 * 
+	 * for(int i=0;i<= Customercount;i++) {
+	 * 
+	 * WebElement CusName= driver.findElement(By.xpath(
+	 * "(//div[contains(@class,'tree__tree')]/ul/li/span)["+i+"]")); String Cname=
+	 * CusName.getText(); Customername.add(Cname);
+	 * 
+	 * 
+	 * } }
+	 */
 
 /*Methods to act on Test Cases 4 & 5-----------End---------------------*/	
 

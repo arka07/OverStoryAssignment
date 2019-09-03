@@ -1,6 +1,10 @@
 package com.ericsson.edos.dopuatautomation.testcases;
 
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeMethod;
@@ -41,8 +45,65 @@ public class RasterTest extends TestBase{
 
 	}
 
-	//Access GNP Raster Visualization
+	
 	@Test(priority=1)
+	public void VerifyRastersMultiTenancy() throws InterruptedException
+	{
+		boolean isCustomerValMatching=false;
+		boolean isCustomerCountMatching=false;
+		Thread.sleep(3000);
+		String[] LibCusCount=TestBase.getCustomerName();
+		//
+		List<String> CusNameFromRastersPAge = new ArrayList<>();
+		
+		CusNameFromRastersPAge=rasterpage.GetRastersCustomerNames();
+		//
+		System.out.println("No Of Customers available in TIV are::::"+CusNameFromRastersPAge.size());
+		System.out.println("No Of Customers available in Prop Files are::::"+LibCusCount.length);
+		int RasterCusCount=CusNameFromRastersPAge.size();
+		int LIbCusCount=LibCusCount.length;
+		
+		if(RasterCusCount>0){
+			
+			List<String> CusNameFromLibFile = new ArrayList<>();
+			Collections.addAll(CusNameFromLibFile, LibCusCount);
+		
+		if(RasterCusCount==LIbCusCount)
+		{
+			isCustomerCountMatching=true;
+		}
+		else
+		{
+			isCustomerCountMatching=false;
+		}
+		
+		if(CusNameFromLibFile.equals(CusNameFromRastersPAge))
+		{
+			isCustomerValMatching=true;
+			System.out.println("Rasters Dashbaord Customer values are matching with :: Constant Values stored in Prop File");
+			Reporter.log("<span style='color:white;background-color:green;font-size:14px;'>"+"<b>"+"Rasters Dashbaord Customer values are matching with :: Constant Values stored in Prop File"+"</b>"+"<span>"+"<br/>");
+		}
+		else{
+			isCustomerValMatching=false;
+			System.out.println("Rasters Dashbaord Customer values are Not matching with :: Constant Values stored in Prop File");
+			Reporter.log("<span style='color:white;background-color:green;font-size:14px;'>"+"<b>"+"Rasters Dashbaord Customer values are Not matching with :: Constant Values stored in Prop File"+"</b>"+"<span>"+"<br/>");
+		}
+		
+		Assert.assertTrue(isCustomerValMatching && isCustomerCountMatching);
+		}
+		
+		else{
+			Assert.assertFalse(true);	
+			}
+		
+	}	
+	
+	
+	
+	
+	
+	//Access GNP Raster Visualization
+	@Test(priority=2)
 	public void ValidtionofRasterPortal() throws InterruptedException {
 		Thread.sleep(2000);
 		String HomePageTitle = rasterpage.ValidateRasterHomePage();

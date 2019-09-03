@@ -1,5 +1,9 @@
 package com.ericsson.edos.dopuatautomation.testcases;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.BeforeTest;
@@ -21,8 +25,11 @@ public class CallTerminationAnalysisTest extends TestBase {
 	boolean IsDataavailableinLeftTable; 
 	boolean IsDataavailableinRightTable;
 
+	
+	TestBase tbCTA = new TestBase();
 	public  CallTerminationAnalysisTest() {
 		super();
+		
 	}
 
 
@@ -32,9 +39,60 @@ public class CallTerminationAnalysisTest extends TestBase {
 	{  
 
 		CTAPage = new CallTerminationAnalysisPage();  
+		
 	}
 
+     
+	
+	@Test(priority=3)
+	public void VerifyCTAMultiTenancy() throws InterruptedException
+	{
 
+		
+		boolean isCustomerValMatching=false;
+		boolean isCustomerCountMatching=false;
+		Thread.sleep(3000);
+		String[] LibCusCount=TestBase.getCustomerName();
+		List<String> CusNameFromCTAPAge = new ArrayList<>();
+		CusNameFromCTAPAge=CTAPage.CTACustomername();
+		
+		System.out.println("CusNameFromCTAPAge::"+CusNameFromCTAPAge.size());
+		System.out.println("CusNameFromLibFile::"+LibCusCount.length);
+		int CTACusCount=CusNameFromCTAPAge.size();
+		int LIbCusCount=LibCusCount.length;
+		if(CTACusCount>0){
+		List<String> CusNameFromLibFile = new ArrayList<>();
+	    Collections.addAll(CusNameFromLibFile, LibCusCount);
+	    
+		if(CTACusCount==LIbCusCount)
+		{
+			isCustomerCountMatching=true;
+		}
+		else
+		{
+			isCustomerCountMatching=false;
+		}
+		
+		if(CusNameFromLibFile.equals(CusNameFromCTAPAge))
+		{
+			isCustomerValMatching=true;
+			System.out.println("CTA Dashbaord Customer values are matching with :: Constant Values stored in Prop File");
+		}
+		else{
+			isCustomerValMatching=false;
+			System.out.println("CTA Dashbaord Customer values are Not matching with :: Constant Values stored in Prop File");
+			
+		}
+		Assert.assertTrue(isCustomerValMatching && isCustomerCountMatching);
+		}
+		else{
+		Assert.assertFalse(true);	
+		}
+	
+		
+		
+		
+	}	
 
 	@Test(priority=1)
 	public void VerifyCTATitle() throws InterruptedException
@@ -57,7 +115,11 @@ public class CallTerminationAnalysisTest extends TestBase {
 
 	}
 	
-	@Test(priority=3)
+	
+	
+	
+	
+	@Test(priority=4)
 	public void VerifyCTACalendars() throws InterruptedException
 	{   
         Thread.sleep(10000);
@@ -75,13 +137,14 @@ public class CallTerminationAnalysisTest extends TestBase {
 		}
 
 	
+
 	
 	
 
 	/*---------------------------Test Case Methods for UAT TC ID--2----------------------START-------------*/
 	
 	
-	@Test(priority=4)
+	@Test(priority=5)
 	public void VerifyCTACallsDataGridTable() throws InterruptedException
 	{
 		Thread.sleep(10000);
@@ -99,7 +162,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 	}
 
 
-	@Test(priority=5)
+	@Test(priority=6)
 	public void VerifyNonTableComponents() throws InterruptedException{
 		Thread.sleep(10000);
 		boolean isTerminationStatusvAvailable=false;
@@ -191,7 +254,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 	
 	
 	//TC-03 Cell Filter: Data is filtered
-	@Test(priority=8)
+	@Test(priority=9)
 	public void VerifyCellFilterData() throws InterruptedException{
 		Thread.sleep(10000);
 		CTAPage.GetScrolled("UP",17);
@@ -259,7 +322,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 	
 	//TC - 06 Open call details from table
 	
-	@Test(priority=9)
+	@Test(priority=10)
 	public void VerifyOpenCallDetails() throws InterruptedException{
 		Thread.sleep(12000);
 		OrigCellVAlue = CTAPage.ValidateOriginatingCell();
@@ -324,7 +387,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 	}
 	
 	//TC - 07 Call Events
-	@Test(priority=10)
+	@Test(priority=11)
 	public void ValidateCallEvents() throws InterruptedException{
 		
 		Thread.sleep(10000);
@@ -361,7 +424,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 	}
 	
 
-	@Test(priority=6)
+	@Test(priority=7)
 	public void VerifyCallsPlottedonMap() throws InterruptedException
 	{
 		 /* Thread.sleep(10000);
@@ -390,7 +453,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 	}
 
 
-	@Test(priority=7)
+	@Test(priority=8)
 	public void VerifyCallsDetailsfrommap() throws InterruptedException
 	{      Thread.sleep(10000);
 	       CTAPage.clickcallsfrommap();

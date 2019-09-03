@@ -152,7 +152,21 @@ public class EdosTraceInputValidationPage extends TestBase {
 	  @FindBy (xpath="(//div[contains(@class,'errorNotificationsPanel__error-notifications-panel')]//div[contains(@class,'notification__main-div')])")
 	  List<WebElement> ErrorNotificationCount;
 	
-	
+
+	  
+	  /*Multi-Tenancy */
+	  
+	  @FindBy(xpath="//button[contains(@class,'dropdown__btn') or contains(@class,'dropdown__clickable')]")
+      WebElement clickProjectDD;
+      
+      @FindBy(xpath="//div[contains(@class,'tree__tree')]/ul/li/span")
+      List<WebElement> customername;
+      
+      String allcustomertiv="(//div[contains(@class,'tree__tree')]/ul/li/span)" ;
+	  
+	  
+	  
+	  
 /*Private Fields*/
 	public String Classnameis=null;
 	public int CurrentDateis;
@@ -202,7 +216,6 @@ public class EdosTraceInputValidationPage extends TestBase {
     public String[] ROPCollection1= new String[2];
     public String[] SubFirstROPCollection= new String[3];
     public String[] SubEndROPCollection= new String[3];
-    
     /*Selenium class declarations*/
     Actions actions = new Actions(driver);
     
@@ -218,6 +231,21 @@ public class EdosTraceInputValidationPage extends TestBase {
 
 	/*--------------STARTS-------------------WebElements Capturing Methods-----------------------------------------------------------*/
 
+	
+	/*Multi-Tenancy Method*/
+	public List<String> GetTIVCustomerNames() throws InterruptedException {
+  	  List<String> CustomerNames = new ArrayList<>();
+  	  CustomerNames = VerifyCustomerName(clickProjectDD, customername, allcustomertiv);
+  	for(String Cval:CustomerNames) 
+  	{
+//  		CustomerNames.add(Cval);
+  		System.out.println("The Customer values are:::: "+Cval);
+  	}
+  return CustomerNames;
+}
+	
+	
+	
 	
 	/*Generic Method to fetch the Granularity(DAY,ROP,Hour) from the dropdown*/
 	public void GetSelctedGranularity(String Granlevel) throws InterruptedException{
