@@ -40,7 +40,7 @@ public class MainPortal_LoginPageTest extends  TestBase{
 	
 	/*TestMethod to Check EDOS-DP Logo of Login Page is Displaying*/
     @Test(priority=1)
-	public void EdosLogo1Test() throws InterruptedException 
+	public void Logo1Test() throws InterruptedException 
     {
     	
 		boolean Logo1=loginpage.ValidateEDOSLOGO1();
@@ -50,7 +50,7 @@ public class MainPortal_LoginPageTest extends  TestBase{
 	
     /*TestMethod to Check Main Portal Logo of Login Page is Displaying*/
 	@Test(priority=2)
-	public void EdosLogo2Test() throws InterruptedException 
+	public void Logo2Test() throws InterruptedException 
 	{
 		boolean Logo2=loginpage.ValidateEDOSLOGO2();
 		Thread.sleep(2000);
@@ -62,7 +62,7 @@ public class MainPortal_LoginPageTest extends  TestBase{
 	
 	/*TestMethod to Check Text of Main Portal of Login Page is Correct*/
 	@Test(priority=3)
-	public void EdosLogoText1Test() throws InterruptedException 
+	public void LogoText1Test() throws InterruptedException 
 	{
 		String Logotext1=loginpage.GetEDOSLOGO1();
 		Thread.sleep(2000);
