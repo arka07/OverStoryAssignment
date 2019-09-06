@@ -44,19 +44,19 @@ public class MainPortal_Loginpage extends TestBase{
 	
 	
 	/*Method to Check EDOS-DP Logo is Displayed of Login Page*/
-    public boolean ValidateEDOSLOGO1() 
+    public boolean ValidateLOGO1() 
      {
 		 return Logo1.isDisplayed();
 	 }
 	 
     /*Method to Check  Main Portal Logo is Displayed of Login Page*/
-    public boolean ValidateEDOSLOGO2() 
+    public boolean ValidateLOGO2() 
      {
 		 return Logo2.isDisplayed();
 	 }
 	 
     /*Method to Get the text of EDOS-DP Logo of Login Page*/ 
-	 public String GetEDOSLOGO1() 
+	 public String GetLOGO1() 
 	 {
 		 return Logo1.getText();
 	 }
