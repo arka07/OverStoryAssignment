@@ -249,8 +249,10 @@ public class VDT_RasterTest extends TestBase{
 
 		Thread.sleep(2000);
 		String EyeDisable = rasterpage.ValidationOfEyeIconNotVisible();
+		System.out.println(EyeDisable);
 		Thread.sleep(1000);
-		if(EyeDisable.equalsIgnoreCase("eButton__icon___1Gb-y styles__icon___3eFpL styles__icon-eye___TmGum")) {
+		if(EyeDisable.contains("eds__icon-eye___")) {
+			//equalsIgnoreCase("eButton__icon___1Gb-y styles__icon___3eFpL styles__icon-eye___TmGum")) {
 			System.out.println("Eye Icon is disabled");
 			Reporter.log("Eye Icon is disabled");
 		}
@@ -262,8 +264,10 @@ public class VDT_RasterTest extends TestBase{
 
 		Thread.sleep(2000);
 		String EyeEnable = rasterpage.ValidationOfEyeIconVisible();
+		System.out.println(EyeEnable);
 		Thread.sleep(1000);
-		if(EyeDisable.equalsIgnoreCase("eButton__icon___1Gb-y styles__icon___3eFpL styles__icon-eye___TmGum")) {
+		if(EyeEnable.contains("eds__icon-eye-solid___")) {
+			//equalsIgnoreCase("eButton__icon___1Gb-y styles__icon___3eFpL styles__icon-eye___TmGum")) {
 			System.out.println("Eye Icon is Enabled");
 			Reporter.log("Eye Icon is Enabled");
 		}
@@ -272,7 +276,7 @@ public class VDT_RasterTest extends TestBase{
 			Assert.fail("Eye Icon is still not enabled");
 		}
 
-		Thread.sleep(2000);
+		/*Thread.sleep(2000);
 		int LayerType = rasterpage.ValidationOfLayerType();
 		Thread.sleep(1000);
 		Reporter.log("Total number of Topology Layer present is  "+LayerType);
@@ -289,7 +293,7 @@ public class VDT_RasterTest extends TestBase{
 		}
 
 		Thread.sleep(2000);
-		rasterpage.ValidateOnTopologyLayer();
+		rasterpage.ValidateOnTopologyLayer();*/
 
 		Thread.sleep(2000);
 		boolean ApplyDeactivated = rasterpage.ValidateOnApplyButtonDeactivated();
@@ -465,4 +469,5 @@ public class VDT_RasterTest extends TestBase{
 	//@test(priority=7)
 	//Not automated as we need to manually check the sectors in the map
 }
+
 
