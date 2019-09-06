@@ -33,7 +33,7 @@
         <version>2.22.0</version>
         <configuration>
           <suiteXmlFiles>
-           <suiteXmlFile>Regression.xml</suiteXmlFile>
+           <suiteXmlFile>DOPUATs.xml</suiteXmlFile>
             </suiteXmlFiles>
         </configuration>
       </plugin>
@@ -60,7 +60,7 @@
         <version>2.22.0</version>
         <configuration>
           <suiteXmlFiles>
-           <suiteXmlFile>CTATestNG.xml</suiteXmlFile>
+           <suiteXmlFile>VDT_CTA.xml</suiteXmlFile>
             </suiteXmlFiles>
         </configuration>
       </plugin>
@@ -87,7 +87,7 @@
         <version>2.22.0</version>
         <configuration>
           <suiteXmlFiles>
-           <suiteXmlFile>CMPM.xml</suiteXmlFile>
+           <suiteXmlFile>RANTS_CMPM.xml</suiteXmlFile>
             </suiteXmlFiles>
         </configuration>
       </plugin>
@@ -114,7 +114,7 @@
         <version>2.22.0</version>
         <configuration>
           <suiteXmlFiles>
-           <suiteXmlFile>Rasters.xml</suiteXmlFile>
+           <suiteXmlFile>VDT_Rasters.xml</suiteXmlFile>
             </suiteXmlFiles>
         </configuration>
       </plugin>
@@ -141,7 +141,7 @@
         <version>2.22.0</version>
         <configuration>
           <suiteXmlFiles>
-           <suiteXmlFile>TIV.xml</suiteXmlFile>
+           <suiteXmlFile>VDT_TIV.xml</suiteXmlFile>
             </suiteXmlFiles>
         </configuration>
       </plugin>

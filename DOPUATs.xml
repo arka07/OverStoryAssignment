@@ -5,10 +5,10 @@
 
 
         <suite-files>
-               <suite-file path="./CTATestNG.xml" />
-               <suite-file path="./TIV.xml" />
-               <suite-file path="./Rasters.xml"/>
-               <suite-file path="./CMPM.xml" />
+               <suite-file path="./VDT_CTA.xml" />
+               <suite-file path="./VDT_TIV.xml" />
+               <suite-file path="./VDT_Rasters.xml"/>
+               <suite-file path="./RANTS_CMPM.xml" />
 
         </suite-files>
 </suite>

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Regression Testing Suite]" guice-stage="DEVELOPMENT">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Regression Testing Suite]">
   <listeners>
     <listener class-name="com.ericsson.edos.dopuatautomation.util.ListenersTest"/>
     <listener class-name="com.ericsson.edos.dopuatautomation.util.ExtentReportNG"/>
   </listeners>
-  <test name="BouyguesPageTest(failed)">
+  <test name="TivTest(failed)">
     <classes>
-      <class name="com.ericsson.edos.dopuatautomation.testcases.BouyguesTest">
+      <class name="com.ericsson.edos.dopuatautomation.testcases.EdosTraceInputValidationTest">
         <methods>
-          <include name="initialisation"/>
           <include name="setUp"/>
-          <include name="VerifyDeltaAuditofSites"/>
-          <include name="ValidateSearchforSpecificPmCounter"/>
+          <include name="VerifyTIVErrorNotificationAlertPopUp"/>
+          <include name="initialisation"/>
+          <include name="VerifyTableWithCellFiltering"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.ericsson.edos.dopuatautomation.testcases.BouyguesTest -->
+      </class> <!-- com.ericsson.edos.dopuatautomation.testcases.EdosTraceInputValidationTest -->
     </classes>
-  </test> <!-- BouyguesPageTest(failed) -->
+  </test> <!-- TivTest(failed) -->
 </suite> <!-- Failed suite [Regression Testing Suite] -->
