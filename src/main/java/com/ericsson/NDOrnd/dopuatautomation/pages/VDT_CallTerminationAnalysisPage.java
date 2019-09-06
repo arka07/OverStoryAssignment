@@ -1,4 +1,4 @@
-package com.ericsson.edos.dopuatautomation.pages;
+package com.ericsson.NDOrnd.dopuatautomation.pages;
 
 
 
@@ -18,9 +18,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import com.ericsson.edos.dopuatautomation.base.TestBase;
+import com.ericsson.NDOrnd.dopuatautomation.base.TestBase;
 
-public class CallTerminationAnalysisPage extends TestBase {
+public class VDT_CallTerminationAnalysisPage extends TestBase {
 	
 	
 	
@@ -252,7 +252,7 @@ public class CallTerminationAnalysisPage extends TestBase {
      * Xpath for the Test Case- 4 & 5-------End----------------------- 
      */
 	
-	public  CallTerminationAnalysisPage() {
+	public  VDT_CallTerminationAnalysisPage() {
         
 		
 		PageFactory.initElements(driver , this);
