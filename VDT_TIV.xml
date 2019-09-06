@@ -22,9 +22,7 @@
 		<classes>
 			<class name="com.ericsson.NDOrnd.dopuatautomation.testcases.MainPortal_ApplicationTest" >
 			 <methods>
-			 <include name="VerifyApplicationPage" />
-              <include name="VerifyEdosDpLogo" />
-              <include name="VerifyTIVLink" />
+			<include name="VerifyTIVLink" />
              </methods>
             </class>	 
 	    </classes>

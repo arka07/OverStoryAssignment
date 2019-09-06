@@ -2,25 +2,25 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Regression Testing Suite">
   <listeners>
-		<listener class-name="com.ericsson.edos.dopuatautomation.util.ListenersTest" />
-		<listener class-name="com.ericsson.edos.dopuatautomation.util.ExtentReportNG" />
+		<listener class-name="com.ericsson.NDOrnd.dopuatautomation.util.ListenersTest" />
+		<listener class-name="com.ericsson.NDOrnd.dopuatautomation.util.ExtentReportNG" />
 	</listeners>
 
 	<test name=" LandingPageTest">
 		<classes>
-			<class name="com.ericsson.edos.dopuatautomation.testcases.LandingpageTest" />
+			<class name="com.ericsson.NDOrnd.dopuatautomation.testcases.MainPortal_LandingpageTest" />
 		</classes>
 	</test>
 	
 	<test name="LoginPageTest">
 		<classes>
-			<class name="com.ericsson.edos.dopuatautomation.testcases.LoginPageTest" />
+			<class name="com.ericsson.NDOrnd.dopuatautomation.testcases.MainPortal_LoginPageTest" />
 		</classes>
 	</test>
 	
 	<test name="ApplicationPageTest">
 	<classes>
-			<class name="com.ericsson.edos.dopuatautomation.testcases.applicationTest" >
+			<class name="com.ericsson.NDOrnd.dopuatautomation.testcases.MainPortal_ApplicationTest" >
 			 <methods>
               <include name="VerifyCTALink" />
              </methods>
@@ -31,7 +31,7 @@
 	
 		<test name="CallTerminationAnalysisTest">
 		<classes>
-			<class name="com.ericsson.edos.dopuatautomation.testcases.CallTerminationAnalysisTest">
+			<class name="com.ericsson.NDOrnd.dopuatautomation.testcases.VDT_CallTerminationAnalysisTest" >
               <methods>
               <include name="VerifyCellFilterData" />
               <include name="VerifyCellFilterSearch" />

@@ -1,4 +1,4 @@
-package com.ericsson.NDOrnd.dopuatautomation.testcases;
+package com.ericsson.edos.dopuatautomation.testcases;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,25 +9,25 @@ import org.testng.Reporter;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.ericsson.NDOrnd.dopuatautomation.base.TestBase;
-import com.ericsson.NDOrnd.dopuatautomation.pages.VDT_CallTerminationAnalysisPage;
-import com.ericsson.NDOrnd.dopuatautomation.pages.MainPortal_ApplicationPage;
-import com.ericsson.NDOrnd.dopuatautomation.pages.MainPortal_Landingpage;
-import com.ericsson.NDOrnd.dopuatautomation.pages.MainPortal_Loginpage;
+import com.ericsson.edos.dopuatautomation.base.TestBase;
+import com.ericsson.edos.dopuatautomation.pages.EdosApplicationPage;
+import com.ericsson.edos.dopuatautomation.pages.Edoslandingpage;
+import com.ericsson.edos.dopuatautomation.pages.Edosloginpage;
+import com.ericsson.edos.dopuatautomation.pages.CallTerminationAnalysisPage;
 
-public class VDT_CallTerminationAnalysisTest extends TestBase {
+public class CallTerminationAnalysisTest extends TestBase {
 
-	MainPortal_Landingpage landingpage;
-	MainPortal_Loginpage loginpage;
-	MainPortal_ApplicationPage applicationpage;
-	VDT_CallTerminationAnalysisPage CTAPage;
+	Edoslandingpage landingpage;
+	Edosloginpage loginpage;
+	EdosApplicationPage applicationpage;
+	CallTerminationAnalysisPage CTAPage;
 	String OrigCellVAlue;
 	boolean IsDataavailableinLeftTable; 
 	boolean IsDataavailableinRightTable;
 
 	
 	TestBase tbCTA = new TestBase();
-	public  VDT_CallTerminationAnalysisTest() {
+	public  CallTerminationAnalysisTest() {
 		super();
 		
 	}
@@ -38,7 +38,7 @@ public class VDT_CallTerminationAnalysisTest extends TestBase {
 	public void setUp() throws InterruptedException
 	{  
 
-		CTAPage = new VDT_CallTerminationAnalysisPage();  
+		CTAPage = new CallTerminationAnalysisPage();  
 		
 	}
 
@@ -256,8 +256,8 @@ public class VDT_CallTerminationAnalysisTest extends TestBase {
 	//TC-03 Cell Filter: Data is filtered
 	@Test(priority=9)
 	public void VerifyCellFilterData() throws InterruptedException{
-		Thread.sleep(10000);
-		CTAPage.GetScrolled("UP",17);
+		/*Thread.sleep(10000);
+		CTAPage.GetScrolled("UP",17);*/
         CTAPage.GetDateFromTextBox("Start","Start");
        
         Thread.sleep(8000);
@@ -455,7 +455,7 @@ public class VDT_CallTerminationAnalysisTest extends TestBase {
 
 	@Test(priority=8)
 	public void VerifyCallsDetailsfrommap() throws InterruptedException
-	{      Thread.sleep(10000);
+	{      Thread.sleep(12000);
 	       CTAPage.clickcallsfrommap();
 	       Assert.assertTrue(CTAPage.comparesectors(), "The sectors present in Table and Maps are not matching");
 

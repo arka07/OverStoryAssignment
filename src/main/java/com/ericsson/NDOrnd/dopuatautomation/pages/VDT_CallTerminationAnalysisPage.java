@@ -1,4 +1,4 @@
-package com.ericsson.NDOrnd.dopuatautomation.pages;
+package com.ericsson.edos.dopuatautomation.pages;
 
 
 
@@ -18,9 +18,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.Reporter;
 
-import com.ericsson.NDOrnd.dopuatautomation.base.TestBase;
+import com.ericsson.edos.dopuatautomation.base.TestBase;
 
-public class VDT_CallTerminationAnalysisPage extends TestBase {
+public class CallTerminationAnalysisPage extends TestBase {
 	
 	
 	
@@ -88,13 +88,16 @@ public class VDT_CallTerminationAnalysisPage extends TestBase {
 	//@FindBy (xpath="//label[text()='Cells']/../div/div[@class='Select-menu-outer']/div/div[1]")
 	WebElement FirstCellDropdown;
 
-	@FindBy (xpath="//span[@class='Select-value-label']")
+	@FindBy (xpath="//label[text()='Cells']//parent::div//div[contains(@class,'placeholder')]")
+	//span[@class='Select-value-label']
 	WebElement cellvalue;
 
 	@FindBy (xpath="//button[text()='Filter']")
 	WebElement Filter;
 
-	@FindBy (xpath="(//div[@accesskey='0-4'])[2]")
+	@FindBy (xpath="(//div[contains(@class,'left-side-grid')]//div)//div[@accesskey='0-4']")
+	//(//div[@accesskey='0-4'])[2]
+	
 	WebElement OriginatingCell;
 
 
@@ -249,7 +252,7 @@ public class VDT_CallTerminationAnalysisPage extends TestBase {
      * Xpath for the Test Case- 4 & 5-------End----------------------- 
      */
 	
-	public  VDT_CallTerminationAnalysisPage() {
+	public  CallTerminationAnalysisPage() {
         
 		
 		PageFactory.initElements(driver , this);
@@ -506,12 +509,16 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 	public void ClickOnArrow() throws InterruptedException  {
         Thread.sleep(5000);
 		ArrowClick.click();
+	
 	}
 
 	public String GetDropdownValue() throws InterruptedException  {
-
-		String firstCellName = FirstCellDropdown.getText();
-		System.out.println(firstCellName);
+       /* CTAAct.sendKeys(Keys.ARROW_DOWN).perform();*/
+        WebElement elecell = driver.findElement(By.xpath("(((//label[text()='Cells']//parent::div//div)[1]//div[contains(@class,'menu')]//div)//div//div)[1]"));
+        System.out.println("Celllllllll:::::"+elecell.getText());
+        System.out.println("Tagnames::::"+elecell.getTagName());
+		String firstCellName = elecell.getText();
+		System.out.println("intail Cell combobox value:::"+ firstCellName);
 		return firstCellName;
 	}
 
@@ -519,13 +526,15 @@ public void SetEndDateProcessedHours() throws InterruptedException {
 
 	public void ClickFirstCellvalue() throws InterruptedException{
         Thread.sleep(5000);
-		FirstCellDropdown.click();
+        CTAAct.sendKeys(Keys.ENTER).sendKeys(Keys.ESCAPE).build().perform();
+        Thread.sleep(3000);
+		//FirstCellDropdown.click();
 	}
 
 	public String GetCellValue() throws InterruptedException  {
         Thread.sleep(5000);
 		String SelectedCellName = cellvalue.getText();
-		System.out.println(SelectedCellName);
+		System.out.println("Selected Cell is:::"+SelectedCellName);
 		return SelectedCellName;
 	}
 
