@@ -82,48 +82,48 @@ public class VDT_Rasterpage extends TestBase{
 	//Expanding the Topology Layer
 
 	//WebElement for Eye Icon
-	@FindBy (xpath="(//div[@class='eButton__linked-button___3nenl'])[2]")
-	WebElement EyeIcon;
+		@FindBy (xpath="(//div[@class='eButton__linked-button___3nenl'])[2]")
+		WebElement EyeIcon;
 
-	//Web Element to make the Eye Icon Visible
-	@FindBy (xpath="//i[@class='eButton__icon___1Gb-y styles__icon___3eFpL styles__icon-eye-solid___2Q-Y1']")
-	WebElement EyeIconVisible;
+		//Web Element to make the Eye Icon Visible
+		@FindBy (xpath="//i[contains(@class,'icon-eye-solid__')]")
+		WebElement EyeIconVisible;
 
-	//Web Element to make the Eye ICon Invisible
-	@FindBy (xpath="//i[@class='eButton__icon___1Gb-y styles__icon___3eFpL styles__icon-eye___TmGum']")
-	WebElement EyeIconNotVisible;
+		//Web Element to make the Eye ICon Invisible
+		@FindBy (xpath="//i[contains(@class,'__icon-eye___')]")
+		WebElement EyeIconNotVisible;
 
-	//WebElement for Downward Eye Icon in Topology Layer
-	@FindBy (xpath="(//div[@class='eButton__linked-button___3nenl'])[3]")
-	WebElement ArrowIcon;
+		//WebElement for Downward Eye Icon in Topology Layer
+		@FindBy (xpath="(//div[@class='eButton__linked-button___3nenl'])[3]")
+		WebElement ArrowIcon;
 
-	//WebElement for clicking on the Topology Arrow
-	@FindBy (xpath="(//span[@class='Select-arrow'])[1]")
-	WebElement TopologyArrow;
+		//WebElement for clicking on the Topology Arrow
+		@FindBy (xpath="//i[@title='Open'][1]")
+		WebElement TopologyArrow;
 
-	//WebElement for Selecting the topology from the dropdown list
-	@FindBy (xpath="//div[@class='Select-value']/span[text()='Topology']")
-	WebElement SelectTopology;
+		//WebElement for Selecting the topology from the dropdown list
+		@FindBy (xpath="//div[@class='Select-value']/span[text()='Topology']")
+		WebElement SelectTopology;
 
-	//WebElement to validate the Apply button is deactivated or not
-	@FindBy (xpath="//button[text()='Apply']")
-	WebElement ApplyButton;
+		//WebElement to validate the Apply button is deactivated or not
+		@FindBy (xpath="//button[text()='Apply']")
+		WebElement ApplyButton;
 
-	//WebElement to select the Opacity Range
-	@FindBy (xpath="//input[@id='topo-opacity']")
-	WebElement OpacityRange;
+		//WebElement to select the Opacity Range
+		@FindBy (xpath="//input[@id='topo-opacity']")
+		WebElement OpacityRange;
 
-	//WebElement to select the Site Scale Range
-	@FindBy (xpath="//input[@id='sites-scale-factor']")
-	WebElement SitesScaleRange;
+		//WebElement to select the Site Scale Range
+		@FindBy (xpath="//input[@id='sites-scale-factor']")
+		WebElement SitesScaleRange;
 
-	//WebElement to select the Sector Scale Range
-	@FindBy (xpath="//input[@id='sectors-scale-factor']")
-	WebElement SectorsScaleRange;
+		//WebElement to select the Sector Scale Range
+		@FindBy (xpath="//input[@id='sectors-scale-factor']")
+		WebElement SectorsScaleRange;
 
-	//WebElement to validate the layer is compacted or not
-	@FindBy (xpath="//div[text()='Basic']")
-	WebElement BasicText;
+		//WebElement to validate the layer is compacted or not
+		@FindBy (xpath="//div[text()='Basic']")
+		WebElement BasicText;
 	
 	
 	 
@@ -174,7 +174,7 @@ public class VDT_Rasterpage extends TestBase{
 	WebElement Layer2ArrowIcon;
 
 	//WebElement for clicking on the Layer2 Arrow
-	@FindBy (xpath="(//span[@class='Select-arrow'])[1]")
+	@FindBy (xpath="//div[contains(@class,'css-1rmysgx ezaaypj0')]")
 	WebElement LayerTypeDropdown;
 
 	//WebElement for Selecting the Raster from the dropdown list
@@ -262,15 +262,15 @@ public class VDT_Rasterpage extends TestBase{
 	WebElement DeltaDLRSSI;
 
 	//WebElement to make the Raster Eye Icon Visible
-	@FindBy (xpath="(//i[@class='eButton__icon___1Gb-y styles__icon___3eFpL styles__icon-eye-solid___2Q-Y1'])[2]")
+	@FindBy (xpath="(//i[contains(@class,'icon-eye-solid__')])[2]")
 	WebElement RasterEyeIconVisible;
 
 	//Web Element to make the Raster Eye ICon Invisible
-	@FindBy (xpath="(//i[@class='eButton__icon___1Gb-y styles__icon___3eFpL styles__icon-eye___TmGum'])[2]")
+	@FindBy (xpath="(//i[contains(@class,'eds__icon-eye___')])[2]")
 	WebElement RasterEyeIconNotVisible;
 
 	//WebElement to click on the Layer 2 Bin Icon
-	@FindBy (xpath="//i[@class='eButton__icon___1Gb-y styles__icon___3eFpL styles__icon-trashcan___2IV4K']")
+	@FindBy (xpath="//i[contains(@class,'eds__icon-trashcan___')]")
 	WebElement Layer2BinIcon;
 
 	//WebElemnt to validate the new raster layers
@@ -304,12 +304,11 @@ public class VDT_Rasterpage extends TestBase{
 	/*@FindBy (xpath="//div[text()='End']/../div[4]/div/div/div/input")
 	WebElement ClickEndDate;*/
 	
-	@FindBy (xpath="(//input[contains(@class,'calendar')])[1]")
+	@FindBy (xpath="(//input[contains(@class,'datePickerInput')])[1]")
 	WebElement ClickStartDate;
 	
-	@FindBy (xpath="(//input[contains(@class,'calendar')])[2]")
+	@FindBy (xpath="(//input[contains(@class,'datePickerInput')])[2]")
 	WebElement ClickEndDate;
-	
 	
 	
 	//WebElement to click on the start date panel
@@ -329,34 +328,34 @@ public class VDT_Rasterpage extends TestBase{
 	@FindBy (xpath = "(//ul[@class='react-datepicker__time-list']//li)")
 	List<WebElement> StartHours;
 	
-	@FindBy (xpath="(//div[@class='Select-control'])[3]")
+	@FindBy (xpath="(//i[@title='Open'])[3]")
 	WebElement ClickAggregationType;
 	
-	@FindBy (xpath="(//div[@class='Select-control'])[3]//input")
+	@FindBy (xpath="(//div[@class='css-19yxn7s'])[3]//input")
 	WebElement SelectAggregationType;
 	
-	@FindBy (xpath="(//div[@class='Select-control'])[4]")
+	@FindBy (xpath="(//i[@title='Open'])[4]")
 	WebElement ClickFilterCarrierType;
 	
-	@FindBy (xpath="(//div[@class='Select-control'])[4]//input")
+	@FindBy (xpath="(//div[@class='css-19yxn7s'])[4]//input")
 	WebElement SelectFilterCarrierType;
 	
-	@FindBy (xpath="(//div[@class='Select-control'])[5]")
+	@FindBy (xpath="(//i[@title='Open'])[5]")
 	WebElement ClickFilterQCIType;
 	
-	@FindBy (xpath="(//div[@class='Select-control'])[5]//input")
+	@FindBy (xpath="(//div[@class='css-19yxn7s'])[5]//input")
 	WebElement SelectFilterQCIType;
 	
-	@FindBy (xpath="(//div[@class='Select-control'])[6]")
+	@FindBy (xpath="(//i[@title='Open'])[6]")
 	WebElement ClickFilterMDTType;
 	
-	@FindBy (xpath="(//div[@class='Select-control'])[6]//input")
+	@FindBy (xpath="(//div[@class='css-19yxn7s'])[6]//input")
 	WebElement SelectFilterMDTType;
 	
-	@FindBy (xpath="(//div[@class='Select-control'])[7]")
+	@FindBy (xpath="(//i[@title='Open'])[7]")
 	WebElement ClickFilterIndoorType;
 	
-	@FindBy (xpath="(//div[@class='Select-control'])[7]//input")
+	@FindBy (xpath="(//div[@class='css-19yxn7s'])[7]//input")
 	WebElement SelectFilterIndoorType;
 	
 
@@ -366,14 +365,15 @@ public class VDT_Rasterpage extends TestBase{
 	@FindBy (xpath="//div[@class='rasterLegend__raster-legend-header___blo9b']")
 	WebElement LegendText;
 
-	@FindBy (xpath="(//div[@class='Select-control'])[2]")
+	@FindBy (xpath="(//i[@title='Open'])[2]")
 	WebElement ClickRasterType;
 
 
-	@FindBy (xpath="(//div[@class='Select-control'])[2]//input")
+	@FindBy (xpath="//input[@id='react-select-3-input']")
 	WebElement SelectRasterType;
 	
-	
+	@FindBy (xpath="//div[contains(@class,'css-19yxn7s')]/div/input")
+	WebElement LayerTypeText;
 
 	//--------TC-05--------//
 	//Zoom In and Out Button
@@ -386,7 +386,8 @@ public class VDT_Rasterpage extends TestBase{
 	@FindBy (xpath="//div[@class='mapControlsOverlay__zoom___140pK']")
 	WebElement ZoomValue;
 	
-	
+	@FindBy (xpath="//div[@class='eButton__no-linked-button___8cGiZ']")
+	WebElement ApplyButton1;
 	 
 	  /*Multi-Tenancy */
 	  
@@ -522,7 +523,9 @@ public class VDT_Rasterpage extends TestBase{
 
 	//Validation of Layer type from the dropdown, and it is be unique
 	public int ValidationOfLayerType() {
-		List<WebElement> allElements = driver.findElements(By.xpath("//div[@class='Select-value']/span"));
+		TopologyArrow.click();
+		List<WebElement> allElements = driver.findElements(By.xpath("//div[contains(@class,'css-x9e0s7')]/*"));
+		//ele = driver.findElements(By.xpath("//div[contains@class,'css-x9e0s7')]/.."));
 		int totalElements = allElements.size();
 		System.out.println("Total number of dropdown elements present on the web page is : "+totalElements);
 		return totalElements;
@@ -635,15 +638,22 @@ public class VDT_Rasterpage extends TestBase{
 	public int ValidationOfRasterLayerType() throws InterruptedException {
 		LayerTypeDropdown.click();
 		Thread.sleep(1000);
-		List<WebElement> allElements = driver.findElements(By.xpath("//div[@class='Select-menu-outer']//div"));
+		List<WebElement> allElements = driver.findElements(By.xpath("//div[contains(@class,'css-x9e0s7')]/div/div/*"));
+		Thread.sleep(1000);
 		int totalElements = allElements.size();
+		/*for(WebElement eelements:allElements) {
+			Thread.sleep(1000);
+			System.out.println(eelements.getTagName());
+			System.out.println(eelements.getText());
+			
+		}*/
 		System.out.println("Total number of dropdown elements present on the Raster Layer is : "+totalElements);
 		return totalElements;
 	}
 	
-	public void ClickRasterLayerFromDropdown() throws InterruptedException {
+	/*public void ClickRasterLayerFromDropdown() throws InterruptedException {
 		Thread.sleep(2000);
-		List<WebElement> allElements = driver.findElements(By.xpath("//div[@class='Select-menu-outer']//div"));
+		List<WebElement> allElements = driver.findElements(By.xpath("//div[contains(@class,'css-x9e0s7')]/div/div/*"));
 		for(WebElement eelements:allElements) {
 			System.out.println(eelements.getText());	
 			if(eelements.getText().equalsIgnoreCase("Raster")) {
@@ -654,13 +664,25 @@ public class VDT_Rasterpage extends TestBase{
 				break;
 			}
 		}
+	}*/
+	
+	public void ClickRasterLayerFromDropdown() throws InterruptedException {
+
+		//LayerTypeDropdown.click();
+		//Thread.sleep(1000);
+		//LayerTypeText.clear();
+		Thread.sleep(1000);
+		LayerTypeText.sendKeys("Raster");
+		//Thread.sleep(1000);
+		LayerTypeText.sendKeys(Keys.ENTER);
+
 	}
 
 	//Validate on selecting the Raster type from the dropdown
 	public void SelectingTheRasterType() throws InterruptedException {
 
 		Thread.sleep(1000);
-		WebElement rasterName = driver.findElement(By.xpath("(//div[@class='Select-control'])[2]"));
+		//WebElement rasterName = driver.findElement(By.xpath("(//div[@class='Select-control'])[2]"));
 
 		ArrayList<String> rasterelement1 = new ArrayList<String>();
 		rasterelement1.add("Number of calls");
@@ -768,17 +790,17 @@ public class VDT_Rasterpage extends TestBase{
 			Thread.sleep(2000);
 			Reporter.log("Aggregation Type is selected");
 			
-			AggregationTypeText.click();
+			/*AggregationTypeText.click();
 			Thread.sleep(2000);
 			
 			action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN);
 			action.build().perform();
-			Thread.sleep(2000);
+			Thread.sleep(2000);*/
 			
 			Thread.sleep(2000);
 			ClickFilterCarrierType.click();
 			Thread.sleep(2000);
-			SelectFilterCarrierType.sendKeys("2");
+			SelectFilterCarrierType.sendKeys("6300");
 			Thread.sleep(2000);
 			SelectFilterCarrierType.sendKeys(Keys.ENTER);
 			Thread.sleep(2000);
@@ -787,7 +809,7 @@ public class VDT_Rasterpage extends TestBase{
 			Thread.sleep(2000);
 			ClickFilterQCIType.click();
 			Thread.sleep(2000);
-			SelectFilterQCIType.sendKeys("QCI");
+			SelectFilterQCIType.sendKeys("QCI1");
 			Thread.sleep(2000);
 			SelectFilterQCIType.sendKeys(Keys.ENTER);
 			Thread.sleep(2000);
@@ -811,8 +833,10 @@ public class VDT_Rasterpage extends TestBase{
 			Thread.sleep(2000);
 			Reporter.log("Indoor/Outdoor is selected");
 			
-			ApplyButton.click();
-			Thread.sleep(2000);
+			/*ApplyButton.click();
+			//ApplyButton1.click();
+			System.out.println("Clicked on Apply button");*/
+			/*Thread.sleep(2000);
 			ValidateOnApplyButtonDeactivated();
 			boolean ApplyDeactivated = ValidateOnApplyButtonDeactivated();
 			Thread.sleep(1000);
@@ -825,7 +849,7 @@ public class VDT_Rasterpage extends TestBase{
 				Reporter.log("Apply Button is enabled");
 				//Assert.fail("Apply Button is enabled");
 			}
-			
+			*/
 			
 		}
 
@@ -860,7 +884,7 @@ public class VDT_Rasterpage extends TestBase{
 	//Validate on total number the Eye Icon visible
 	public int ValidatingTheEyeIconCount() {
 
-		List<WebElement> eyeElements = driver.findElements(By.xpath("//i[@class='eButton__icon___1Gb-y styles__icon___3eFpL styles__icon-eye-solid___2Q-Y1']"));
+		List<WebElement> eyeElements = driver.findElements(By.xpath("//i[contains(@class,'icon-eye-solid')]"));
 		int eyeIconsize = eyeElements.size();
 		System.out.println("Number of layers present inside the layer listbox is : "+ eyeIconsize);
 		return eyeIconsize;
@@ -869,11 +893,11 @@ public class VDT_Rasterpage extends TestBase{
 	//Deleting the added layers
 	public void DeletingTheAddedLayers() {
 
-		List<WebElement> eyeElements = driver.findElements(By.xpath("//i[@class='eButton__icon___1Gb-y styles__icon___3eFpL styles__icon-trashcan___2IV4K']"));
+		List<WebElement> eyeElements = driver.findElements(By.xpath("//i[contains(@class,'eds__icon-trashcan___')]"));
 		int eyeIconsize = eyeElements.size();
 		System.out.println("Total deleting elements are "+eyeIconsize);
 		for(int i=5;i>0;i--) {
-			WebElement deleteButton = driver.findElement(By.xpath("(//i[@class='eButton__icon___1Gb-y styles__icon___3eFpL styles__icon-trashcan___2IV4K'])["+(i)+"]"));
+			WebElement deleteButton = driver.findElement(By.xpath("(//i[contains(@class,'eds__icon-trashcan___')])["+(i)+"]"));
 			deleteButton.click();
 			System.out.println("Clicked on the delete button"+(i));
 		}
@@ -1176,5 +1200,6 @@ public class VDT_Rasterpage extends TestBase{
 
 	}
 }
+
 
 
