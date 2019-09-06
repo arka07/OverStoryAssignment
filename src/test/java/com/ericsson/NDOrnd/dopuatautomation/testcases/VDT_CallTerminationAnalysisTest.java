@@ -1,4 +1,4 @@
-package com.ericsson.edos.dopuatautomation.testcases;
+package com.ericsson.NDOrnd.dopuatautomation.testcases;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -9,25 +9,25 @@ import org.testng.Reporter;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
-import com.ericsson.edos.dopuatautomation.base.TestBase;
-import com.ericsson.edos.dopuatautomation.pages.EdosApplicationPage;
-import com.ericsson.edos.dopuatautomation.pages.Edoslandingpage;
-import com.ericsson.edos.dopuatautomation.pages.Edosloginpage;
-import com.ericsson.edos.dopuatautomation.pages.CallTerminationAnalysisPage;
+import com.ericsson.NDOrnd.dopuatautomation.base.TestBase;
+import com.ericsson.NDOrnd.dopuatautomation.pages.VDT_CallTerminationAnalysisPage;
+import com.ericsson.NDOrnd.dopuatautomation.pages.MainPortal_ApplicationPage;
+import com.ericsson.NDOrnd.dopuatautomation.pages.MainPortal_Landingpage;
+import com.ericsson.NDOrnd.dopuatautomation.pages.MainPortal_Loginpage;
 
-public class CallTerminationAnalysisTest extends TestBase {
+public class VDT_CallTerminationAnalysisTest extends TestBase {
 
-	Edoslandingpage landingpage;
-	Edosloginpage loginpage;
-	EdosApplicationPage applicationpage;
-	CallTerminationAnalysisPage CTAPage;
+	MainPortal_Landingpage landingpage;
+	MainPortal_Loginpage loginpage;
+	MainPortal_ApplicationPage applicationpage;
+	VDT_CallTerminationAnalysisPage CTAPage;
 	String OrigCellVAlue;
 	boolean IsDataavailableinLeftTable; 
 	boolean IsDataavailableinRightTable;
 
 	
 	TestBase tbCTA = new TestBase();
-	public  CallTerminationAnalysisTest() {
+	public  VDT_CallTerminationAnalysisTest() {
 		super();
 		
 	}
@@ -38,7 +38,7 @@ public class CallTerminationAnalysisTest extends TestBase {
 	public void setUp() throws InterruptedException
 	{  
 
-		CTAPage = new CallTerminationAnalysisPage();  
+		CTAPage = new VDT_CallTerminationAnalysisPage();  
 		
 	}
 
