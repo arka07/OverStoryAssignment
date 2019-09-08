@@ -43,7 +43,7 @@ public class MainPortal_LoginPageTest extends  TestBase{
 	public void Logo1Test() throws InterruptedException 
     {
     	
-		boolean Logo1=loginpage.ValidateEDOSLOGO1();
+		boolean Logo1=loginpage.ValidateLOGO1();
 		Thread.sleep(2000);
 		Assert.assertTrue(Logo1);
 	}
@@ -52,7 +52,7 @@ public class MainPortal_LoginPageTest extends  TestBase{
 	@Test(priority=2)
 	public void Logo2Test() throws InterruptedException 
 	{
-		boolean Logo2=loginpage.ValidateEDOSLOGO2();
+		boolean Logo2=loginpage.ValidateLOGO2();
 		Thread.sleep(2000);
 		Assert.assertTrue(Logo2);
 	}
@@ -64,7 +64,7 @@ public class MainPortal_LoginPageTest extends  TestBase{
 	@Test(priority=3)
 	public void LogoText1Test() throws InterruptedException 
 	{
-		String Logotext1=loginpage.GetEDOSLOGO1();
+		String Logotext1=loginpage.GetLOGO1();
 		Thread.sleep(2000);
 		Assert.assertEquals(Logotext1,"DESIGN AND OPTIMIZATION PLATFORM");
 	}
