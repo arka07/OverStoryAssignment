@@ -2,20 +2,20 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Regression Testing Suite]">
   <listeners>
-    <listener class-name="com.ericsson.edos.dopuatautomation.util.ListenersTest"/>
-    <listener class-name="com.ericsson.edos.dopuatautomation.util.ExtentReportNG"/>
+    <listener class-name="com.ericsson.NDOrnd.dopuatautomation.util.ListenersTest"/>
+    <listener class-name="com.ericsson.NDOrnd.dopuatautomation.util.ExtentReportNG"/>
   </listeners>
   <test name="TivTest(failed)">
     <classes>
-      <class name="com.ericsson.edos.dopuatautomation.testcases.EdosTraceInputValidationTest">
+      <class name="com.ericsson.NDOrnd.dopuatautomation.testcases.VDT_TraceInputValidationTest">
         <methods>
-          <include name="setUp"/>
           <include name="VerifyTIVErrorNotificationAlertPopUp"/>
-          <include name="initialisation"/>
           <include name="VerifyTableWithCellFiltering"/>
+          <include name="initialisation"/>
           <include name="tearDown"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.ericsson.edos.dopuatautomation.testcases.EdosTraceInputValidationTest -->
+      </class> <!-- com.ericsson.NDOrnd.dopuatautomation.testcases.VDT_TraceInputValidationTest -->
     </classes>
   </test> <!-- TivTest(failed) -->
 </suite> <!-- Failed suite [Regression Testing Suite] -->
