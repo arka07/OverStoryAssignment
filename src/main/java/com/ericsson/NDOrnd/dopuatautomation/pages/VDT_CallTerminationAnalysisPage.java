@@ -1066,6 +1066,8 @@ zoomoutbutton.click();
 Thread.sleep(15000);
 zoomoutbutton.click();
 Thread.sleep(15000);
+zoomoutbutton.click();
+Thread.sleep(10000);
 //ArrayList<String> sectortext= new ArrayList<String>();   
 int totalsize = callscountinmap.size();
 System.out.println(totalsize);  
