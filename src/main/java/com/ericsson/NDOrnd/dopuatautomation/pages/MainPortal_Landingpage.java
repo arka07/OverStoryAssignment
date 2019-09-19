@@ -9,7 +9,7 @@ import com.ericsson.NDOrnd.dopuatautomation.base.TestBase;
 public class MainPortal_Landingpage extends TestBase
    {
 	/*  Inspecting WebElement for Important Legal Notice*/
-	@FindBy(xpath="//p[@class='eaLogin-licenceHeader']")
+	@FindBy(xpath="//b[contains(text(),'IMPORTANT LEGAL NOTICE')]")
 	private WebElement LegalNotice;
 	
 	/*  Inspecting WebElement for Authorized User*/
@@ -17,7 +17,7 @@ public class MainPortal_Landingpage extends TestBase
 	private WebElement LicenseContent;
 	
 	/*  Inspecting WebElement for Proceed Button*/
-	@FindBy(id="showLicence")
+	@FindBy(xpath="//button[contains(text(),'Proceed')]")
 	WebElement Proceed;
 	
 	

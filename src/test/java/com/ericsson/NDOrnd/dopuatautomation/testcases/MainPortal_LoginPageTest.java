@@ -38,7 +38,7 @@ public class MainPortal_LoginPageTest extends  TestBase{
 	
 	}
 	
-	/*TestMethod to Check EDOS-DP Logo of Login Page is Displaying*/
+	/*TestMethod to Check EDOS-DP Logo of Login Page is Displaying
     @Test(priority=1)
 	public void Logo1Test() throws InterruptedException 
     {
@@ -48,14 +48,14 @@ public class MainPortal_LoginPageTest extends  TestBase{
 		Assert.assertTrue(Logo1);
 	}
 	
-    /*TestMethod to Check Main Portal Logo of Login Page is Displaying*/
+    TestMethod to Check Main Portal Logo of Login Page is Displaying
 	@Test(priority=2)
 	public void Logo2Test() throws InterruptedException 
 	{
 		boolean Logo2=loginpage.ValidateLOGO2();
 		Thread.sleep(2000);
 		Assert.assertTrue(Logo2);
-	}
+	}*/
 	
 	
 
@@ -66,7 +66,7 @@ public class MainPortal_LoginPageTest extends  TestBase{
 	{
 		String Logotext1=loginpage.GetLOGO1();
 		Thread.sleep(2000);
-		Assert.assertEquals(Logotext1,"DESIGN AND OPTIMIZATION PLATFORM");
+		Assert.assertEquals(Logotext1,"Design and Optimization Platform");
 	}
 	
 	/*TestMethod to Get the UserName of Login Page*/

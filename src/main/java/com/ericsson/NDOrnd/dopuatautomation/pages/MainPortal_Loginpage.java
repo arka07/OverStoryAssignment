@@ -21,7 +21,7 @@ public class MainPortal_Loginpage extends TestBase{
 	WebElement Password;
 	
 	/*Inspecting WebElement for LoginButton*/
-	@FindBy(id="logicon")
+	@FindBy(id="sendLogin")
 	WebElement Loginbutton;
 	
 	/*Inspecting WebElement for RequestAccessButton*/
@@ -29,7 +29,7 @@ public class MainPortal_Loginpage extends TestBase{
 	WebElement RequestAccess;
 	
 	/*Inspecting WebElement for DOPLOGO*/
-	@FindBy(xpath="//*[@class='eaLogin-title1']")
+	@FindBy(xpath="//div[text()='Design and Optimization Platform']")
 	WebElement Logo1;
 	
 	/*Inspecting WebElement for EricssonLOGO*/
@@ -43,17 +43,17 @@ public class MainPortal_Loginpage extends TestBase{
 	}
 	
 	
-	/*Method to Check EDOS-DP Logo is Displayed of Login Page*/
+	/*Method to Check EDOS-DP Logo is Displayed of Login Page
     public boolean ValidateLOGO1() 
      {
 		 return Logo1.isDisplayed();
 	 }
 	 
-    /*Method to Check  Main Portal Logo is Displayed of Login Page*/
+    Method to Check  Main Portal Logo is Displayed of Login Page
     public boolean ValidateLOGO2() 
      {
 		 return Logo2.isDisplayed();
-	 }
+	 }*/
 	 
     /*Method to Get the text of EDOS-DP Logo of Login Page*/ 
 	 public String GetLOGO1() 
