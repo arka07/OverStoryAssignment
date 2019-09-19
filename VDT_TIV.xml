@@ -34,6 +34,7 @@
 			 <methods>
 			 
 			 <include name="VerifyTIVErrorNotificationAlertPopUp" />
+             <include name="VerifyTIVMultiTenancy" />
 			 <include name="VerifyChartValuesWithDateSelected" /> 
 			 <include name="VerifyTableWithCellFiltering"/> 
 			 
