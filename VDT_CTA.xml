@@ -33,6 +33,7 @@
 		<classes>
 			<class name="com.ericsson.NDOrnd.dopuatautomation.testcases.VDT_CallTerminationAnalysisTest" >
               <methods>
+              <include name="VerifyCTAMultiTenancy" />
               <include name="VerifyCellFilterData" />
               <include name="VerifyCellFilterSearch" />
               <include name="VerifyCTACallsDataGridTable"/>
