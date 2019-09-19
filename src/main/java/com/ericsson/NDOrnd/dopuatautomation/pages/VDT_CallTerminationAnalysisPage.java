@@ -1041,7 +1041,7 @@ public void Gettextboxclick(String texttype) throws InterruptedException {
 }
 
 public void clickoncheckbox() throws InterruptedException {
-       for(int i=1;i<=5;i++) {
+       for(int i=1;i<=2;i++) {
        //driver.findElement(By.xpath(("((//div[contains(@class,'left-side-grid')]//div)//img)["+i+"]"))).click();
        WebElement callsclick =driver.findElement(By.xpath("((//div[contains(@class,'left-side-grid')]//div)//img//parent::span)["+i+"]"));
        callsclick.click();
