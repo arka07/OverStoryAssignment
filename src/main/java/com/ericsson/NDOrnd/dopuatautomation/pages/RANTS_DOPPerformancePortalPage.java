@@ -10,7 +10,7 @@ public class RANTS_DOPPerformancePortalPage extends TestBase {
 	
 	
 	/*Inspecting WebElement for GNP Performance Portal*/	
-	@FindBy (xpath = "//a[contains(@href,'Customer=')]")
+	@FindBy (xpath = "//a[contains(@href,'Customer=bouygues')]")
 	WebElement ClickOnBouygueslink;
     
 	/*@FindBy (xpath = "//a[contains(@href,'Customer=dtathapoc')]")
