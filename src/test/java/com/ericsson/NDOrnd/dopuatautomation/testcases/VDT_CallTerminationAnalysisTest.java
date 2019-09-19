@@ -448,7 +448,7 @@ public class VDT_CallTerminationAnalysisTest extends TestBase {
 	       Thread.sleep(10000);
 	       CTAPage.GetScroll("DOWN",47);
 	       Thread.sleep(12000);
-	       Assert.assertEquals(5, CTAPage.checkcountcallsinmap());
+	       Assert.assertEquals(2, CTAPage.checkcountcallsinmap());
 	       Thread.sleep(15000);
 	}
 
