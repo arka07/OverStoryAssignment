@@ -77,6 +77,9 @@ public class VDT_RasterTest extends TestBase{
 			isCustomerCountMatching=false;
 		}
 		
+		System.out.println("CusNameFromLibFile "+CusNameFromLibFile);
+		System.out.println("CusNameFromRastersPAge "+CusNameFromRastersPAge);
+		
 		if(CusNameFromLibFile.equals(CusNameFromRastersPAge))
 		{
 			isCustomerValMatching=true;
@@ -220,13 +223,14 @@ public class VDT_RasterTest extends TestBase{
 			Thread.sleep(2000);
 			System.out.println("Start/End date/time have Invalid data");
 		}
-
+		
+		rasterpage.selectDate();
 		Thread.sleep(2000);
-		String RasterStartTimeText = rasterpage.GetStartDate();
+		String RasterStartTimeText = rasterpage.GetStartDateData();
 		System.out.println("Start date is "+RasterStartTimeText);
 
 		Thread.sleep(2000);
-		String RasterEndTimeText = rasterpage.GetEndDate();
+		String RasterEndTimeText = rasterpage.GetEndDateData();
 		System.out.println("End date is "+RasterEndTimeText);
 
 		Thread.sleep(2000);
@@ -276,7 +280,7 @@ public class VDT_RasterTest extends TestBase{
 			Assert.fail("Eye Icon is still not enabled");
 		}
 
-		/*Thread.sleep(2000);
+		Thread.sleep(2000);
 		int LayerType = rasterpage.ValidationOfLayerType();
 		Thread.sleep(1000);
 		Reporter.log("Total number of Topology Layer present is  "+LayerType);
@@ -292,7 +296,7 @@ public class VDT_RasterTest extends TestBase{
 			Assert.fail("Topology is not a unique option to select is present in the Layer Type");
 		}
 
-		Thread.sleep(2000);
+		/*Thread.sleep(2000);
 		rasterpage.ValidateOnTopologyLayer();*/
 
 		Thread.sleep(2000);
@@ -460,10 +464,22 @@ public class VDT_RasterTest extends TestBase{
 
 
 	}
-
-	//Add a Timing Advance layer
-	//@test(priority=6)
-	//Yet to create the method
+	
+	//Add a Timing Advance layer + OSF
+	//@Test(priority=6)
+	public void ValidtionofOvershootingFactor() throws InterruptedException {
+		Thread.sleep(2000);
+		rasterpage.ClickOnArrowButton();
+		Thread.sleep(2000);
+		if(!rasterpage.CheckOvershootFactorReport()) {
+			System.out.println("Overshoot Factor Report Button Not visible");
+		}
+		
+		Thread.sleep(2000);
+		rasterpage.overshootFactor();
+		Thread.sleep(2000);
+		
+	}
 
 	//Search panel is available
 	//@test(priority=7)

@@ -98,7 +98,8 @@ public class VDT_Rasterpage extends TestBase{
 		WebElement ArrowIcon;
 
 		//WebElement for clicking on the Topology Arrow
-		@FindBy (xpath="//i[@title='Open'][1]")
+		//@FindBy (xpath="//i[@title='Open'][1]")
+		@FindBy (xpath="(//i[contains(@class,'eds__icon-chevron-down___')])[2]")
 		WebElement TopologyArrow;
 
 		//WebElement for Selecting the topology from the dropdown list
@@ -328,31 +329,36 @@ public class VDT_Rasterpage extends TestBase{
 	@FindBy (xpath = "(//ul[@class='react-datepicker__time-list']//li)")
 	List<WebElement> StartHours;
 	
-	@FindBy (xpath="(//i[@title='Open'])[3]")
+	//@FindBy (xpath="(//i[@title='Open'])[3]")
+	@FindBy (xpath="(//div[@class = ' css-w1oppg'])[3]")
 	WebElement ClickAggregationType;
 	
 	@FindBy (xpath="(//div[@class='css-19yxn7s'])[3]//input")
 	WebElement SelectAggregationType;
 	
-	@FindBy (xpath="(//i[@title='Open'])[4]")
+	//@FindBy (xpath="(//i[@title='Open'])[4]")
+	@FindBy (xpath="(//div[@class = ' css-w1oppg'])[4]")
 	WebElement ClickFilterCarrierType;
 	
 	@FindBy (xpath="(//div[@class='css-19yxn7s'])[4]//input")
 	WebElement SelectFilterCarrierType;
 	
-	@FindBy (xpath="(//i[@title='Open'])[5]")
+	//@FindBy (xpath="(//i[@title='Open'])[5]")
+	@FindBy (xpath="(//div[@class = ' css-w1oppg'])[5]")
 	WebElement ClickFilterQCIType;
 	
 	@FindBy (xpath="(//div[@class='css-19yxn7s'])[5]//input")
 	WebElement SelectFilterQCIType;
 	
-	@FindBy (xpath="(//i[@title='Open'])[6]")
+	//@FindBy (xpath="(//i[@title='Open'])[6]")
+	@FindBy (xpath="(//div[@class = ' css-w1oppg'])[6]")
 	WebElement ClickFilterMDTType;
 	
 	@FindBy (xpath="(//div[@class='css-19yxn7s'])[6]//input")
 	WebElement SelectFilterMDTType;
 	
-	@FindBy (xpath="(//i[@title='Open'])[7]")
+	//@FindBy (xpath="(//i[@title='Open'])[7]")
+	@FindBy (xpath="(//div[@class = ' css-w1oppg'])[7]")
 	WebElement ClickFilterIndoorType;
 	
 	@FindBy (xpath="(//div[@class='css-19yxn7s'])[7]//input")
@@ -365,11 +371,12 @@ public class VDT_Rasterpage extends TestBase{
 	@FindBy (xpath="//div[@class='rasterLegend__raster-legend-header___blo9b']")
 	WebElement LegendText;
 
-	@FindBy (xpath="(//i[@title='Open'])[2]")
+	//@FindBy (xpath="(//i[@title='Open'])[2]")
+	@FindBy (xpath="(//div[@class=' css-1qigc93-control'])[2]")
 	WebElement ClickRasterType;
 
 
-	@FindBy (xpath="//input[@id='react-select-3-input']")
+	@FindBy (xpath="(//div[contains(@class,'css-19yxn7s')]/div/input)[2]")
 	WebElement SelectRasterType;
 	
 	@FindBy (xpath="//div[contains(@class,'css-19yxn7s')]/div/input")
@@ -397,6 +404,61 @@ public class VDT_Rasterpage extends TestBase{
     @FindBy(xpath="//div[contains(@class,'tree__tree')]/ul/li/span")
     List<WebElement> customername;
     
+    
+   // ----------------TC-06 XPaths ----------------------------------------
+    
+    @FindBy (xpath="(//div[contains(@class,'layerSelectionMenu__flex-item')])[2]")
+	WebElement FillColour;
+    
+    @FindBy (xpath="((//div[contains(@class,'layerSelectionMenu__flex-item')])[2]//li)[5]")
+	WebElement OvershootAnalysis;
+    
+    @FindBy (xpath="((//div[contains(@class,'layerSelectionMenu__flex-item')])[2]//li)[6]/span")
+	WebElement OvershootFactor;
+    
+    @FindBy (xpath="//i[contains(@class,'detailsMenuButton')]")
+	WebElement OvershootFactorReport;
+    
+    @FindBy (xpath="(//div[contains(@class,'overshootingFactorDataGrid')]/div/div/div/div/div)[4]/div/div[1]")
+    WebElement FirstCell;
+    
+    @FindBy (xpath="(//input[@class='jss107'])[2]")
+    WebElement FirstCellCheck;
+    
+    public void overshootFactor() throws InterruptedException {
+    	
+    	FillColour.click();
+    	Thread.sleep(2000);
+    	System.out.println("FillColour clicked");
+    	
+    	OvershootAnalysis.click();
+    	Thread.sleep(2000);
+    	System.out.println("OvershootAnalysis clicked");
+    	
+    	OvershootFactor.click();
+    	Thread.sleep(2000);
+    	System.out.println("OvershootFactor clicked");
+    	
+    	ApplyButton.click();
+    	Thread.sleep(2000);
+    	
+    	boolean temp = CheckOvershootFactorReport();
+    	Assert.assertTrue(temp==true);
+    	
+    	System.out.println("OvershootFactorReport visible");
+    	
+    	OvershootFactorReport.click();
+    	Thread.sleep(2000);
+    	
+    	String tableFirstCell = FirstCell.getText();
+    	Assert.assertFalse(tableFirstCell==null, "Contents in the table not visible");    	
+    	System.out.println("First Cell = "+ FirstCell.getText());
+    	
+    	FirstCellCheck.click();
+    	Thread.sleep(2000);
+    	
+    }
+    		
     String allcustomerRasters="(//div[contains(@class,'tree__tree')]/ul/li/span)" ;
 
 	Actions action = new Actions(driver);
@@ -522,10 +584,16 @@ public class VDT_Rasterpage extends TestBase{
 	}
 
 	//Validation of Layer type from the dropdown, and it is be unique
-	public int ValidationOfLayerType() {
+	public int ValidationOfLayerType() throws InterruptedException {
 		TopologyArrow.click();
-		List<WebElement> allElements = driver.findElements(By.xpath("//div[contains(@class,'css-x9e0s7')]/*"));
-		//ele = driver.findElements(By.xpath("//div[contains@class,'css-x9e0s7')]/.."));
+		List<WebElement> allElements = driver.findElements(By.xpath("//div[contains(@class,'css-x9e0s7-menu')]/*"));
+		Thread.sleep(1000);
+		/*for(WebElement eelements:allElements) {
+			Thread.sleep(1000);
+			System.out.println(eelements.getTagName());
+			System.out.println(eelements.getText());
+			
+		}*/
 		int totalElements = allElements.size();
 		System.out.println("Total number of dropdown elements present on the web page is : "+totalElements);
 		return totalElements;
@@ -635,6 +703,7 @@ public class VDT_Rasterpage extends TestBase{
 	
 
 	//Validate on the Raster Layer Type from the dropdown, and it is be unique
+				/*CHANGE*/
 	public int ValidationOfRasterLayerType() throws InterruptedException {
 		LayerTypeDropdown.click();
 		Thread.sleep(1000);
@@ -772,7 +841,8 @@ public class VDT_Rasterpage extends TestBase{
 	
 	//Selecting any of the filter and aggregation type of raster type
 		public void SelectTheRasterOption() throws InterruptedException {
-
+			
+			System.out.println("Selecting Raster Type");
 			Thread.sleep(2000);
 			ClickRasterType.click();
 			Thread.sleep(2000);
@@ -781,6 +851,7 @@ public class VDT_Rasterpage extends TestBase{
 			SelectRasterType.sendKeys(Keys.ENTER);
 			Reporter.log("Raster Layer is selected");
 						
+			System.out.println("Selecting Aggregation Type");
 			Thread.sleep(2000);
 			ClickAggregationType.click();
 			Thread.sleep(2000);
@@ -790,22 +861,23 @@ public class VDT_Rasterpage extends TestBase{
 			Thread.sleep(2000);
 			Reporter.log("Aggregation Type is selected");
 			
-			/*AggregationTypeText.click();
+			AggregationTypeText.click();
 			Thread.sleep(2000);
 			
 			action.sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN);
 			action.build().perform();
-			Thread.sleep(2000);*/
-			
+			Thread.sleep(2000);
+			System.out.println("Selecting carrier Type");
 			Thread.sleep(2000);
 			ClickFilterCarrierType.click();
 			Thread.sleep(2000);
-			SelectFilterCarrierType.sendKeys("6300");
+			SelectFilterCarrierType.sendKeys("42715");
 			Thread.sleep(2000);
 			SelectFilterCarrierType.sendKeys(Keys.ENTER);
 			Thread.sleep(2000);
 			Reporter.log("Carrier Type is selected");
 			
+			System.out.println("Selecting QCI Type");
 			Thread.sleep(2000);
 			ClickFilterQCIType.click();
 			Thread.sleep(2000);
@@ -815,6 +887,7 @@ public class VDT_Rasterpage extends TestBase{
 			Thread.sleep(2000);
 			Reporter.log("QCI is selected");
 			
+			System.out.println("Selecting MDDT Type");
 			Thread.sleep(2000);
 			ClickFilterMDTType.click();
 			Thread.sleep(2000);
@@ -824,6 +897,7 @@ public class VDT_Rasterpage extends TestBase{
 			Thread.sleep(2000);
 			Reporter.log("MDT is selected");
 			
+			System.out.println("Selecting indoor Type");
 			Thread.sleep(2000);
 			ClickFilterIndoorType.click();
 			Thread.sleep(2000);
@@ -831,15 +905,19 @@ public class VDT_Rasterpage extends TestBase{
 			Thread.sleep(2000);
 			SelectFilterIndoorType.sendKeys(Keys.ENTER);
 			Thread.sleep(2000);
+			RasterTitleText.click(); ///EScape
+			Thread.sleep(2000);
 			Reporter.log("Indoor/Outdoor is selected");
+			System.out.println("Indoor/Outdoor is selected");
 			
-			/*ApplyButton.click();
+			ApplyButton.click();
 			//ApplyButton1.click();
-			System.out.println("Clicked on Apply button");*/
-			/*Thread.sleep(2000);
-			ValidateOnApplyButtonDeactivated();
+			System.out.println("Clicked on Apply button");
+			Thread.sleep(2000);
+			System.out.println("Try to validate Apply button deactivated");
 			boolean ApplyDeactivated = ValidateOnApplyButtonDeactivated();
 			Thread.sleep(1000);
+			System.out.println("Validated Apply button deactivated");
 			if(ApplyDeactivated==false) {
 				System.out.println("Apply Button is disabled");
 				Reporter.log("Apply Button is disabled");
@@ -849,7 +927,7 @@ public class VDT_Rasterpage extends TestBase{
 				Reporter.log("Apply Button is enabled");
 				//Assert.fail("Apply Button is enabled");
 			}
-			*/
+			
 			
 		}
 
@@ -952,204 +1030,288 @@ public class VDT_Rasterpage extends TestBase{
 			return ClickEndDate.getAttribute("value");
 		}
 		
-	//Selecting the start date	
-	public void GetDatesFromCalendar(String Val) throws InterruptedException {
-		//(//div[@class='react-datepicker__week'])[1]//div[1]
-		//(//div[@class='react-datepicker__week'])[2]//div[1]
-		 
-		CssClass=new ArrayList<String>();
-		String bXpath="(//div[@class='react-datepicker__week'])[";
-		String aXpath="]//div[";
-		int RopSelctedSize=driver.findElements(By.xpath("(//div[contains(@class,'day--mon react-datepicker__day--selected')]//preceding::div[contains(@class,'datepicker__week')]//div[last()])")).size();
-
-		String DayVlue=null;
-		String CName=null;
-		for(int rowNum=1;rowNum<=5;rowNum++)
-		{
-			for(int ColNum=1;ColNum<=7;ColNum++)
-			{
-		
-				CName=driver.findElement(By.xpath(bXpath+rowNum+aXpath+ColNum+"]")).getAttribute("class");
-				if(!(CName.contains("disabled"))){
-					CssClass.add(CName);
-					DayVlue=driver.findElement(By.xpath(bXpath+rowNum+aXpath+ColNum+"]")).getText();
-					Reporter.log("<span style='color:#58D68D;background-color:#1C2833;'>"+"The available Date is:" +"<b>"+DayVlue +"</b>"+"<span>"+"<br/>");
-					System.out.println("The available Date is:" +DayVlue);
+		public void selectDate() throws InterruptedException {
+			boolean dateFlag = true, rowSelect = true;
+			int dateCounter = 7, rowCounter = 1, j, temp=0;
+			ClickStartDate.click();
+			Thread.sleep(2000);
+			String startDateSelect="//div[@class='react-datepicker__week']//div[not(contains(@class,'disabled'))][1]/../div";
+			while(rowSelect) {
+				while(dateFlag) {
+					int timeCounter = 1;
+					driver.findElement(By.xpath(startDateSelect+"["+dateCounter+"]")).click();
+					Thread.sleep(1500);
+					driver.findElement(By.xpath(startDateSelect+"["+dateCounter+"]")).click();
+					System.out.println("Date number "+dateCounter);
+					boolean timeFlag = true;
+					Thread.sleep(2000);
+					while(timeFlag) {
+						System.out.println("Time number "+timeCounter);
+						String timeSelect = "//ul[@class='react-datepicker__time-list']//li";
+						String time1 = driver.findElement(By.xpath(timeSelect+"["+timeCounter+"]")).getText();
+						time1 = time1.split(":")[0];
+						System.out.println("Integer.parseInt(time1) "+Integer.parseInt(time1));
+						if(Integer.parseInt(time1) >= 8) break;
+						
+						for(j = 1; j<=16;j++) {
+							temp = timeCounter + j;
+							String className = driver.findElement(By.xpath(timeSelect+"["+temp+"]")).getAttribute("class");
+							System.out.println("Inside For "+ temp);
+							if (className.contains("disabled")) {
+								break;
+							}
+						}
+						if(j==17) {
+							driver.findElement(By.xpath(timeSelect+"["+timeCounter+"]")).click();
+							timeFlag = false;
+							dateFlag = false;
+							rowSelect = false;
+						}
+						timeCounter++;
+					}
+					dateCounter--;
 				}
-				
-				//System.out.println("The ClassName is:" +CName);
+				if (rowSelect) startDateSelect = "//div[@class='react-datepicker__week']//div[not(contains(@class,'disabled'))][1]/../following-sibling::div["+(rowCounter++)+"]";
 			}
-		}
-		
-		for(String value:CssClass){
 			
-			if(!Val.equals("ROPP"))
-			{
-			System.out.println("The ClassName is:"+value);
-			if(Val.equals("Selected")){
-			if(value.contains("datepicker__day--selected"))
-			{
-				driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--selected')]")).click();
-				/*Classnameis=driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--selected')]")).getAttribute("class");
-				CurrentDateis=Integer.parseInt(driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).getText());
-				System.out.println("The class of selected Date is::"+Classnameis);*/
-				System.out.println("The current Date::"+CurrentDateis);
-			}
-			}
-			if(Val.equals("today"))
-			{
-				if(value.contains("datepicker__day--today"))
-				{
-					driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).click();
-					Classnameis=driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).getAttribute("class");
-					System.out.println("The class of selected Date is::"+Classnameis);
-				}
-			}
-		}
-		}
-		
-		
-		if(Val.equals("ROPP"))
-		{
-			System.out.println("Inside Rop Selectttt");
-			/*int PreviousDateis=(CurrentDateis-1);*/
-			int PreviousDateis;
-			Classnameis=driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--selected')]")).getAttribute("class");
-			System.out.println("the class of selected date is::::------"+Classnameis);
-			// System.out.println("Previous date is:"+PreviousDateis);
-			for(String value:CssClass){
-				
-				System.out.println("The ClassName is:"+value);
-				
-				if( Classnameis.contains("react-datepicker__day react-datepicker__day--mon react-datepicker__day--selected react-datepicker__day--today"))
-				{
-				    /*driver.findElement(By.xpath("//div[contains(text(),'"+PreviousDateis+"')]")).click();
-					Thread.sleep(4000);*/
-					//driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--selected')]")).click();
-					
-					//CurrentDateis=Integer.parseInt(driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).getText());
-					System.out.println("The class of selected Date is::"+Classnameis);
-					//CurrentDateis=Integer.parseInt(driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).getText());
-				//	PreviousDateis=(CurrentDateis-1);
-					//driver.findElement(By.xpath("//div[contains(text(),'"+PreviousDateis+"')]")).click();
-					/*driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]//preceding::div[@class='react-datepicker__week']//div[last()]")).click();
-					Thread.sleep(4000);*/
-					driver.findElement(By.xpath("(//div[contains(@class,'day--mon react-datepicker__day--selected')]//preceding::div[contains(@class,'datepicker__week')]//div[last()])["+RopSelctedSize+"]")).click();
-					Thread.sleep(4000);
-					break;
-				}
-				
-				
-				if( Classnameis.contains("react-datepicker__day react-datepicker__day--sun react-datepicker__day--selected react-datepicker__day--weekend"))
-				{
-				    /*driver.findElement(By.xpath("//div[contains(text(),'"+PreviousDateis+"')]")).click();
-					Thread.sleep(4000);*/
-					//driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--selected')]")).click();
-					
-					//CurrentDateis=Integer.parseInt(driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).getText());
-					System.out.println("The class of selected Date is::"+Classnameis);
-					//CurrentDateis=Integer.parseInt(driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).getText());
-				//	PreviousDateis=(CurrentDateis-1);
-					//driver.findElement(By.xpath("//div[contains(text(),'"+PreviousDateis+"')]")).click();
-					/*driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]//preceding::div[@class='react-datepicker__week']//div[last()]")).click();
-					Thread.sleep(4000);*/
-					driver.findElement(By.xpath("//div[contains(@class,'day--selected react-datepicker__day--weekend')]")).click();
-					Thread.sleep(4000);
-					break;
-				}
-				
-				
-				if(value.contains("datepicker__day") && !(Classnameis.equals("react-datepicker__day react-datepicker__day--mon react-datepicker__day--selected react-datepicker__day--today")) && !(Classnameis.equals("react-datepicker__day react-datepicker__day--sun react-datepicker__day--selected react-datepicker__day--weekend")))
-				{
-				
-					//div[contains(@class,'datepicker__day--selected') or contains(@class,'datepicker__day--today')]
-					driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]//preceding-sibling::div[1]")).click();
-					Thread.sleep(4000);
-				}
-				
-					
-					
-					}	
-				
-				
-			}
+			Thread.sleep(2000);
+			ClickEndDate.click();
+			Thread.sleep(2000);
+			String endDateSelect = "//div[@class='react-datepicker__week']//div[not(contains(@class,'disabled'))][1]";
+			driver.findElement(By.xpath(endDateSelect)).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath(endDateSelect)).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//ul[@class='react-datepicker__time-list']//li"+"["+temp+"]")).click();
+			Thread.sleep(2000);
+			
+			RefreshButton.click();
+			Thread.sleep(2000);
 			
 		}
 		
+		//--------------------- TC - 06 ----------------------------
+		
+		public boolean CheckOvershootFactorReport() {
+			try{
+				if(OvershootFactorReport.isDisplayed()) {
+					return true;
+				}else {
+					return false;
+				}
+			}
+			catch(Exception e){
+				return false;
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+//	//Selecting the start date	
+//	public void GetDatesFromCalendar(String Val) throws InterruptedException {
+//		//(//div[@class='react-datepicker__week'])[1]//div[1]
+//		//(//div[@class='react-datepicker__week'])[2]//div[1]
+//		 
+//		CssClass=new ArrayList<String>();
+//		String bXpath="(//div[@class='react-datepicker__week'])[";
+//		String aXpath="]//div[";
+//		int RopSelctedSize=driver.findElements(By.xpath("(//div[contains(@class,'day--mon react-datepicker__day--selected')]//preceding::div[contains(@class,'datepicker__week')]//div[last()])")).size();
+//
+//		String DayVlue=null;
+//		String CName=null;
+//		for(int rowNum=1;rowNum<=5;rowNum++)
+//		{
+//			for(int ColNum=1;ColNum<=7;ColNum++)
+//			{
+//		
+//				CName=driver.findElement(By.xpath(bXpath+rowNum+aXpath+ColNum+"]")).getAttribute("class");
+//				if(!(CName.contains("disabled"))){
+//					CssClass.add(CName);
+//					DayVlue=driver.findElement(By.xpath(bXpath+rowNum+aXpath+ColNum+"]")).getText();
+//					Reporter.log("<span style='color:#58D68D;background-color:#1C2833;'>"+"The available Date is:" +"<b>"+DayVlue +"</b>"+"<span>"+"<br/>");
+//					System.out.println("The available Date is:" +DayVlue);
+//				}
+//				
+//				//System.out.println("The ClassName is:" +CName);
+//			}
+//		}
+//		
+//		for(String value:CssClass){
+//			
+//			if(!Val.equals("ROPP"))
+//			{
+//			System.out.println("The ClassName is:"+value);
+//			if(Val.equals("Selected")){
+//			if(value.contains("datepicker__day--selected"))
+//			{
+//				driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--selected')]")).click();
+//				/*Classnameis=driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--selected')]")).getAttribute("class");
+//				CurrentDateis=Integer.parseInt(driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).getText());
+//				System.out.println("The class of selected Date is::"+Classnameis);*/
+//				System.out.println("The current Date::"+CurrentDateis);
+//			}
+//			}
+//			if(Val.equals("today"))
+//			{
+//				if(value.contains("datepicker__day--today"))
+//				{
+//					driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).click();
+//					Classnameis=driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).getAttribute("class");
+//					System.out.println("The class of selected Date is::"+Classnameis);
+//				}
+//			}
+//		}
+//		}
+//		
+//		
+//		if(Val.equals("ROPP"))
+//		{
+//			System.out.println("Inside Rop Selectttt");
+//			/*int PreviousDateis=(CurrentDateis-1);*/
+//			int PreviousDateis;
+//			Classnameis=driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--selected')]")).getAttribute("class");
+//			System.out.println("the class of selected date is::::------"+Classnameis);
+//			// System.out.println("Previous date is:"+PreviousDateis);
+//			for(String value:CssClass){
+//				
+//				System.out.println("The ClassName is:"+value);
+//				
+//				if( Classnameis.contains("react-datepicker__day react-datepicker__day--mon react-datepicker__day--selected react-datepicker__day--today"))
+//				{
+//				    /*driver.findElement(By.xpath("//div[contains(text(),'"+PreviousDateis+"')]")).click();
+//					Thread.sleep(4000);*/
+//					//driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--selected')]")).click();
+//					
+//					//CurrentDateis=Integer.parseInt(driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).getText());
+//					System.out.println("The class of selected Date is::"+Classnameis);
+//					//CurrentDateis=Integer.parseInt(driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).getText());
+//				//	PreviousDateis=(CurrentDateis-1);
+//					//driver.findElement(By.xpath("//div[contains(text(),'"+PreviousDateis+"')]")).click();
+//					/*driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]//preceding::div[@class='react-datepicker__week']//div[last()]")).click();
+//					Thread.sleep(4000);*/
+//					driver.findElement(By.xpath("(//div[contains(@class,'day--mon react-datepicker__day--selected')]//preceding::div[contains(@class,'datepicker__week')]//div[last()])["+RopSelctedSize+"]")).click();
+//					Thread.sleep(4000);
+//					break;
+//				}
+//				
+//				
+//				if( Classnameis.contains("react-datepicker__day react-datepicker__day--sun react-datepicker__day--selected react-datepicker__day--weekend"))
+//				{
+//				    /*driver.findElement(By.xpath("//div[contains(text(),'"+PreviousDateis+"')]")).click();
+//					Thread.sleep(4000);*/
+//					//driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--selected')]")).click();
+//					
+//					//CurrentDateis=Integer.parseInt(driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).getText());
+//					System.out.println("The class of selected Date is::"+Classnameis);
+//					//CurrentDateis=Integer.parseInt(driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]")).getText());
+//				//	PreviousDateis=(CurrentDateis-1);
+//					//driver.findElement(By.xpath("//div[contains(text(),'"+PreviousDateis+"')]")).click();
+//					/*driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]//preceding::div[@class='react-datepicker__week']//div[last()]")).click();
+//					Thread.sleep(4000);*/
+//					driver.findElement(By.xpath("//div[contains(@class,'day--selected react-datepicker__day--weekend')]")).click();
+//					Thread.sleep(4000);
+//					break;
+//				}
+//				
+//				
+//				if(value.contains("datepicker__day") && !(Classnameis.equals("react-datepicker__day react-datepicker__day--mon react-datepicker__day--selected react-datepicker__day--today")) && !(Classnameis.equals("react-datepicker__day react-datepicker__day--sun react-datepicker__day--selected react-datepicker__day--weekend")))
+//				{
+//				
+//					//div[contains(@class,'datepicker__day--selected') or contains(@class,'datepicker__day--today')]
+//					driver.findElement(By.xpath("//div[contains(@class,'datepicker__day--today')]//preceding-sibling::div[1]")).click();
+//					Thread.sleep(4000);
+//				}
+//				
+//					
+//					
+//					}	
+//				
+//				
+//			}
+//			
+//		}
+//		
+//	
+//	public void GetHours(String Hs) throws InterruptedException {
+//		HoursSelected=new ArrayList<String>();
+//		int HSSize=StartHours.size();
+//		/*System.out.println("Before  the Loop  " + HSSize);*/
+//		for(int i=HSSize;i>=1;i--)
+//		{
+//
+//			/*System.out.println("Into the Loop  " + i);*/
+//			Thread.sleep(5000);
+//			String Hval= driver.findElement(By.xpath("(//ul[@class='react-datepicker__time-list']//li)["+i+"]")).getText();
+//			HoursSelected.add(driver.findElement(By.xpath("(//ul[@class='react-datepicker__time-list']//li)["+i+"]")).getAttribute("class"));
+//			/*System.out.println("Hour val is" + Hval);*/
+//			HoursSelected.add(Hval);
+//
+//		}
+//
+//
+//
+//		for (String Havailable : HoursSelected) {
+//
+//			if(!Havailable.contains("disabled"))
+//			{
+//				System.out.println("The ClassName is:"+Havailable);
+//				if(Hs.equals("Rop"))
+//				{
+//					driver.findElement(By.xpath("(//ul[@class='react-datepicker__time-list']//li)[13]")).click();
+//					break;
+//				}
+//				if(Hs.equals("Normal"))
+//				{
+//					driver.findElement(By.xpath("(//ul[@class='react-datepicker__time-list']//li)[11]")).click();
+//					break;
+//				}
+//			}
+//		}
+//	}
+//
+//	public String GetStartDate() throws InterruptedException {			
+//		Thread.sleep(2000);
+//		ClickStartDate.click();
+//		Thread.sleep(2000);
+//		GetDatesFromCalendar("today");
+//		Thread.sleep(2000);
+//		GetHours("Normal");
+//		Thread.sleep(2000);
+//		RasterTitleText.click();
+//		Thread.sleep(2000);
+//		String StartDate =ClickStartDate.getAttribute("value");
+//		Reporter.log("Start Date is:" + StartDate);
+//		System.out.println("Start Date is:" + StartDate  );
+//
+//		return StartDate;
+//
+//	}
+//
+//	//Method to Click on  ENDDate Calendar*/		
+//	public String GetEndDate() throws InterruptedException {
+//
+//		Thread.sleep(2000);
+//		ClickEndDate.click();
+//		Thread.sleep(2000);
+//		GetDatesFromCalendar("today");
+//		Thread.sleep(2000);
+//		GetHours("Rop");
+//		RasterTitleText.click();
+//		String Endate=ClickEndDate.getAttribute("value");
+//		Reporter.log("EndTime is:" +Endate);
+//		System.out.println("EndTime is:" +Endate  );
+//
+//		return Endate;
+//	}
+//	
 	
-	public void GetHours(String Hs) throws InterruptedException {
-		HoursSelected=new ArrayList<String>();
-		int HSSize=StartHours.size();
-		/*System.out.println("Before  the Loop  " + HSSize);*/
-		for(int i=HSSize;i>=1;i--)
-		{
-
-			/*System.out.println("Into the Loop  " + i);*/
-			Thread.sleep(5000);
-			String Hval= driver.findElement(By.xpath("(//ul[@class='react-datepicker__time-list']//li)["+i+"]")).getText();
-			HoursSelected.add(driver.findElement(By.xpath("(//ul[@class='react-datepicker__time-list']//li)["+i+"]")).getAttribute("class"));
-			/*System.out.println("Hour val is" + Hval);*/
-			HoursSelected.add(Hval);
-
-		}
-
-
-
-		for (String Havailable : HoursSelected) {
-
-			if(!Havailable.contains("disabled"))
-			{
-				System.out.println("The ClassName is:"+Havailable);
-				if(Hs.equals("Rop"))
-				{
-					driver.findElement(By.xpath("(//ul[@class='react-datepicker__time-list']//li)[13]")).click();
-					break;
-				}
-				if(Hs.equals("Normal"))
-				{
-					driver.findElement(By.xpath("(//ul[@class='react-datepicker__time-list']//li)[11]")).click();
-					break;
-				}
-			}
-		}
-	}
-
-	public String GetStartDate() throws InterruptedException {			
-		Thread.sleep(2000);
-		ClickStartDate.click();
-		Thread.sleep(2000);
-		GetDatesFromCalendar("today");
-		Thread.sleep(2000);
-		GetHours("Normal");
-		Thread.sleep(2000);
-		RasterTitleText.click();
-		Thread.sleep(2000);
-		String StartDate =ClickStartDate.getAttribute("value");
-		Reporter.log("Start Date is:" + StartDate);
-		System.out.println("Start Date is:" + StartDate  );
-
-		return StartDate;
-
-	}
-
-	//Method to Click on  ENDDate Calendar*/		
-	public String GetEndDate() throws InterruptedException {
-
-		Thread.sleep(2000);
-		ClickEndDate.click();
-		Thread.sleep(2000);
-		GetDatesFromCalendar("today");
-		Thread.sleep(2000);
-		GetHours("Rop");
-		RasterTitleText.click();
-		String Endate=ClickEndDate.getAttribute("value");
-		Reporter.log("EndTime is:" +Endate);
-		System.out.println("EndTime is:" +Endate  );
-
-		return Endate;
-	}
-
-
 
 	public void SelectEndDate() throws InterruptedException {
 	}
