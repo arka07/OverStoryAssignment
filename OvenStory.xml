@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Testing Suite">
+  <listeners>
+		<listener class-name="com.OvenStory.Assignment.util.ListenersTest" />
+			</listeners>
+
+	<test name=" TestOvenStory">
+		<classes>
+			<class name="com.OvenStory.Assignment.testcases.OvenStoryMainPageTest" />
+		</classes>
+	</test>
+</suite> 

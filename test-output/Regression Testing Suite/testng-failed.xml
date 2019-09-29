@@ -3,19 +3,17 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Regression Testing Suite]">
   <listeners>
     <listener class-name="com.ericsson.NDOrnd.dopuatautomation.util.ListenersTest"/>
-    <listener class-name="com.ericsson.NDOrnd.dopuatautomation.util.ExtentReportNG"/>
   </listeners>
-  <test name="TivTest(failed)">
+  <test name=" TestOvenStory(failed)">
     <classes>
-      <class name="com.ericsson.NDOrnd.dopuatautomation.testcases.VDT_TraceInputValidationTest">
+      <class name="com.ericsson.NDOrnd.dopuatautomation.testcases.OvenStoryMainPageTest">
         <methods>
-          <include name="VerifyTIVErrorNotificationAlertPopUp"/>
-          <include name="VerifyTableWithCellFiltering"/>
+          <include name="VerifySideMenuLinks"/>
+          <include name="setUp"/>
           <include name="initialisation"/>
           <include name="tearDown"/>
-          <include name="setUp"/>
         </methods>
-      </class> <!-- com.ericsson.NDOrnd.dopuatautomation.testcases.VDT_TraceInputValidationTest -->
+      </class> <!-- com.ericsson.NDOrnd.dopuatautomation.testcases.OvenStoryMainPageTest -->
     </classes>
-  </test> <!-- TivTest(failed) -->
+  </test> <!--  TestOvenStory(failed) -->
 </suite> <!-- Failed suite [Regression Testing Suite] -->
