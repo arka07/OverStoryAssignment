@@ -24,7 +24,7 @@ public class OvenStoryMainPage extends TestBase {
 
 	/*TestCase-1*/
 	/*Inspecting WebElement for Location Textbox*/	
-	@FindBy (xpath = "//input[contains(@placeholder,'locationSearchInput') or contains(@id,'locationSearchInput')]")
+	@FindBy (xpath = "//input[contains(@placeholder,'location') or contains(@id,'locationSearchInput')]")
 	WebElement LocationTextBox;	
 	
 	/*TestCase-1*/
@@ -100,6 +100,7 @@ public class OvenStoryMainPage extends TestBase {
 	public List<String> CartItemsSelected = new ArrayList<String>();
 	public List<String> titlename =new ArrayList<String>();
 	public boolean locationtext;
+	Actions action = new Actions(driver);
 	
 	
 	/*Initializing all the WebElements*/
@@ -197,8 +198,10 @@ public class OvenStoryMainPage extends TestBase {
 		
 		/*TestStep- AddButton  */
 		
-		
-		TopHeader.click();
+		action.sendKeys(Keys.ESCAPE);
+		Thread.sleep(2000);
+		action.sendKeys(Keys.ESCAPE);
+		//TopHeader.click();
 	    Thread.sleep(2000);
 		GetScroll("DOWN", 15);
 		boolean Isaddeditemvalid=false;
@@ -355,7 +358,3 @@ public class OvenStoryMainPage extends TestBase {
 	
 	
 }
-
-
-
-
